@@ -68,12 +68,12 @@ plain code, not AI, so it is predictable and testable.
 The admin may script the first few rounds ([04](04-brainstorm.md)). The QuestionWriter
 starts where the script ends and treats scripted decisions exactly like its own.
 
-### Original, inspired by a source
+### Grounded in a source play
 
-The scene is original and built from the room's answers; the source play supplies only
-its **engine** (see [05](05-scene-writing.md)). The QuestionWriter sees the engine so its
-questions can steer towards a scene the engine fits (for example, a question that sets up
-someone to be tempted), without ever naming the source.
+The scene is grounded in a known play, with a twist the room chooses (see
+[05](05-scene-writing.md)). The QuestionWriter sees the source's plot, characters and
+famous moments, so its options (play-plus-twist pairs, moments) stay true to the play
+while the twist brings the chaos.
 
 ### Genre as an input
 
@@ -91,7 +91,7 @@ one something the playwright could make matter.
 
 ```
 QuestionWriter
-  in:  genre card, source engine, slot, decisions so far, content rating, persona (if used)
+  in:  genre card, source play (plot, characters, moments), slot, decisions so far, content rating, persona (if used)
   out: question        short enough to read on a phone at a glance
        options         3 or 4, short
        selection_mode  single | multiple
@@ -117,7 +117,7 @@ Two places a persona fits, and both could be used:
 
 ```
 PremiseWriter
-  in:  genre card, source engine, decisions (question + winning options), content rating, number of improvisers
+  in:  genre card, source play (plot, characters, moments), decisions (question + winning options), content rating, number of improvisers
   out: play          title; what the play is about, in a sentence or two
        situation     where and when this scene happens in the play
        characters    name; voiced or withheld; what they want; one fact about them
@@ -139,9 +139,11 @@ SceneWriter
 ```
 
 - **Writes both sides**: the host's lines and the improvisers' ghost lines.
-- **One step or two:** a single call, or an outline of beats first and lines second. Two
-  steps likely pay off decisions and shape the arc better but take longer. DSPy makes this
-  a measured comparison on the same metric, not a guess.
+- **Outline first, then lines** ([09](09-story-quality.md)): want, obstacle, escalation, turn,
+  button and payoffs are decided before any line is written. Whether this beats a single
+  step is still measured, not assumed.
+- **Several candidates, best one wins:** three to five scenes written in parallel; the judge
+  picks the best; below the bar, one revision, then the understudy.
 - **Checked before use:** the code checks below run as a gate. A failure gets one rewrite,
   then the understudy scene ([08](08-reliability-and-infrastructure.md)).
 - **Streaming**, if needed: DSPy streams string fields only, so the lines would come as one
@@ -159,9 +161,9 @@ feedback text. Code checks produce feedback for free ("line 14 is 41 words; the 
 
 | Module | Checked by code | Judged by an LLM |
 |---|---|---|
-| **QuestionWriter** | Lengths; option count; slot filled; source never named | Options are real forks; grounded (twist round: surprising yet usable); builds on earlier decisions; within the content rating |
-| **PremiseWriter** | Every decision has a payoff; characters match the improviser count; no names or places from the source | Coherent; specific; the briefing has only what the host needs |
-| **SceneWriter** | No names, places or quotations from the source; line count against target; line length; a delivery description on every line; the dialogue carries who, where and what for the audience; beats present and in order | The genre is recognisable, conventions not caricature; original: the source's engine is felt but its plot is not retold; the twist matters to the scene; every payoff lands; readable cold; no filler; the host's lines carry the scene; within the content rating |
+| **QuestionWriter** | Lengths; option count; slot filled; no phone-related options | Options are real forks; grounded (twist round: surprising yet usable); builds on earlier decisions; within the content rating |
+| **PremiseWriter** | Every decision has a payoff; characters match the improviser count; characters and moment exist in the source | Coherent; specific; the briefing has only what the host needs |
+| **SceneWriter** | No phones, screens, apps, texts or calls anywhere; no long quotations from the source; line count against target; line length; a delivery description on every line; the dialogue carries who, where and what for the audience; beats present and in order | The genre is recognisable, conventions not caricature; delivery descriptions performable with one hand; true to the source play except for the twist; the twist matters to the scene; every payoff lands; readable cold; no filler; the host's lines carry the scene; within the content rating |
 | **Whole pipeline** | | "Would the room believe this scene is theirs?" |
 
 ### Data

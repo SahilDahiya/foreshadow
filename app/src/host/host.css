@@ -1,0 +1,101 @@
+/* Colours are a placeholder; the phase colour design comes later. */
+.host {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  overscroll-behavior: none;
+  background: var(--bg);
+  transition: background-color 200ms;
+}
+.host.prepare { background: #0e1626; }
+.host.deliver { background: #241a08; }
+.host.loading { display: grid; place-items: center; color: var(--muted); }
+
+.host-inner {
+  height: 100%;
+  padding: max(1.25rem, env(safe-area-inset-top)) 1.5rem max(1.25rem, env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  transition: transform 120ms ease-out;
+}
+
+.label {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.briefing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+  overflow-y: auto;
+  touch-action: pan-y;
+}
+.briefing h1 { margin: 0; font-size: 2.5rem; }
+.briefing p { margin: 0; line-height: 1.45; }
+.task-card {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #ffffff22;
+  border-radius: 1rem;
+}
+.task { font-size: 2rem; font-weight: 700; margin-top: 0.5rem !important; }
+.start {
+  margin-top: auto;
+  padding: 1.25rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  background: var(--fg);
+  color: var(--bg);
+}
+.briefing .small { font-size: 0.85rem; text-align: center; }
+
+.playing {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1rem;
+}
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; }
+.dot.on { background: var(--on); }
+.dot.off { background: var(--off); }
+.phase { margin-top: auto; }
+.cue { margin: 0; font-style: italic; color: #c9c3b4; font-size: 1.1rem; }
+.cue.large { font-size: 1.9rem; color: var(--fg); line-height: 1.25; }
+.dialogue { margin: 0; line-height: 1.2; font-weight: 600; }
+.dialogue.medium { font-size: 1.4rem; color: #c9c3b4; }
+.dialogue.huge { font-size: clamp(2rem, 8vw, 3.25rem); }
+.peek {
+  margin: auto 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid #ffffff1a;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.playing > :last-child:not(.peek) { margin-bottom: auto; }
+
+.ended {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 1rem;
+  text-align: center;
+}

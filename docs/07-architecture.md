@@ -110,7 +110,7 @@ two languages can't drift apart.
 ```
 D1
   genres          id, name, voice, conventions, suggested_engines, example_lines
-  sources         id, title, engine (tension, arc shape, devices)
+  sources         id, tradition, title, plot, characters, moments[], suggested_twists[]
   survey_plans    id, name, rounds (scripted questions and options; then AI slots)
   venues          id, name, city
   door_questions  id, venue_id (null = live), text, options, correct_option_ids[]
@@ -121,7 +121,9 @@ D1
   understudies    id, genre_id, source_id, scene
 
 Durable Object (per show)
-  sets            id, order, status, improviser_count, host_token
+  performers      id, name, device token                      -- the troupe, joined once per show
+  sets            id, order, status
+  casting         set_id, performer_id, role (host|improviser), character_id
   rounds          id, set_id, order, slot, source (scripted|ai), question, selection_mode,
                   opened_at, min_s, max_s, threshold, closes_at
   options         id, round_id, text, persona
@@ -147,6 +149,7 @@ foreshadow/
   docs/
   app/         one Vite project: React frontend (all surfaces) + Worker + Durable Object
   ai/          AI service and harness (Python, uv): DSPy programs, FastAPI, metrics
+  library/     the play library service (Python, uv): Gutenberg → parsed plays
   contracts/   Pydantic models → JSON Schema → TypeScript types
 ```
 
@@ -169,14 +172,19 @@ deployed and tried on real phones before the next.
 1. **Fake scene, real sync.** A hard-coded scene, the host screen with swipes, the
    follow-along screen, and the cursor through the Durable Object. The host is local-first,
    events carry sequence numbers and everything resumes after a reload, from the start.
-2. **Shows, sets, brainstorm.** Join flow, survey plans with scripted rounds only, voting,
+2. **Real scenes catalogue** ([05](05-scene-writing.md), version 1). The play library
+   ([10](10-play-library.md)): done for all 38 Shakespeare plays. Next: segments and
+   performable scenes, and the first shortlist approved.
+3. **Shows, sets, brainstorm.** Join flow, survey plans with scripted rounds only, voting,
    round timing with alarms, results on phones.
-3. **AI.** The seed DSPy programs in the container, through AI Gateway: adaptive rounds,
-   premise, scene, the understudy fallback.
 4. **Stage hardening.** Reconnects, manual cursor override, screen wake lock, real phones
    in a dark room, a simulated 30-person brainstorm.
-5. **Harness.** Metrics, simulated audiences, the human-rated set, GEPA runs.
-6. **Rehearse with real people and iterate**, mostly on the prompts.
+5. **Version 1 live:** rehearse and perform with real scenes, learn what the format needs.
+6. **Scene lab, then AI in the app** ([09](09-story-quality.md)): version 2 (a twist on a real
+   scene), then version 3 (generated scenes). The DSPy programs in the container, through AI Gateway: adaptive rounds,
+   premise, scene, the understudy fallback.
+7. **Harness.** Metrics, simulated audiences, the human-rated set, GEPA runs.
+8. **Rehearse with real people and iterate**, mostly on the prompts.
 
 ## Sources
 

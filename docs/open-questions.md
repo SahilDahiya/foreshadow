@@ -2,11 +2,26 @@
 
 ## Format
 
+44. **Names in a modern world:** keep Macbeth and Lady Macbeth (recognisable), or give them
+    modern names, as *Omkara* did?
+45. **Violence in a modern world:** do events stay literal (Duncan is murdered, as in
+    *Maqbool*) or become their modern equivalent (ousted in a boardroom coup)?
+46. **Which worlds first?** Proposed: a tech company, a national government, a parliament,
+    and as written.
+
+41. **How modern?** Plain, faithful contemporary English (proposed), or looser and more
+    colloquial?
+42. **Do famous lines stay as Shakespeare wrote them** ("To be, or not to be")?
+43. **Can the audience switch the follow-along screen to the original text?**
+
+38. **Version 1 shortlist:** which scenes first? Proposed: the eight in
+    [05-scene-writing.md](05-scene-writing.md), starting with Earnest and Macbeth.
+39. **Cuts:** may scenes be lightly cut to fit the time, as long as nothing is rewritten?
+40. **Does the room also choose which character the host plays,** or is it fixed per scene?
+
 1. **Where does the audience follow along: on their phones, on a projector, or both?**
 2. **When do ghost lines appear to the audience:** ahead of time, when the gap opens, or
    after it closes? Proposed: when the gap opens, as a show setting to try in rehearsal.
-3. **How close to the source play?** Proposed: borrow only its engine (core tension and
-   arc shape); everything else original. Owner's lean: as original as possible.
 4. **Plays only, or also fairy tales and myths?**
 5. **How long is one scene?** Five to seven minutes, or the original fifteen?
 6. **Does the host play one character, or several?**
@@ -16,6 +31,10 @@
 
 ## Brainstorm
 
+36. **Which traditions and plays go in the first catalogue?** Proposed: Shakespeare first.
+37. **Is Bollywood a tradition (Devdas, Shakuntala) or a genre applied to any play (Macbeth
+    as Bollywood)?** Proposed: both are possible; keep them as separate rounds.
+
 29. **Round timing defaults:** about 8 s minimum, 25 s maximum, close early at 85% of active
     phones or when the result can't change, then a 3 s last call. Right ballpark?
 30. **Should voters ever see the live tally before the round closes?** Proposed: no; only
@@ -24,9 +43,6 @@
 26. **How do the improvisers receive their mime task?** Proposed: the host shows them a
     task card on the phone before Start. Should the audience also see it?
 
-23. **Is the audience told which play inspired the scene?** Never, up front, or as a reveal
-    after the scene ("you just wrote Macbeth")?
-24. **Who picks the source play:** the room, the admin per show, or chosen at random?
 25. **How many twist questions per scene?** Proposed: one, asked late.
 
 9. **What is an AI persona?** An author of options (Robot versus Pirate), a simulated
@@ -37,19 +53,6 @@
 12. **How many options win a multiple-selection round?**
 
 ## Running a show
-
-34. **Live door questions:** set at the doors by the host, or by the admin?
-35. **Two door questions, or one?** One is faster; two makes guessing much harder.
-
-20. **Who sets the target length of a scene: the admin per show, or the host per set?**
-21. **Is the target length a soft guide, or a hard limit?** Proposed: a soft guide; the host
-    always decides.
-
-13. **Who starts each set: the host from the host device, or the admin?** Proposed: the host.
-14. **Where will shows run, and how reliable is the wifi?** This decides between hosted and
-    a laptop server with a hotspot.
-15. **Is the host's own judgment the right answer to "when do I deliver the next line?"**
-    Proposed in [03-roles-and-surfaces.md](03-roles-and-surfaces.md#timing-when-does-the-host-deliver-the-next-line-proposed).
 
 ## Technical
 
@@ -69,6 +72,19 @@
     trustworthy.
 
 ## Resolved
+
+- **Who assigns hosts?** The app, at random. Devices register as audience, performer or
+  admin.
+- **Who improvises?** The performers who aren't hosting decide among themselves, told how
+  many the scene needs; the app can pick at random if asked.
+- **Several characters per host?** No: one character per host.
+
+- **How close to the source?** Grounded in the known play (characters, plot, moments) with
+  one twist chosen by the room. Replaces "engine only".
+- **Is the audience told the play?** Yes, from the start; they choose it.
+
+- **Is the host's phone part of the scene?** No. The improvisers ignore it and the play
+  never mentions phones, screens or apps.
 
 
 - **Who writes the door questions?** The admin, any multiple-choice question (for example,

@@ -38,11 +38,17 @@ The host device holds the whole scene. Advancing changes the screen immediately 
 tells the server. If the network is gone, the host carries on and the device catches the
 server up when it returns. The network is never between the host and their next line.
 
-### 2. One writer per set
+### 2. Each line has one writer
 
-Only the host device moves the cursor. Each event carries a sequence number and is
-idempotent, so repeated or late messages can't scramble the order. With a single writer
-there are no conflicts to resolve.
+Each line belongs to one host, and only that host can deliver it, only when it is next.
+The show's Durable Object puts deliveries in order and gives each a sequence number, so
+repeated or late messages can't scramble the order, and no two hosts can ever claim the
+same moment. With one host this is exactly a single writer; with several, ownership of
+lines does the same job.
+
+Trade-off: with several hosts, a host who loses connection delays the next host's turn.
+Their delivery still shows on their own phone at once and reaches the room when the
+connection returns.
 
 ### 3. Everything can resume
 

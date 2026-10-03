@@ -224,3 +224,8 @@ node_modules/
 # Cloudflare / Wrangler
 .wrangler/
 .dev.vars*
+
+# Generated play library (rebuild with: cd library && uv run library build && uv run library publish)
+library/data/
+library/.cache/
+app/public/data/

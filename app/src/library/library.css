@@ -1,0 +1,37 @@
+.library {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  line-height: 1.45;
+}
+.library h1 { margin: 0.2rem 0 0.4rem; font-size: 2rem; }
+.library .label { margin: 0; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+.library .small { font-size: 0.85rem; }
+.library a { color: #d9c9a3; }
+.library .back { display: inline-block; margin-bottom: 1rem; text-decoration: none; }
+.library .toggle { display: inline-flex; gap: 0.5rem; align-items: center; margin-top: 0.75rem; font-size: 0.9rem; }
+
+.cards { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.5rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
+.card { display: flex; flex-direction: column; gap: 0.2rem; padding: 0.9rem 1rem; border: 1px solid #ffffff1a; border-radius: 0.6rem; text-decoration: none; color: var(--fg) !important; }
+.card:hover { border-color: #ffffff40; }
+.card .title { font-weight: 600; }
+
+.scenes { width: 100%; margin-top: 1.5rem; border-collapse: collapse; font-size: 0.92rem; }
+.scenes th { text-align: left; font-weight: 500; color: var(--muted); border-bottom: 1px solid #ffffff1a; padding: 0.4rem 0.5rem; }
+.scenes td { border-bottom: 1px solid #ffffff10; padding: 0.5rem; vertical-align: top; }
+.scenes .num { text-align: right; font-variant-numeric: tabular-nums; }
+.scenes tr.two td:first-child { box-shadow: inset 3px 0 0 #7bd88f; }
+.badge { margin-left: 0.5rem; padding: 0.05rem 0.4rem; border-radius: 999px; font-size: 0.7rem; background: #1d3324; color: #9fe0ae; }
+.speaker { display: inline-block; margin-right: 0.6rem; white-space: nowrap; }
+
+.reader .text { margin-top: 2rem; max-width: 38rem; }
+.speech { margin-bottom: 1.1rem; }
+.speaker-name { margin: 0 0 0.15rem; font-size: 0.75rem; letter-spacing: 0.12em; color: var(--muted); }
+.verse { margin: 0; font-size: 1.05rem; }
+.direction { margin: 0.6rem 0; font-style: italic; color: #8ea0c4; }
+.direction.inline { margin: 0.3rem 0; }
+.pager { display: flex; justify-content: space-between; margin-top: 3rem; }
+
+@media (max-width: 40rem) {
+  .scenes th:nth-child(2), .scenes td:nth-child(2) { display: none; }
+}

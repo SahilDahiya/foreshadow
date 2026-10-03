@@ -110,26 +110,22 @@ the audience believes **the scene is theirs**, and believes **it is real**.
 - **Options are grounded**: things a playwright would seriously consider. Random wackiness
   reads as a party game.
 - **The writing is specific**: names, objects, concrete detail.
-- **A proven engine helps.** Borrowing the dramatic engine of a known play (its core
-  tension and shape) gives an original scene real stakes and direction. See
-  [05-scene-writing.md](05-scene-writing.md).
+- **A known play helps.** Grounding the scene in a play everyone knows gives it proven
+  stakes and instant recognition. See [05-scene-writing.md](05-scene-writing.md).
 
 ## Slots (proposed)
 
 The slots are fixed and the AI writes each round's wording and options, adapting to
-earlier decisions. Every brainstorm therefore yields a complete premise. The source play
-supplies only the engine (see [05](05-scene-writing.md)); everything the slots collect is
-original.
+earlier decisions. Every brainstorm therefore yields a complete premise grounded in a
+known play ([05](05-scene-writing.md)).
 
-0. **The genre:** usually a round the admin scripts (see below).
-1. **The world:** where and when.
-2. **Who is in the room.**
-3. **What each of them wants.**
-4. **The twist:** a deliberately out-of-the-ordinary question (see below).
-5. **The turn:** the one thing that changes before the scene ends.
+1. **The tradition** (Shakespeare, Goethe, Indian classics…), usually scripted by the admin.
+2. **The play and its twist**: options pair a known play with one changed fact.
+3. **The moment**: which famous point in the play the scene is set at.
+4. **The genre**, if it isn't the tradition's own (Macbeth as Bollywood).
+5. **A late pirate detail**, if wanted (see below).
 
-Slots may be merged to get down to three or four rounds. Which source is used, and who
-picks it, is open.
+Slots may be merged to get down to three or four rounds.
 
 ## Scripted opening, then the AI takes over (decided)
 
@@ -164,6 +160,8 @@ Proposed rules:
 - **Ask it late**, once the story has a shape, so the twist has something to collide with.
 - **One per scene, two at most.** More turns the survey into a party game, which costs
   belief.
+- **Never a phone.** No option may involve phones, screens or apps ("a text from an
+  ex"), because the scene can't use them; see [05](05-scene-writing.md).
 - **The options are wild; the payoff is serious.** Whatever wins has to matter in the
   scene and be justified inside the story, not mentioned once and dropped. A twist the
   scene takes seriously is funny; a random gag is not.

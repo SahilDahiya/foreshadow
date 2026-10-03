@@ -1,40 +1,24 @@
-import { useState } from "react";
-import usePartySocket from "partysocket/react";
+import { HostScreen } from "./host/HostScreen";
+import { LibraryScreen } from "./library/LibraryScreen";
+import { WatchScreen } from "./watch/WatchScreen";
 
-type RoomMessage =
-  | { type: "presence"; count: number }
-  | { type: "ping"; from: string };
-
-// Skeleton: proves the path phone → Worker → Durable Object → every phone.
+// A router is overkill for three routes.
 export function App() {
-  const [connected, setConnected] = useState(false);
-  const [phones, setPhones] = useState(0);
-  const [pings, setPings] = useState(0);
+  const [, route, showId, ...rest] = window.location.pathname.split("/").map(decodeURIComponent);
+  if (route === "library") return <LibraryScreen path={[showId, ...rest].filter(Boolean)} />;
+  if (route === "host" && showId) return <HostScreen showId={showId} />;
+  if (route === "watch" && showId) return <WatchScreen showId={showId} />;
+  return <Home />;
+}
 
-  const socket = usePartySocket({
-    party: "show-room",
-    room: "demo",
-    onOpen: () => setConnected(true),
-    onClose: () => setConnected(false),
-    onMessage: (event) => {
-      const message = JSON.parse(event.data as string) as RoomMessage;
-      if (message.type === "presence") setPhones(message.count);
-      if (message.type === "ping") setPings((n) => n + 1);
-    },
-  });
-
+function Home() {
   return (
-    <main>
+    <main className="home">
       <h1>Foreshadow</h1>
-      <p className={connected ? "status on" : "status off"}>
-        {connected ? "Connected to the room" : "Connecting…"}
-      </p>
-      <p className="big">{phones}</p>
-      <p>{phones === 1 ? "phone in the room" : "phones in the room"}</p>
-      <button onClick={() => socket.send("ping")} disabled={!connected}>
-        Ping every phone
-      </button>
-      <p className="muted">Pings received: {pings}</p>
+      <p className="muted">Prototype: a hard-coded scene, kept in sync.</p>
+      <a className="pill" href="/host/demo">Host the demo scene</a>
+      <a className="pill secondary" href="/watch/demo">Follow along</a>
+      <a className="pill secondary" href="/library">Play library</a>
     </main>
   );
 }

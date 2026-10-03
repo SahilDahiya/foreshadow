@@ -28,7 +28,12 @@ Admin ──manages──▶ Catalogue (Genres, Sources)
 | **Show** | One live event (one evening). Created by the admin. Has a join code. | Decided |
 | **Set** | One brainstorm, scene and performance inside a show. A show holds several, and the host rotates between them. "Set" is a placeholder name. | Proposed |
 | **Genre** | The overarching register of a play and scene: Shakespearean, Greek, Bollywood, soap opera, reality TV, surreal, anime, and many more. Stored as a genre card in the catalogue. | Decided (cards proposed) |
-| **Source** | A well-known public-domain play that inspires a scene. Stored as its **engine** (core tension, arc shape, dramatic devices), never its plot. The scene must be original. | Decided (engine proposed) |
+| **Source** | A well-known public-domain play the scene is grounded in: its plot, characters, world and famous moments. Grouped by tradition (Shakespeare, Goethe, Greek, Indian classics, surreal). | Decided |
+| **World** | Where the play is set when performed: as written, or transposed to today (a tech company, a national government, a parliament). Chosen by the room. | Decided (idea) |
+| **World mapping** | For one play and world: who each character becomes, and what each place and object becomes. Written once, reused for every scene. | Proposed |
+| **Rendition** | A scene in today's English, in a chosen world, speech for speech with the original, approved by a person before use. | Proposed |
+| **Twist** | One deliberate change to a known fact of the source ("Macbeth has a twin he doesn't know about"), chosen by the room. The source is the order, the twist the chaos. | Decided (kinds proposed) |
+| **Moment** | A famous point in the source play where the scene is set (the banquet, the balcony). | Proposed |
 | **Brainstorm** | The ordered series of rounds in which the audience shapes the scene. | Decided |
 | **Survey plan** | Which rounds the admin scripts (question and options written by hand) and where the AI takes over. Saved as reusable templates. | Decided (templates proposed) |
 | **Round** | One question, its options, the ballots cast, and the resulting decision. | Decided |
@@ -38,11 +43,16 @@ Admin ──manages──▶ Catalogue (Genres, Sources)
 | **Door check** | The questions a joining audience member answers to prove they are human and present (for example, the host's shirt colour). Answers set at the doors by the host or admin. | Decided (design proposed) |
 | **Door question** | A multiple-choice question written by the admin, with one or more correct options. Either a *venue* question (reusable at every show there) or a *live* question (set at the doors for one show). | Decided (kinds proposed) |
 | **Admission** | What passing the door check grants: a signed token for one show, kept on the phone and carried by every ballot. | Proposed |
+| **Device** | A phone registered to a show as audience, performer or admin. | Decided |
+| **Performer** | A member of the troupe, joined on their own phone. Hosts in some scenes (chosen at random, one character each), improvises in others (performers decide who goes on). | Decided |
+| **Cast requirement** | What a scene needs: the characters read by hosts, and how many improvisers (exactly n, at least n). | Proposed |
+| **Casting** | For one set: which performer hosts which character, and which performers improvise. | Proposed |
 | **Ballot** | One audience member's selection in one round. | Decided |
 | **Decision** | The winning option or options of a round. It is a **promise**: the scene must pay it off. | Proposed |
 | **Premise** | The source, the play's context and all the decisions. The contract between the room and the playwright, and the input to scene writing. | Proposed |
 | **Play** | The backdrop: title, what it is about, who is in it. **Never written out**; it exists so the scene has something to belong to. | Decided |
 | **Opening task** | A simple physical activity each improviser is doing when the scene starts. Written by the AI; reveals nothing. | Decided (details proposed) |
+| **Scene provenance** | Where a scene's text comes from: a real play (source, act and scene, edition; version 1) or the AI (later versions). | Proposed |
 | **Scene** | The text the host reads: one place, one continuous stretch of time, a few characters. Written once, never changed. | Decided |
 | **Character** | A part in the scene, either **voiced** (read by the host) or **withheld** (played by an improviser). | Proposed |
 | **Line** | One line of dialogue, with a delivery description. Every line is delivered; none is optional. See below. | Decided (fields proposed) |

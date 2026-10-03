@@ -19,6 +19,8 @@ Each document marks its points with one of three labels:
 | [06-ai-pipeline.md](06-ai-pipeline.md) | The AI pipeline (survey, premise, scene) and optimising it with DSPy |
 | [07-architecture.md](07-architecture.md) | Stack, sync, data and the build plan |
 | [08-reliability-and-infrastructure.md](08-reliability-and-infrastructure.md) | Targets, failure modes, infrastructure, and how we prove it works |
+| [09-story-quality.md](09-story-quality.md) | The critical risk: defining a compelling scene, and defending against a bad one |
+| [10-play-library.md](10-play-library.md) | The internal service that turns public-domain plays into data the app uses |
 | [open-questions.md](open-questions.md) | Everything still to decide |
 
 Working principle (decided): get the whole system working end to end first, rough but

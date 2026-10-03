@@ -13,19 +13,73 @@
   improvise in the next, so host and improviser are assignments per set, not identities.
 - **Proposed: host access is per set.** Whoever hosted one set must not be able to see the
   scene for a set they improvise in.
-- **Proposed: a single host device.** One phone or tablet lives on stage and is handed to
-  whoever hosts next. Nobody needs a personal login, and improvisers never hold the script
-  for their own set.
+- **Superseded: a single host device.** Every performer now has their own phone; see
+  "Several hosts" below.
 - **Decided: brainstorm results appear only on audience phones.** The improvisers can stay
   in the room during the brainstorm without learning the premise.
 - The improviser is in the domain model (withheld characters are played by improvisers,
   and later transcripts will be attributed to them) but is not a user of the app.
 
-## Surfaces
+## Several hosts, every performer with a phone (decided idea; design proposed)
+
+**Decided idea:** a scene can have several hosts. The three witches are read by three
+hosts, each from their own phone. Who hosts and who improvises changes from scene to
+scene. Improvisers carry their phones in their pockets, not in their hands.
+
+This replaces the single host device passed around the stage: **every performer joins
+the show on their own phone** as a member of the troupe.
+
+### Devices register as one of three kinds (decided)
+
+**Audience**, **performer** or **admin**. A performer's phone is the same app in performer
+mode: it can be made a host for a scene, or told what the scene needs from improvisers.
+
+### Casting, scene by scene
+
+- **Hosts are chosen at random** from the performers (decided), and each phone reveals it:
+  "You're hosting: you are the FIRST WITCH."
+- **One character per host** (decided). A scene with three voiced characters needs three
+  hosts.
+- **The other performers decide among themselves who goes on** (decided), once told how
+  many improvisers the scene needs. The app can also pick at random if they want it to.
+- **Each scene has a cast requirement**: which characters are read by hosts, and how many
+  improvisers it needs: exactly one, exactly two, at least one, one or more.
+- **Each host sees their own briefing and only their own lines.**
+- **Everyone else is told what the scene needs**: "This scene needs exactly one
+  improviser." Improvisers react; they don't need to know anything else.
+- **Only scenes the troupe can cast are offered** to the audience: a scene needs at least
+  one performer per voiced character plus its minimum number of improvisers, so a scene
+  needing three hosts and two improvisers never appears for a troupe of four.
+
+### What each phone does
+
+| Performer | Before the scene | During the scene |
+|---|---|---|
+| **Host** | Their character and briefing; Start (or Ready) | Their own lines, prepare and deliver; waits while other hosts speak |
+| **Improviser** | That the scene needs them; their own mime task, privately | In the pocket |
+
+The mime task now goes to each improviser's own phone, instead of the host turning their
+screen towards them.
+
+### Taking turns between hosts
+
+The script is one sequence of lines, and each line belongs to one host.
+
+- **You can only deliver your line when it is next.** Until then your screen shows your
+  upcoming line and who speaks before you ("after SECOND WITCH").
+- **Prepare is private; deliver is shared.** When the line before yours is delivered, your
+  screen moves to prepare, and you swipe to deliver when the moment comes.
+- **Back undoes only your own last delivery.**
+- Pacing becomes shared: each host controls the gap before their own lines.
+
+
 
 A surface is a screen. Roles are people; surfaces are views.
 
 ### Host screen: read the line, choose the moment (decided goal; details proposed)
+
+**Decided: the phone is not part of the play.** The improvisers ignore the phone in the
+host's hand, and the script never mentions one ([05](05-scene-writing.md)).
 
 **Decided: keep the host simple.** The host only delivers dialogue, with a description
 of how to deliver it.
