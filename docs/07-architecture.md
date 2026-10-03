@@ -64,7 +64,10 @@ connect to. A show is exactly that: a room.
 
 | Part | Choice | Why |
 |---|---|---|
-| Frontend | **TypeScript, React + Vite**, served as Worker static assets | Mobile first, no install; one app with a route per surface, split so the audience bundle stays small |
+| Frontend | **TypeScript, React + Vite**, served as Worker static assets | Mobile first, no install; one app with a route per surface, split so the audience bundle stays small. The largest ecosystem for gestures and animation, which the host and follow-along screens depend on |
+| Build and dev | **Cloudflare Vite plugin** | Frontend, Worker and Durable Object in one Vite project; local dev runs on Cloudflare's own runtime |
+| Live connection | **partysocket / partyserver** (Cloudflare's PartyKit libraries) | A WebSocket that reconnects with backoff and buffers messages, and a Durable Object base class for rooms |
+| Offline host screen | **Service worker** (for example vite-plugin-pwa) | The app loads with no network; installed to the home screen, full screen |
 | API and routing | **Cloudflare Worker** (TypeScript) | At the edge, near every phone |
 | Live state and sync | **Durable Object per show**, WebSockets | See above. Replaces the earlier plan of a FastAPI server with SSE |
 | Shared data | **D1** | Catalogue (genres, sources), survey plans, shows, finished scenes, ratings |
@@ -142,8 +145,7 @@ Durable Object (per show)
 ```
 foreshadow/
   docs/
-  web/         React + Vite frontend (all surfaces)
-  worker/      Worker + Durable Object (TypeScript)
+  app/         one Vite project: React frontend (all surfaces) + Worker + Durable Object
   ai/          AI service and harness (Python, uv): DSPy programs, FastAPI, metrics
   contracts/   Pydantic models → JSON Schema → TypeScript types
 ```

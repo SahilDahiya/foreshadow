@@ -53,10 +53,12 @@
 
 ## Technical
 
+33. **Frontend framework:** proposed React + Vite with the Cloudflare Vite plugin (Svelte
+    the main alternative). The choice changes none of the app's design.
+
 31. **Cloudflare account:** is it on the Workers Paid plan (needed for Containers), and is
     there a domain to use?
 32. **Claude access:** directly from Anthropic, or through Vertex AI on GCP?
-33. **Frontend:** React + Vite proposed. Any preference?
 
 18. **How big are audiences, and how many shows run at once?** Targets assume at least
     200 phones per show and a few shows at a time.
@@ -67,6 +69,7 @@
     trustworthy.
 
 ## Resolved
+
 
 - **Who writes the door questions?** The admin, any multiple-choice question (for example,
   how many stairs you took to reach the show: 0, 5, −5, 8+).
