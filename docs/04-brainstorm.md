@@ -1,5 +1,78 @@
 # 04 — Brainstorm
 
+## Joining: the door check (decided idea; design proposed)
+
+**Decided:** no email, no phone number. Instead, a joining audience member answers a
+couple of questions that prove they are **human and present at the show**, such as the
+colour of the host's shirt.
+
+### Threats it addresses
+
+- **The code leaks** (someone posts the QR online) and people outside the room vote.
+- **Bots** flood the votes.
+- Either would make the results stop reflecting the room, and the room would stop
+  believing the scene is theirs.
+
+### Questions only the room can answer (proposed)
+
+| Strength | Examples | Why |
+|---|---|---|
+| **Strong: live and in the room** | The colour of the host's shirt; a word the host says aloud at the door ("tonight's word is *pineapple*"); how many fingers the host holds up; what is on the stage | Can only be known by being there, and changes every show |
+| Weak: printed facts | The city, the venue, the start time | Anyone with the poster or the leaked code knows these too |
+
+So the door check uses live questions, and the printed facts at most as a light first step.
+
+### The admin writes the questions (decided)
+
+**Door questions are set by the admin**, any question they like, as multiple choice. The
+owner's example:
+
+> How many stairs did you take to get to our show? **0 · 5 · −5 · 8+**
+> (negative for downstairs)
+
+Proposed details:
+
+- **Two kinds of question.** *Venue questions* (the stairs, the colour of the front door,
+  what hangs in the lobby) are true of the venue and reusable at every show there.
+  *Live questions* (the shirt, tonight's word) are set at the doors for one show. A venue
+  question plus a live question is a good pair.
+- **A question bank.** The admin keeps questions per venue and picks which to use for each
+  show.
+- **More than one option can be correct.** People count stairs differently, so the
+  admin can mark both "5" and "8+" as right.
+- **Every question needs an answer for everyone.** Someone who took the lift, or who uses a
+  wheelchair, must be able to answer the stairs question ("took the lift" as a correct
+  option). Questions about what people *saw* are fairer than questions about what they
+  *did*.
+- **Playful is good.** The door check is the room's first taste of the show's tone.
+
+### How it works (proposed)
+
+- **Multiple choice, like everything else**: tap a colour swatch, tap a word. Two questions
+  with four options each, so a guess gets through 1 time in 16.
+- **The host or admin sets the answers at the doors**, on the host device: pick the shirt
+  colour from swatches, choose tonight's word. The AI can't know these.
+- **A wrong answer** means trying again after a short pause, with the options shuffled.
+- **Passing issues an admission** for this show: a signed token kept on the phone. Every
+  vote carries it; it expires when the show ends.
+- **It doubles as the warm-up.** "Look at me: what colour is my shirt?" is the room's first
+  act of participation, and sets the playful tone before the first round.
+
+### Alongside it (proposed)
+
+- **Cloudflare Turnstile**, the invisible check that a browser is human (usually no
+  puzzle). The door check proves *present*; Turnstile proves *human*.
+- **One admission per phone.** Extra tabs share it. A second phone in the room means a
+  second vote, which is acceptable: that person is in the room.
+- **A capacity cap**: the admin enters the venue's capacity; joins far beyond it are flagged
+  on the admin's live show panel.
+- **No limits by IP address.** A whole room on venue wifi shares one address.
+
+### Not proposed: phone location
+
+Asking the browser for the phone's location would add a permission prompt, feels
+invasive, and is unreliable indoors. The live questions do the job better.
+
 ## Decided
 
 - The audience joins on their phones (web, no install) and takes part in a short

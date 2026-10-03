@@ -7,7 +7,7 @@
 | **Admin** | The whole app, across shows | Special rights: creates shows, manages the catalogue and everything else | The only role with a real login |
 | **Host** | One set | Hosting is reading. Watches the brainstorm live, then reads the scene cold: dialogue only, with delivery descriptions | The host device (proposed) |
 | **Improviser** | One set | Plays a withheld character. Sees nothing of the script. | Does not use the app |
-| **Audience member** | One show | Votes in each brainstorm round; sees questions and results on their own phone | QR code or short code; no install, no account |
+| **Audience member** | One show | Votes in each brainstorm round; sees questions and results on their own phone | QR code or short code, then the door check (below); no install, no account, no email or phone number |
 
 - **Decided: improvisers can take turns hosting.** The same person can host one set and
   improvise in the next, so host and improviser are assignments per set, not identities.

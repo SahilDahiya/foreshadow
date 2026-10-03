@@ -38,6 +38,9 @@
 
 ## Running a show
 
+34. **Live door questions:** set at the doors by the host, or by the admin?
+35. **Two door questions, or one?** One is faster; two makes guessing much harder.
+
 20. **Who sets the target length of a scene: the admin per show, or the host per set?**
 21. **Is the target length a soft guide, or a hard limit?** Proposed: a soft guide; the host
     always decides.
@@ -50,17 +53,27 @@
 
 ## Technical
 
+31. **Cloudflare account:** is it on the Workers Paid plan (needed for Containers), and is
+    there a domain to use?
+32. **Claude access:** directly from Anthropic, or through Vertex AI on GCP?
+33. **Frontend:** React + Vite proposed. Any preference?
+
 18. **How big are audiences, and how many shows run at once?** Targets assume at least
     200 phones per show and a few shows at a time.
 19. **Do venues have decent mobile signal?** The plan assumes audience phones mostly use
     their own data, not the venue wifi.
 
-16. **Python backend (FastAPI) with a TypeScript frontend**, or a TypeScript app calling a
-    separate Python service for generation?
 17. **Will there be early rehearsals with real people?** Their ratings make the harness
     trustworthy.
 
 ## Resolved
+
+- **Who writes the door questions?** The admin, any multiple-choice question (for example,
+  how many stairs you took to reach the show: 0, 5, −5, 8+).
+
+- **Infrastructure:** Cloudflare as much as possible (Workers, Durable Objects, D1, R2,
+  Containers, AI Gateway, Access); GCP for backup and batch work. TypeScript everywhere
+  except the Python AI service.
 
 - **What is the opening task?** A mimed physical activity, done while the host silently
   reads the first delivery description; then the host swipes and says the first line.

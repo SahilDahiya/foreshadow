@@ -46,9 +46,9 @@ there are no conflicts to resolve.
 
 ### 3. Everything can resume
 
-The cursor and events live in Postgres. Any screen that reloads, any phone that
-reconnects and the server after a restart all resume at the exact line. SSE clients
-reconnect with the last event id they saw and receive what they missed.
+The cursor and events live in the show's Durable Object storage. Any screen that reloads,
+any phone that reconnects and the object after a restart all resume at the exact line.
+Clients reconnect with the last sequence number they saw and receive what they missed.
 
 ### 4. There is always an understudy scene
 
@@ -59,7 +59,7 @@ closest understudy, and the audience sees a scene instead of an error.
 ### 5. Nothing slow sits on the request path
 
 Writing the scene runs as a background task with a hard time limit. Progress reaches
-the host over SSE. Questions for the next round are written ahead while voting is open,
+the host over the WebSocket. Questions for the next round are written ahead while voting is open,
 and the first round's question doesn't depend on any vote, so it is prepared before the
 set starts.
 
@@ -74,22 +74,36 @@ rewrite, then the understudy.
 | Failure | What happens |
 |---|---|
 | Venue wifi dies | The host continues from the local scene. Audience phones mostly use their own mobile data. The host device should have mobile data too, with a hotspot as backup. |
-| Server restarts mid-scene | The state is in Postgres; clients reconnect and resume. No deploys during show times. |
+| Server restarts mid-scene | The state is in Durable Object storage; clients reconnect and resume. No deploys during show times (a deploy restarts Durable Objects and drops connections). |
 | LLM slow or down | Time limit, one retry, then the understudy scene. |
 | LLM output fails checks | One rewrite, then the understudy scene. |
 | Host phone locks, crashes or runs flat | Screen wake lock while performing. On reload, the host screen resumes from local storage or the server. A second device can take over with the same set token. |
 | Repeated swipes, late messages | Sequence numbers and idempotent events. |
-| Someone votes twice | One ballot per participant per round; a new vote replaces the old one. |
+| Someone votes twice | One ballot per admission per round; a new vote replaces the old one. |
+| The join code leaks online | The door check asks questions only people in the room can answer; admissions expire with the show. |
+| Bots | Turnstile, plus the door check, plus the capacity cap flagged on the admin panel. |
 | Clocks disagree | The server decides when a round closes. |
 
 ## Infrastructure
 
-| Part | Choice | Why |
+**Decided:** Cloudflare as much as possible; GCP is available too. The full design is in
+[07-architecture.md](07-architecture.md).
+
+| Part | Choice | Reliability role |
 |---|---|---|
-| App server | **One long-running container** (Python, FastAPI) on a host like Fly.io, in the region where shows happen | SSE needs long-lived connections and generation needs long tasks; serverless platforms are poor at both. One instance needs no message bus for fan-out. |
-| Database | **Managed Postgres** with backups | The source of truth for resuming. |
-| Frontend | **Static files on a CDN**, with a service worker caching the app | Fast first load; the host screen reloads even without a network. The audience bundle stays tiny. |
-| Scale-out, if ever needed | Postgres LISTEN/NOTIFY or Redis for fan-out between instances | Not needed at this size. |
+| Live state | **A Durable Object per show** | One ordered writer; storage that survives restarts; alarms for round timing; WebSocket fan-out |
+| Frontend | **Worker static assets**, with a service worker caching the app | Fast first load; the host screen reloads even without a network |
+| AI service | **A Docker image in a Cloudflare Container** | Runs unchanged on GCP Cloud Run as a backup |
+| Model access | **AI Gateway** | Retries, fallbacks, and a log of every call |
+| Shared data | **D1**; logs and datasets in **R2** | |
+| Admin | **Cloudflare Access** | |
+
+Watch-outs:
+
+- **Container cold starts.** The first request to a sleeping container takes seconds. Wake
+  the AI service when a show opens, well before the first AI round.
+- **Durable Object placement.** Create each show's object with a location hint near the
+  venue, not near wherever the admin happened to create it.
 
 ## Seeing what is happening
 

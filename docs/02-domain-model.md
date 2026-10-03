@@ -35,6 +35,9 @@ Admin ──manages──▶ Catalogue (Genres, Sources)
 | **Question** | Written by the admin (scripted rounds) or by AI (the rest). Single or multiple selection. Fills one **slot** (see [04](04-brainstorm.md)). | Decided (slots proposed) |
 | **Option** | One of a question's multiple choices. Written by AI, possibly by a **persona**. Audience members never type free text. | Decided |
 | **Persona** | An AI voice that writes questions and options. What exactly a persona is remains open. | Open |
+| **Door check** | The questions a joining audience member answers to prove they are human and present (for example, the host's shirt colour). Answers set at the doors by the host or admin. | Decided (design proposed) |
+| **Door question** | A multiple-choice question written by the admin, with one or more correct options. Either a *venue* question (reusable at every show there) or a *live* question (set at the doors for one show). | Decided (kinds proposed) |
+| **Admission** | What passing the door check grants: a signed token for one show, kept on the phone and carried by every ballot. | Proposed |
 | **Ballot** | One audience member's selection in one round. | Decided |
 | **Decision** | The winning option or options of a round. It is a **promise**: the scene must pay it off. | Proposed |
 | **Premise** | The source, the play's context and all the decisions. The contract between the room and the playwright, and the input to scene writing. | Proposed |

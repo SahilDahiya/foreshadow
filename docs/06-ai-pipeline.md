@@ -22,6 +22,10 @@ Everything below is **proposed** unless marked otherwise.
 - **An optimised program is saved as JSON** and loaded in production. Production runs the
   same program the harness tuned.
 
+In production the programs run in a Python service in a Cloudflare Container, and every
+model call goes through Cloudflare AI Gateway, which logs it for the harness. See
+[07](07-architecture.md).
+
 ## The objective (decided)
 
 Every module serves one goal: **the best possible play the audience would want to see,
