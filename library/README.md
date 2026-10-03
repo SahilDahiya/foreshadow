@@ -6,6 +6,8 @@ Turns public-domain plays into structured data for the app. Design:
 ```
 uv sync
 uv run library build      # fetch Gutenberg #100 once (cached), parse all 38 plays, report
+uv run library lab        # open the preference lab: A/B vote on renderings, improve the prompt
+uv run library render macbeth/1/7   # write a scene in today's English with the champion prompt
 uv run library publish    # copy the library into app/public/data/library
 uv run pytest
 ```
@@ -19,7 +21,13 @@ src/foreshadow_library/
   sources/gutenberg.py    fetch, cache, strip the Gutenberg boilerplate
   parsers/shakespeare.py  parser for the Gutenberg #100 edition
   analyse.py              scene stats, two-hander detection, the index
-  cli.py                  build and publish
+  render.py               today's-English rendering (a DSPy program; the prompt is its instruction)
+  lab/                    the preference lab: passages, challenger proposer, rounds, local voting page
+  cli.py                  build, render, lab and publish
+lab/                      the lab's data, committed: prompts, rounds and your votes
 data/                     generated, not committed
 .cache/                   downloaded sources, not committed
 ```
+
+The lab and rendering call Claude and need `ANTHROPIC_API_KEY`, read from the repository's `.env`.
+Design: [../docs/11-preference-lab.md](../docs/11-preference-lab.md).

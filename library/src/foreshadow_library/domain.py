@@ -116,3 +116,32 @@ class PlaySummary(BaseModel):
 
 class LibraryIndex(BaseModel):
     plays: list[PlaySummary]
+
+
+# --- Renditions: a scene in today's English (docs/10-play-library.md) ---------------
+
+
+class RenderedPart(BaseModel):
+    kind: Literal["line", "direction"]
+    text: str
+
+
+class RenderedBlock(BaseModel):
+    """One block of the rendition. It always answers exactly one block of the text scene."""
+
+    source_block: int  # index into the text scene's blocks
+    parts: list[RenderedPart]
+
+
+class Rendition(BaseModel):
+    id: str  # "<scene id>/<world>"
+    play_id: str
+    scene_id: str
+    world: str  # "original", or a modern world the room can choose
+    language: str  # "todays-english"
+    model: str
+    prompt_version: str
+    created_at: str
+    approved_at: str | None = None  # nothing reaches a show until a person approves it
+    blocks: list[RenderedBlock]
+    check_warnings: list[str] = []

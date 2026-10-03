@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 from typing import Protocol
 
-from .domain import LibraryIndex, Play
+from .domain import LibraryIndex, Play, Rendition
 
 
 class RawTextRepository(Protocol):
@@ -68,3 +68,27 @@ class FilePlayRepository:
         path.parent.mkdir(parents=True, exist_ok=True)
         # Compact, but one play per file keeps diffs readable enough.
         path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+class RenditionRepository(Protocol):
+    def get(self, scene_id: str, world: str) -> Rendition | None: ...
+    def save(self, rendition: Rendition) -> None: ...
+
+
+class FileRenditionRepository:
+    """renditions/<play>/<act>/<scene>/<world>.json under the library root."""
+
+    def __init__(self, root: Path):
+        self.root = root
+
+    def _path(self, scene_id: str, world: str) -> Path:
+        return self.root / "renditions" / scene_id / f"{world}.json"
+
+    def get(self, scene_id: str, world: str) -> Rendition | None:
+        path = self._path(scene_id, world)
+        return Rendition.model_validate_json(path.read_text(encoding="utf-8")) if path.exists() else None
+
+    def save(self, rendition: Rendition) -> None:
+        path = self._path(rendition.scene_id, rendition.world)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(rendition.model_dump_json(indent=1), encoding="utf-8")

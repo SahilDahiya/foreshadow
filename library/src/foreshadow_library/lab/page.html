@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foreshadow preference lab</title>
+<style>
+  :root { --bg:#0e0f13; --panel:#171922; --fg:#ece8dc; --muted:#8d8a80; --line:#ffffff1c;
+          --a:#e0a458; --b:#6fa8dc; --ok:#7bd88f; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, sans-serif; }
+  main { max-width: 86rem; margin: 0 auto; padding: 1.25rem 1.25rem 17rem; }
+  h1 { font-size: 1.15rem; margin: 0; }
+  .top { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .muted { color: var(--muted); }
+  .cols { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
+  @media (max-width: 60rem) { .cols { grid-template-columns: 1fr; } }
+  .col { background: var(--panel); border:1px solid var(--line); border-radius:.75rem; padding: 1rem 1.1rem; }
+  .col h2 { margin: 0 0 .75rem; font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+  .col.a h2 { color: var(--a); } .col.b h2 { color: var(--b); }
+  .speaker { margin: .9rem 0 .15rem; font-size:.72rem; letter-spacing:.12em; color: var(--muted); }
+  .speaker:first-of-type { margin-top: 0; }
+  .ln { margin: 0 0 .3rem; }
+  .dir { margin: .3rem 0; font-style: italic; color: var(--muted); }
+  .original .ln { margin: 0; color:#cfcabd; }
+  .bar { position: fixed; left:0; right:0; bottom:0; background:#0b0c10f2; border-top:1px solid var(--line); padding:.9rem 1.25rem 1.1rem; }
+  .bar-inner { max-width: 60rem; margin: 0 auto; }
+  .scale { display:grid; grid-template-columns: repeat(8, 1fr); gap:.4rem; }
+  .scale button { padding:.75rem 0; font-size:1.15rem; font-weight:700; border-radius:.6rem; border:1px solid var(--line); background:var(--panel); color:var(--fg); cursor:pointer; }
+  .scale button:hover { border-color:#ffffff66; }
+  .scale button.picked { outline: 3px solid var(--fg); }
+  .reject { border-color:#ff8a8088 !important; color:#ff8a80 !important; white-space:nowrap; }
+  .reject.picked { outline: 3px solid #ff8a80; }
+  .need { border-color:#ff8a80 !important; }
+  .why { font-size:.8rem; color: var(--muted); margin: 0 0 .3rem .1rem; }
+  .ends { display:flex; justify-content:space-between; font-size:.8rem; margin:.35rem .1rem .6rem; }
+  .ends .ea { color: var(--a); } .ends .eb { color: var(--b); }
+  .row { display:flex; gap:.6rem; align-items:center; }
+  textarea, input[type=text] { flex:1; background:var(--panel); color:var(--fg); border:1px solid var(--line); border-radius:.6rem; padding:.6rem .75rem; font: inherit; }
+  .btn { padding:.6rem 1rem; border-radius:.6rem; border:1px solid var(--line); background:var(--panel); color:var(--fg); cursor:pointer; font: inherit; }
+  .btn.primary { background: var(--fg); color: var(--bg); font-weight:700; border:none; }
+  .btn:disabled { opacity:.4; cursor:default; }
+  .card { background: var(--panel); border:1px solid var(--line); border-radius:.75rem; padding: 1.25rem; margin-bottom: 1rem; }
+  .big { font-size: 1.6rem; font-weight: 700; margin: 0 0 .4rem; }
+  .dots { display:flex; gap:.3rem; flex-wrap:wrap; }
+  .dot { width:.7rem; height:.7rem; border-radius:50%; background:#ffffff22; cursor:pointer; }
+  .dot.done { background: var(--ok); } .dot.here { outline:2px solid var(--fg); }
+  table { width:100%; border-collapse: collapse; font-size:.92rem; }
+  td, th { text-align:left; padding:.4rem .5rem; border-bottom:1px solid var(--line); vertical-align: top; }
+  .err { color:#ff8a80; }
+  kbd { border:1px solid var(--line); border-radius:.3rem; padding:0 .3rem; font-size:.8rem; }
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+const app = document.getElementById("app");
+let state = null, index = 0, pollTimer = null;
+
+const el = (tag, attrs = {}, ...kids) => {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") node.className = v; else if (k.startsWith("on")) node[k] = v; else node.setAttribute(k, v);
+  }
+  for (const kid of kids.flat()) if (kid != null) node.append(kid);
+  return node;
+};
+const api = async (path, body) => {
+  const res = await fetch(path, body ? { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(body) } : undefined);
+  return res.json();
+};
+async function refresh() { state = await api("/api/state"); render(); }
+
+function blocksView(blocks, cls) {
+  return blocks.flatMap((b) => [
+    b.speaker ? el("p", { class: "speaker" }, b.speaker) : null,
+    ...b.parts.map((p) => el("p", { class: p.kind === "line" && b.speaker ? "ln" : "dir" }, p.text)),
+  ]);
+}
+
+function render() {
+  clearTimeout(pollTimer);
+  app.replaceChildren();
+  document.querySelector(".bar")?.remove();
+  if (!state) return;
+  if (state.working) {
+    app.append(el("div", { class: "card" }, el("p", { class: "big" }, "Preparing the next round…"),
+      el("p", { class: "muted" }, state.message || "Starting…"),
+      el("p", { class: "muted" }, "This takes a minute or two: a new challenger prompt is written, then each passage is rendered twice.")));
+    pollTimer = setTimeout(refresh, 2000);
+    return;
+  }
+  const round = state.round;
+  if (!round || round.outcome) return renderBetweenRounds(round);
+  renderVoting(round);
+}
+
+function renderBetweenRounds(round) {
+  const guidance = el("textarea", { rows: "3", placeholder: "Optional: anything you want the next challenger to aim for, in your own words." });
+  const start = el("button", { class: "btn primary", onclick: async () => { state = await api("/api/next", { guidance: guidance.value }); index = 0; render(); } },
+    round ? "Start the next round" : "Start the first round");
+  if (state.error) app.append(el("div", { class: "card err" }, "The last attempt failed: " + state.error));
+  if (round) {
+    const o = round.outcome, n = round.items.length;
+    app.append(el("div", { class: "card" },
+      el("p", { class: "muted" }, `Round ${round.number} result`),
+      el("p", { class: "big" }, o.promoted ? `The challenger (${round.challenger}) wins and is the new champion.` : `The champion (${round.champion}) holds.`),
+      el("p", {}, `You preferred the challenger on ${o.challenger_wins} of ${n} passages and the champion on ${o.champion_wins}` + (o.both_rejected ? `, and rejected both on ${o.both_rejected}` : "") + `. Average preference: ${Math.abs(o.mean_preference * 100).toFixed(0)}% towards the ${o.mean_preference >= 0 ? "challenger" : "champion"}.`),
+      o.both_rejected ? el("p", { class: "muted" }, "Where you rejected both, your reasons go to the next challenger: those passages show what neither prompt gets right yet.") : null,
+      round.rationale ? el("p", { class: "muted" }, "What the challenger tried: " + round.rationale) : null));
+    const rows = round.items.map((it) => {
+      if (it.vote.reject_both) return el("tr", {}, el("td", {}, it.where), el("td", {}, "rejected both"), el("td", {}, "neither"), el("td", { class: "muted" }, it.vote.note));
+      const s = it.vote.score, side = s <= 3 ? "a" : "b";
+      return el("tr", {}, el("td", {}, it.where), el("td", {}, String(s)), el("td", {}, it.reveal[side] === round.challenger ? "challenger" : "champion"), el("td", { class: "muted" }, it.vote.note));
+    });
+    app.append(el("div", { class: "card" }, el("table", {}, el("tr", {}, el("th", {}, "Passage"), el("th", {}, "Vote"), el("th", {}, "You preferred"), el("th", {}, "Your reason")), rows)));
+  } else {
+    app.append(el("div", { class: "card" }, el("p", { class: "big" }, "Preference lab"),
+      el("p", {}, "You'll see the original and two renderings in today's English, A and B. Say why, then vote 0 to 7: 0 means A by a long way, 7 means B by a long way. If neither is good enough, reject both."),
+      el("p", { class: "muted" }, `Current champion prompt: ${state.champion}.`)));
+  }
+  app.append(el("div", { class: "card" }, el("div", { class: "row" }, guidance), el("p", {}), start));
+}
+
+function renderVoting(round) {
+  const items = round.items, item = items[index], voted = items.filter((i) => i.vote).length;
+  const dots = el("div", { class: "dots" }, items.map((it, i) =>
+    el("span", { class: "dot" + (it.vote ? " done" : "") + (i === index ? " here" : ""), title: it.where, onclick: () => { index = i; render(); } })));
+  app.append(el("div", { class: "top" },
+    el("div", {}, el("h1", {}, `Round ${round.number} · ${item.where}`), el("span", { class: "muted" }, `Passage ${index + 1} of ${items.length} · ${voted} voted`)),
+    dots));
+  app.append(el("div", { class: "cols" },
+    el("section", { class: "col original" }, el("h2", {}, "Original"), blocksView(item.original)),
+    el("section", { class: "col a" }, el("h2", {}, "A"), blocksView(item.a)),
+    el("section", { class: "col b" }, el("h2", {}, "B"), blocksView(item.b))));
+
+  const note = el("input", { type: "text", placeholder: "Why? e.g. “B sounds like a real person; A is still stiff”", value: item.vote?.note || "" });
+  note.onkeydown = (e) => { if (e.key === "Enter") note.blur(); };
+  const vote = async (score) => {
+    if (!note.value.trim()) { note.classList.add("need"); note.focus(); return; }
+    const reply = await api("/api/vote", score === "reject" ? { item: item.id, reject_both: true, note: note.value } : { item: item.id, score, note: note.value });
+    if (reply.error) { alert(reply.error); return; }
+    state = reply;
+    const next = state.round.items.findIndex((it, i) => !it.vote && i > index);
+    const any = state.round.items.findIndex((it) => !it.vote);
+    if (next !== -1) index = next; else if (any !== -1) index = any;
+    render();
+  };
+  const scale = el("div", { class: "scale" }, [0,1,2,3,4,5,6,7].map((s) => {
+    const mix = `color-mix(in srgb, var(--b) ${Math.round(s / 7 * 100)}%, var(--a))`;
+    return el("button", { class: item.vote?.score === s ? "picked" : "", style: `border-color:${mix}; color:${mix}`, onclick: () => vote(s) }, String(s));
+  }));
+  const reject = el("button", { class: "btn reject" + (item.vote?.reject_both ? " picked" : ""), onclick: () => vote("reject") }, "Reject both");
+  const all = voted === items.length;
+  const finish = el("button", { class: "btn primary", onclick: async () => { state = await api("/api/decide", {}); render(); } }, "See the result");
+  if (!all) finish.disabled = true;
+  document.body.append(el("div", { class: "bar" }, el("div", { class: "bar-inner" },
+    el("p", { class: "why" }, "1. Say why (required)   2. Vote 0–7, or reject both"),
+    el("div", { class: "row", style: "margin-bottom:.6rem" }, note, reject),
+    scale,
+    el("div", { class: "ends" }, el("span", { class: "ea" }, "0 · A, by a long way"), el("span", { class: "muted" }, "3 · A slightly  |  4 · B slightly"), el("span", { class: "eb" }, "B, by a long way · 7")),
+    el("div", { class: "row", style: "justify-content:flex-end" },
+      el("button", { class: "btn", onclick: () => { index = Math.max(0, index - 1); render(); } }, "←"),
+      el("button", { class: "btn", onclick: () => { index = Math.min(items.length - 1, index + 1); render(); } }, "→"),
+      finish),
+    el("p", { class: "muted", style: "margin:.5rem 0 0; font-size:.8rem" }, "Keys: ", el("kbd", {}, "0"), "–", el("kbd", {}, "7"), " to vote, ", el("kbd", {}, "←"), " ", el("kbd", {}, "→"), " to move, ", el("kbd", {}, "x"), " to reject both. Press ", el("kbd", {}, "Enter"), " in the reason box to leave it, then vote."))));
+  if (!item.vote) note.focus();
+  window.onkeydown = (e) => {
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+    if (e.key >= "0" && e.key <= "7") vote(Number(e.key));
+    if (e.key === "x" || e.key === "X") vote("reject");
+    if (e.key === "ArrowLeft") { index = Math.max(0, index - 1); render(); }
+    if (e.key === "ArrowRight") { index = Math.min(items.length - 1, index + 1); render(); }
+  };
+}
+refresh();
+</script>
+</body>
+</html>

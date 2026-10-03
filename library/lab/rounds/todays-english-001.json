@@ -1,0 +1,2293 @@
+{
+ "number": 1,
+ "task": "todays-english",
+ "champion": "v1",
+ "challenger": "v2",
+ "model": "claude-opus-5-5",
+ "created_at": "2026-10-03T05:18:43+00:00",
+ "items": [
+  {
+   "id": "henry-iv-part-2/3/1#3-10",
+   "play_title": "Henry IV, Part 2",
+   "scene_id": "henry-iv-part-2/3/1",
+   "where": "Henry IV, Part 2 3.1",
+   "start": 3,
+   "end": 10,
+   "original": [
+    {
+     "speaker": "WARWICK",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Many good morrows to your Majesty!"
+      }
+     ]
+    },
+    {
+     "speaker": "KING",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Is it good morrow, lords?"
+      }
+     ]
+    },
+    {
+     "speaker": "WARWICK",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "’Tis one o’clock, and past."
+      }
+     ]
+    },
+    {
+     "speaker": "KING",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Why then, good morrow to you all, my lords."
+      },
+      {
+       "kind": "line",
+       "text": "Have you read o’er the letters that I sent you?"
+      }
+     ]
+    },
+    {
+     "speaker": "WARWICK",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "We have, my liege."
+      }
+     ]
+    },
+    {
+     "speaker": "KING",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Then you perceive the body of our kingdom"
+      },
+      {
+       "kind": "line",
+       "text": "How foul it is, what rank diseases grow,"
+      },
+      {
+       "kind": "line",
+       "text": "And with what danger, near the heart of it."
+      }
+     ]
+    },
+    {
+     "speaker": "WARWICK",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "It is but as a body yet distemper’d,"
+      },
+      {
+       "kind": "line",
+       "text": "Which to his former strength may be restored"
+      },
+      {
+       "kind": "line",
+       "text": "With good advice and little medicine."
+      },
+      {
+       "kind": "line",
+       "text": "My Lord Northumberland will soon be cool’d."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v2",
+    "blocks": [
+     {
+      "source_block": 3,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Good morning, your Majesty. A very good morning to you."
+       }
+      ]
+     },
+     {
+      "source_block": 4,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Is it morning already, my lords?"
+       }
+      ]
+     },
+     {
+      "source_block": 5,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "It's past one o'clock."
+       }
+      ]
+     },
+     {
+      "source_block": 6,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Well then, good morning to you all, my lords."
+       },
+       {
+        "kind": "line",
+        "text": "Have you read through the letters I sent you?"
+       }
+      ]
+     },
+     {
+      "source_block": 7,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "We have, my lord."
+       }
+      ]
+     },
+     {
+      "source_block": 8,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Then you can see how sick this kingdom is."
+       },
+       {
+        "kind": "line",
+        "text": "How rotten the whole body has become, what diseases are spreading through it."
+       },
+       {
+        "kind": "line",
+        "text": "And how dangerously close they are to the heart."
+       }
+      ]
+     },
+     {
+      "source_block": 9,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "It's a body that's only a little out of sorts, so far."
+       },
+       {
+        "kind": "line",
+        "text": "It can get its old strength back."
+       },
+       {
+        "kind": "line",
+        "text": "Good advice and a little medicine will do it."
+       },
+       {
+        "kind": "line",
+        "text": "Lord Northumberland will cool down soon enough."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 3,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "A very good morning to your Majesty!"
+       }
+      ]
+     },
+     {
+      "source_block": 4,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Is it morning, my lords?"
+       }
+      ]
+     },
+     {
+      "source_block": 5,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "It's one o'clock, and past."
+       }
+      ]
+     },
+     {
+      "source_block": 6,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Well then, good morning to you all, my lords."
+       },
+       {
+        "kind": "line",
+        "text": "Have you read through the letters I sent you?"
+       }
+      ]
+     },
+     {
+      "source_block": 7,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "We have, my lord."
+       }
+      ]
+     },
+     {
+      "source_block": 8,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Then you can see how sick the body of our kingdom is."
+       },
+       {
+        "kind": "line",
+        "text": "What foul diseases are growing in it,"
+       },
+       {
+        "kind": "line",
+        "text": "and how dangerously close they are to its heart."
+       }
+      ]
+     },
+     {
+      "source_block": 9,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "It's only a body that's out of sorts for now."
+       },
+       {
+        "kind": "line",
+        "text": "It can be brought back to its old strength"
+       },
+       {
+        "kind": "line",
+        "text": "with good advice and a little medicine."
+       },
+       {
+        "kind": "line",
+        "text": "My Lord Northumberland will soon cool down."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "loves-labours-lost/1/2#63-69",
+   "play_title": "Love’s Labour’s Lost",
+   "scene_id": "loves-labours-lost/1/2",
+   "where": "Love’s Labour’s Lost 1.2",
+   "start": 63,
+   "end": 69,
+   "original": [
+    {
+     "speaker": "ARMADO",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Sing, boy. My spirit grows heavy in love."
+      }
+     ]
+    },
+    {
+     "speaker": "MOTH",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "And that’s great marvel, loving a light wench."
+      }
+     ]
+    },
+    {
+     "speaker": "ARMADO",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "I say, sing."
+      }
+     ]
+    },
+    {
+     "speaker": "MOTH",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Forbear till this company be past."
+      }
+     ]
+    },
+    {
+     "speaker": null,
+     "parts": [
+      {
+       "kind": "direction",
+       "text": "Enter Costard the Clown, Dull the Constable and Jaquenetta a Wench."
+      }
+     ]
+    },
+    {
+     "speaker": "DULL",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Sir, the Duke’s pleasure is that you keep Costard safe; and you must"
+      },
+      {
+       "kind": "line",
+       "text": "suffer him to take no delight, nor no penance, but he must fast three"
+      },
+      {
+       "kind": "line",
+       "text": "days a week. For this damsel, I must keep her at the park. She is"
+      },
+      {
+       "kind": "line",
+       "text": "allowed for the dey-woman. Fare you well."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 63,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Sing, boy. Love is making my spirit heavy."
+       }
+      ]
+     },
+     {
+      "source_block": 64,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "That's a real wonder, sir, when the girl you love is so light."
+       }
+      ]
+     },
+     {
+      "source_block": 65,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "I said, sing."
+       }
+      ]
+     },
+     {
+      "source_block": 66,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Wait till these people have gone by."
+       }
+      ]
+     },
+     {
+      "source_block": 67,
+      "parts": [
+       {
+        "kind": "direction",
+        "text": "Enter Costard the clown, Dull the constable, and Jaquenetta, a country girl."
+       }
+      ]
+     },
+     {
+      "source_block": 68,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Sir, it's the Duke's wish that you keep Costard locked up."
+       },
+       {
+        "kind": "line",
+        "text": "You're not to let him have any fun, and no penance either. He just has to fast three days a week."
+       },
+       {
+        "kind": "line",
+        "text": "As for this young woman, I'm to keep her here in the park."
+       },
+       {
+        "kind": "line",
+        "text": "She's been taken on as the dairymaid. Good day to you."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v2",
+    "blocks": [
+     {
+      "source_block": 63,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Sing, boy."
+       },
+       {
+        "kind": "line",
+        "text": "Love is making my heart heavy."
+       }
+      ]
+     },
+     {
+      "source_block": 64,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Now that's amazing, sir."
+       },
+       {
+        "kind": "line",
+        "text": "Heavy, over a girl who's that light."
+       }
+      ]
+     },
+     {
+      "source_block": 65,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "I said, sing."
+       }
+      ]
+     },
+     {
+      "source_block": 66,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Wait till these people have gone by."
+       }
+      ]
+     },
+     {
+      "source_block": 67,
+      "parts": [
+       {
+        "kind": "direction",
+        "text": "Costard the clown, Dull the constable and Jaquenetta, a country girl, come in."
+       }
+      ]
+     },
+     {
+      "source_block": 68,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Sir, it's the Duke's wish that you keep Costard locked up safe."
+       },
+       {
+        "kind": "line",
+        "text": "You're not to let him have any fun, and no penance either."
+       },
+       {
+        "kind": "line",
+        "text": "But he has to fast three days a week."
+       },
+       {
+        "kind": "line",
+        "text": "As for this young lady, I'm to keep her here at the park."
+       },
+       {
+        "kind": "line",
+        "text": "She's been taken on as the dairy-maid."
+       },
+       {
+        "kind": "line",
+        "text": "Goodbye to you."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "henry-iv-part-1/4/3#14-16",
+   "play_title": "Henry IV, Part 1",
+   "scene_id": "henry-iv-part-1/4/3",
+   "where": "Henry IV, Part 1 4.3",
+   "start": 14,
+   "end": 16,
+   "original": [
+    {
+     "speaker": "HOTSPUR",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Tonight, say I."
+      }
+     ]
+    },
+    {
+     "speaker": "VERNON",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Come, come, it may not be. I wonder much,"
+      },
+      {
+       "kind": "line",
+       "text": "Being men of such great leading as you are,"
+      },
+      {
+       "kind": "line",
+       "text": "That you foresee not what impediments"
+      },
+      {
+       "kind": "line",
+       "text": "Drag back our expedition. Certain horse"
+      },
+      {
+       "kind": "line",
+       "text": "Of my cousin Vernon’s are not yet come up."
+      },
+      {
+       "kind": "line",
+       "text": "Your uncle Worcester’s horse came but today,"
+      },
+      {
+       "kind": "line",
+       "text": "And now their pride and mettle is asleep,"
+      },
+      {
+       "kind": "line",
+       "text": "Their courage with hard labour tame and dull,"
+      },
+      {
+       "kind": "line",
+       "text": "That not a horse is half the half himself."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 14,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Tonight, I say."
+       }
+      ]
+     },
+     {
+      "source_block": 15,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Come on, come on, it can't be done."
+       },
+       {
+        "kind": "line",
+        "text": "I'm amazed that men who lead armies, like you,"
+       },
+       {
+        "kind": "line",
+        "text": "can't see what's holding our attack back."
+       },
+       {
+        "kind": "line",
+        "text": "Some of my cousin Vernon's cavalry still haven't arrived."
+       },
+       {
+        "kind": "line",
+        "text": "Your uncle Worcester's cavalry only got here today."
+       },
+       {
+        "kind": "line",
+        "text": "Their spirit and fire have gone to sleep."
+       },
+       {
+        "kind": "line",
+        "text": "Hard riding has worn their courage down, made it tame and dull."
+       },
+       {
+        "kind": "line",
+        "text": "There isn't a horse out there that's even half of half itself."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v2",
+    "blocks": [
+     {
+      "source_block": 14,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Tonight. I say tonight."
+       }
+      ]
+     },
+     {
+      "source_block": 15,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Come on, come on. It can't be done."
+       },
+       {
+        "kind": "line",
+        "text": "Honestly, I'm amazed. Men who've led as many armies as you have,"
+       },
+       {
+        "kind": "line",
+        "text": "and you can't see what's holding us back?"
+       },
+       {
+        "kind": "line",
+        "text": "Some of my cousin Vernon's cavalry still haven't arrived."
+       },
+       {
+        "kind": "line",
+        "text": "Your uncle Worcester's horses only got here today."
+       },
+       {
+        "kind": "line",
+        "text": "All their fire and spirit is gone."
+       },
+       {
+        "kind": "line",
+        "text": "They're worn out from the march, tame and sluggish."
+       },
+       {
+        "kind": "line",
+        "text": "There isn't a horse out there that's half of half what it should be."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-winters-tale/5/1#53-56",
+   "play_title": "The Winter’s Tale",
+   "scene_id": "the-winters-tale/5/1",
+   "where": "The Winter’s Tale 5.1",
+   "start": 53,
+   "end": 56,
+   "original": [
+    {
+     "speaker": "FLORIZEL",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "She is,"
+      },
+      {
+       "kind": "line",
+       "text": "When once she is my wife."
+      }
+     ]
+    },
+    {
+     "speaker": "LEONTES",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "That “once”, I see by your good father’s speed,"
+      },
+      {
+       "kind": "line",
+       "text": "Will come on very slowly. I am sorry,"
+      },
+      {
+       "kind": "line",
+       "text": "Most sorry, you have broken from his liking,"
+      },
+      {
+       "kind": "line",
+       "text": "Where you were tied in duty; and as sorry"
+      },
+      {
+       "kind": "line",
+       "text": "Your choice is not so rich in worth as beauty,"
+      },
+      {
+       "kind": "line",
+       "text": "That you might well enjoy her."
+      }
+     ]
+    },
+    {
+     "speaker": "FLORIZEL",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Dear, look up:"
+      },
+      {
+       "kind": "line",
+       "text": "Though Fortune, visible an enemy,"
+      },
+      {
+       "kind": "line",
+       "text": "Should chase us with my father, power no jot"
+      },
+      {
+       "kind": "line",
+       "text": "Hath she to change our loves. Beseech you, sir,"
+      },
+      {
+       "kind": "line",
+       "text": "Remember since you ow’d no more to time"
+      },
+      {
+       "kind": "line",
+       "text": "Than I do now: with thought of such affections,"
+      },
+      {
+       "kind": "line",
+       "text": "Step forth mine advocate. At your request"
+      },
+      {
+       "kind": "line",
+       "text": "My father will grant precious things as trifles."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v2",
+    "blocks": [
+     {
+      "source_block": 53,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "She will be."
+       },
+       {
+        "kind": "line",
+        "text": "Once she's my wife."
+       }
+      ]
+     },
+     {
+      "source_block": 54,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "That \"once\" is going to take a long time coming, judging by how fast your father's chasing you."
+       },
+       {
+        "kind": "line",
+        "text": "I'm sorry. Truly sorry that you've lost his good will, when you owed him your obedience."
+       },
+       {
+        "kind": "line",
+        "text": "And just as sorry that she isn't as well born as she is beautiful."
+       },
+       {
+        "kind": "line",
+        "text": "Then you'd be free to have her."
+       }
+      ]
+     },
+     {
+      "source_block": 55,
+      "parts": [
+       {
+        "kind": "direction",
+        "text": "To Perdita"
+       },
+       {
+        "kind": "line",
+        "text": "My love, lift your head."
+       },
+       {
+        "kind": "line",
+        "text": "Even if Fortune turns openly against us and hunts us down along with my father,"
+       },
+       {
+        "kind": "line",
+        "text": "she has no power at all to change how we love each other."
+       },
+       {
+        "kind": "direction",
+        "text": "To Leontes"
+       },
+       {
+        "kind": "line",
+        "text": "Sir, I'm begging you."
+       },
+       {
+        "kind": "line",
+        "text": "Remember when you were no older than I am now, and in love like this."
+       },
+       {
+        "kind": "line",
+        "text": "Remember how that felt, and speak up for me."
+       },
+       {
+        "kind": "line",
+        "text": "If you ask him, my father will give up even what he values most as if it were nothing."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 53,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "She will be, once she's my wife."
+       }
+      ]
+     },
+     {
+      "source_block": 54,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "That \"once,\" judging by how fast your good father is coming, will be a long time arriving."
+       },
+       {
+        "kind": "line",
+        "text": "I'm sorry, truly sorry, that you've lost his favour, when duty bound you to keep it."
+       },
+       {
+        "kind": "line",
+        "text": "And I'm just as sorry that the girl you've chosen isn't as rich in rank as she is in beauty."
+       },
+       {
+        "kind": "line",
+        "text": "Then you could marry her and be happy."
+       }
+      ]
+     },
+     {
+      "source_block": 55,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Darling, look up."
+       },
+       {
+        "kind": "line",
+        "text": "Even if Fortune turns openly against us and hunts us down along with my father,"
+       },
+       {
+        "kind": "line",
+        "text": "she hasn't the slightest power to change our love."
+       },
+       {
+        "kind": "line",
+        "text": "I beg you, sir, remember when you were no older than I am now."
+       },
+       {
+        "kind": "line",
+        "text": "Remember how you loved back then, and speak up for me."
+       },
+       {
+        "kind": "line",
+        "text": "If you ask him, my father will give up precious things as if they were nothing."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "antony-and-cleopatra/4/4#9-11",
+   "play_title": "Antony and Cleopatra",
+   "scene_id": "antony-and-cleopatra/4/4",
+   "where": "Antony and Cleopatra 4.4",
+   "start": 9,
+   "end": 11,
+   "original": [
+    {
+     "speaker": "CLEOPATRA",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Is not this buckled well?"
+      }
+     ]
+    },
+    {
+     "speaker": "ANTONY",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Rarely, rarely."
+      },
+      {
+       "kind": "line",
+       "text": "He that unbuckles this, till we do please"
+      },
+      {
+       "kind": "line",
+       "text": "To daff’t for our repose, shall hear a storm."
+      },
+      {
+       "kind": "line",
+       "text": "Thou fumblest, Eros, and my queen’s a squire"
+      },
+      {
+       "kind": "line",
+       "text": "More tight at this than thou. Dispatch. O love,"
+      },
+      {
+       "kind": "line",
+       "text": "That thou couldst see my wars today, and knew’st"
+      },
+      {
+       "kind": "line",
+       "text": "The royal occupation, thou shouldst see"
+      },
+      {
+       "kind": "line",
+       "text": "A workman in’t."
+      },
+      {
+       "kind": "direction",
+       "text": "Enter an Officer, armed."
+      },
+      {
+       "kind": "line",
+       "text": "Good morrow to thee. Welcome."
+      },
+      {
+       "kind": "line",
+       "text": "Thou look’st like him that knows a warlike charge."
+      },
+      {
+       "kind": "line",
+       "text": "To business that we love we rise betime"
+      },
+      {
+       "kind": "line",
+       "text": "And go to’t with delight."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 9,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Isn't this buckled on well?"
+       }
+      ]
+     },
+     {
+      "source_block": 10,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Beautifully, beautifully."
+       },
+       {
+        "kind": "line",
+        "text": "Anyone who unbuckles this before we choose to take it off and rest will face a storm."
+       },
+       {
+        "kind": "line",
+        "text": "You're fumbling, Eros. My queen makes a better squire at this than you do."
+       },
+       {
+        "kind": "line",
+        "text": "Hurry up."
+       },
+       {
+        "kind": "line",
+        "text": "Oh, my love, if only you could watch me fight today, and knew this royal trade."
+       },
+       {
+        "kind": "line",
+        "text": "You'd see a real craftsman at work."
+       },
+       {
+        "kind": "direction",
+        "text": "An Officer enters, in armour."
+       },
+       {
+        "kind": "line",
+        "text": "Good morning to you. Welcome."
+       },
+       {
+        "kind": "line",
+        "text": "You look like a man who knows how to lead a charge."
+       },
+       {
+        "kind": "line",
+        "text": "When it's work we love, we get up early and go to it gladly."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v2",
+    "blocks": [
+     {
+      "source_block": 9,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Isn't this buckled well?"
+       }
+      ]
+     },
+     {
+      "source_block": 10,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Perfectly. Perfectly."
+       },
+       {
+        "kind": "line",
+        "text": "Anyone who tries to unbuckle this before I choose to take it off and rest is in for a storm."
+       },
+       {
+        "kind": "line",
+        "text": "You're fumbling, Eros. My queen makes a better squire than you."
+       },
+       {
+        "kind": "line",
+        "text": "Hurry up."
+       },
+       {
+        "kind": "line",
+        "text": "Oh, my love, I wish you could see me fight today."
+       },
+       {
+        "kind": "line",
+        "text": "If you understood the soldier's trade, you'd see a real craftsman at work."
+       },
+       {
+        "kind": "direction",
+        "text": "An Officer enters, in armour."
+       },
+       {
+        "kind": "line",
+        "text": "Good morning to you. Welcome."
+       },
+       {
+        "kind": "line",
+        "text": "You look like a man with a battle to lead."
+       },
+       {
+        "kind": "line",
+        "text": "When it's work we love, we get up early and go to it gladly."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "twelfth-night/2/3#82-89",
+   "play_title": "Twelfth Night",
+   "scene_id": "twelfth-night/2/3",
+   "where": "Twelfth Night 2.3",
+   "start": 82,
+   "end": 89,
+   "original": [
+    {
+     "speaker": "SIR ANDREW",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Before me, she’s a good wench."
+      }
+     ]
+    },
+    {
+     "speaker": "SIR TOBY",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "She’s a beagle true bred, and one that adores me. What o’ that?"
+      }
+     ]
+    },
+    {
+     "speaker": "SIR ANDREW",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "I was adored once too."
+      }
+     ]
+    },
+    {
+     "speaker": "SIR TOBY",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Let’s to bed, knight. Thou hadst need send for more money."
+      }
+     ]
+    },
+    {
+     "speaker": "SIR ANDREW",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "If I cannot recover your niece, I am a foul way out."
+      }
+     ]
+    },
+    {
+     "speaker": "SIR TOBY",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Send for money, knight; if thou hast her not i’ th’ end, call me cut."
+      }
+     ]
+    },
+    {
+     "speaker": "SIR ANDREW",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "If I do not, never trust me, take it how you will."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 82,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Upon my soul, she's a good girl."
+       }
+      ]
+     },
+     {
+      "source_block": 83,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "She's a pure-bred little beagle, and she adores me."
+       },
+       {
+        "kind": "line",
+        "text": "So what of it?"
+       }
+      ]
+     },
+     {
+      "source_block": 84,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "I was adored once too."
+       }
+      ]
+     },
+     {
+      "source_block": 85,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Let's go to bed, knight."
+       },
+       {
+        "kind": "line",
+        "text": "You'd better send home for more money."
+       }
+      ]
+     },
+     {
+      "source_block": 86,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "If I can't win your niece, I'll be terribly out of pocket."
+       }
+      ]
+     },
+     {
+      "source_block": 87,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Send for money, knight."
+       },
+       {
+        "kind": "line",
+        "text": "If you haven't got her in the end, call me a broken-down old cart-horse."
+       }
+      ]
+     },
+     {
+      "source_block": 88,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "If I don't, never trust me again, take that however you like."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v2",
+    "blocks": [
+     {
+      "source_block": 82,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "I swear, she's a great girl."
+       }
+      ]
+     },
+     {
+      "source_block": 83,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "She's a pure-bred little beagle, and she adores me."
+       },
+       {
+        "kind": "line",
+        "text": "So what?"
+       }
+      ]
+     },
+     {
+      "source_block": 84,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Someone adored me once too."
+       }
+      ]
+     },
+     {
+      "source_block": 85,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Come on, knight, let's go to bed."
+       },
+       {
+        "kind": "line",
+        "text": "You'd better send home for more money."
+       }
+      ]
+     },
+     {
+      "source_block": 86,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "If I don't win your niece, I'm badly out of pocket."
+       }
+      ]
+     },
+     {
+      "source_block": 87,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Send for the money, knight."
+       },
+       {
+        "kind": "line",
+        "text": "If she's not yours in the end, you can call me a broken-down old nag."
+       }
+      ]
+     },
+     {
+      "source_block": 88,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "If I don't, never trust me again."
+       },
+       {
+        "kind": "line",
+        "text": "Take that however you like."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "henry-iv-part-2/4/1#2-6",
+   "play_title": "Henry IV, Part 2",
+   "scene_id": "henry-iv-part-2/4/1",
+   "where": "Henry IV, Part 2 4.1",
+   "start": 2,
+   "end": 6,
+   "original": [
+    {
+     "speaker": "HASTINGS",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "’Tis Gaultree Forest, an ’t shall please your Grace."
+      }
+     ]
+    },
+    {
+     "speaker": "ARCHBISHOP",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Here stand, my lords, and send discoverers forth"
+      },
+      {
+       "kind": "line",
+       "text": "To know the numbers of our enemies."
+      }
+     ]
+    },
+    {
+     "speaker": "HASTINGS",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "We have sent forth already."
+      }
+     ]
+    },
+    {
+     "speaker": "ARCHBISHOP",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "’Tis well done."
+      },
+      {
+       "kind": "line",
+       "text": "My friends and brethren in these great affairs,"
+      },
+      {
+       "kind": "line",
+       "text": "I must acquaint you that I have received"
+      },
+      {
+       "kind": "line",
+       "text": "New-dated letters from Northumberland,"
+      },
+      {
+       "kind": "line",
+       "text": "Their cold intent, tenor, and substance, thus:"
+      },
+      {
+       "kind": "line",
+       "text": "Here doth he wish his person, with such powers"
+      },
+      {
+       "kind": "line",
+       "text": "As might hold sortance with his quality,"
+      },
+      {
+       "kind": "line",
+       "text": "The which he could not levy; whereupon"
+      },
+      {
+       "kind": "line",
+       "text": "He is retired, to ripe his growing fortunes,"
+      },
+      {
+       "kind": "line",
+       "text": "To Scotland, and concludes in hearty prayers"
+      },
+      {
+       "kind": "line",
+       "text": "That your attempts may overlive the hazard"
+      },
+      {
+       "kind": "line",
+       "text": "And fearful meeting of their opposite."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v2",
+    "blocks": [
+     {
+      "source_block": 2,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "This is Gaultree Forest, your Grace."
+       }
+      ]
+     },
+     {
+      "source_block": 3,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "We'll halt here, my lords."
+       },
+       {
+        "kind": "line",
+        "text": "Send scouts ahead to find out how many of them there are."
+       }
+      ]
+     },
+     {
+      "source_block": 4,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "We've sent them already."
+       }
+      ]
+     },
+     {
+      "source_block": 5,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Good."
+       },
+       {
+        "kind": "line",
+        "text": "My friends, my brothers in this great cause, there's something I have to tell you."
+       },
+       {
+        "kind": "line",
+        "text": "I've had fresh letters from Northumberland."
+       },
+       {
+        "kind": "line",
+        "text": "They're cold. Here's the gist of them."
+       },
+       {
+        "kind": "line",
+        "text": "He says he wishes he were here, with an army worthy of his rank."
+       },
+       {
+        "kind": "line",
+        "text": "But he couldn't raise one."
+       },
+       {
+        "kind": "line",
+        "text": "So he's gone off to Scotland, to wait until his fortunes grow."
+       },
+       {
+        "kind": "line",
+        "text": "And he ends by praying, very warmly, that you come through the danger"
+       },
+       {
+        "kind": "line",
+        "text": "and that terrible clash with the enemy alive."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 2,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "It's Gaultree Forest, if it please your Grace."
+       }
+      ]
+     },
+     {
+      "source_block": 3,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Stop here, my lords."
+       },
+       {
+        "kind": "line",
+        "text": "Send scouts out to find how many enemies we're facing."
+       }
+      ]
+     },
+     {
+      "source_block": 4,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "We've sent them already."
+       }
+      ]
+     },
+     {
+      "source_block": 5,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Well done."
+       },
+       {
+        "kind": "line",
+        "text": "My friends, my brothers in this great cause, there's something I have to tell you."
+       },
+       {
+        "kind": "line",
+        "text": "I've had fresh letters from Northumberland."
+       },
+       {
+        "kind": "line",
+        "text": "Their meaning is cold, and here's the gist of it."
+       },
+       {
+        "kind": "line",
+        "text": "He wishes he were here himself, with an army worthy of his rank."
+       },
+       {
+        "kind": "line",
+        "text": "But he couldn't raise one."
+       },
+       {
+        "kind": "line",
+        "text": "So he's withdrawn to Scotland, to wait until his fortunes grow."
+       },
+       {
+        "kind": "line",
+        "text": "And he ends with heartfelt prayers that our efforts will survive the danger and the fearful clash with the other side."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "antony-and-cleopatra/3/13#33-36",
+   "play_title": "Antony and Cleopatra",
+   "scene_id": "antony-and-cleopatra/3/13",
+   "where": "Antony and Cleopatra 3.13",
+   "start": 33,
+   "end": 36,
+   "original": [
+    {
+     "speaker": "ENOBARBUS",
+     "parts": [
+      {
+       "kind": "direction",
+       "text": "Aside."
+      },
+      {
+       "kind": "line",
+       "text": "To be sure of that,"
+      },
+      {
+       "kind": "line",
+       "text": "I will ask Antony. Sir, sir, thou art so leaky"
+      },
+      {
+       "kind": "line",
+       "text": "That we must leave thee to thy sinking, for"
+      },
+      {
+       "kind": "line",
+       "text": "Thy dearest quit thee."
+      }
+     ]
+    },
+    {
+     "speaker": null,
+     "parts": [
+      {
+       "kind": "direction",
+       "text": "Exit Enobarbus."
+      }
+     ]
+    },
+    {
+     "speaker": "THIDIAS",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Shall I say to Caesar"
+      },
+      {
+       "kind": "line",
+       "text": "What you require of him? For he partly begs"
+      },
+      {
+       "kind": "line",
+       "text": "To be desired to give. It much would please him"
+      },
+      {
+       "kind": "line",
+       "text": "That of his fortunes you should make a staff"
+      },
+      {
+       "kind": "line",
+       "text": "To lean upon. But it would warm his spirits"
+      },
+      {
+       "kind": "line",
+       "text": "To hear from me you had left Antony,"
+      },
+      {
+       "kind": "line",
+       "text": "And put yourself under his shroud,"
+      },
+      {
+       "kind": "line",
+       "text": "The universal landlord."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v2",
+    "blocks": [
+     {
+      "source_block": 33,
+      "parts": [
+       {
+        "kind": "direction",
+        "text": "Aside."
+       },
+       {
+        "kind": "line",
+        "text": "To be sure of that, I'll go and ask Antony."
+       },
+       {
+        "kind": "line",
+        "text": "Sir, sir, you're so full of holes, we'll have to leave you to sink."
+       },
+       {
+        "kind": "line",
+        "text": "Even the one you love most is jumping ship."
+       }
+      ]
+     },
+     {
+      "source_block": 34,
+      "parts": [
+       {
+        "kind": "direction",
+        "text": "Enobarbus leaves."
+       }
+      ]
+     },
+     {
+      "source_block": 35,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Shall I tell Caesar what you want from him?"
+       },
+       {
+        "kind": "line",
+        "text": "He's half hoping to be asked, so he can give."
+       },
+       {
+        "kind": "line",
+        "text": "Nothing would please him more than for you to lean on his good fortune, like a staff."
+       },
+       {
+        "kind": "line",
+        "text": "But it would really warm his heart to hear from me that you'd left Antony."
+       },
+       {
+        "kind": "line",
+        "text": "That you'd put yourself under his protection."
+       },
+       {
+        "kind": "line",
+        "text": "The man who owns the whole world."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 33,
+      "parts": [
+       {
+        "kind": "direction",
+        "text": "Aside."
+       },
+       {
+        "kind": "line",
+        "text": "To be sure of that, I'll ask Antony."
+       },
+       {
+        "kind": "line",
+        "text": "Sir, sir, you're leaking so badly that we have to leave you to sink."
+       },
+       {
+        "kind": "line",
+        "text": "Even the one you love most is deserting you."
+       }
+      ]
+     },
+     {
+      "source_block": 34,
+      "parts": [
+       {
+        "kind": "direction",
+        "text": "Enobarbus leaves."
+       }
+      ]
+     },
+     {
+      "source_block": 35,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Shall I tell Caesar what you want from him?"
+       },
+       {
+        "kind": "line",
+        "text": "He's almost begging to be asked, so he can give."
+       },
+       {
+        "kind": "line",
+        "text": "It would please him very much if you made his good fortune a staff to lean on."
+       },
+       {
+        "kind": "line",
+        "text": "But it would really warm his heart to hear from me that you'd left Antony"
+       },
+       {
+        "kind": "line",
+        "text": "and put yourself under his protection, the protection of the lord of the whole world."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "henry-vi-part-1/5/3#58-61",
+   "play_title": "Henry VI, Part 1",
+   "scene_id": "henry-vi-part-1/5/3",
+   "where": "Henry VI, Part 1 5.3",
+   "start": 58,
+   "end": 61,
+   "original": [
+    {
+     "speaker": "SUFFOLK",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "That is her ransom; I deliver her;"
+      },
+      {
+       "kind": "line",
+       "text": "And those two counties I will undertake"
+      },
+      {
+       "kind": "line",
+       "text": "Your Grace shall well and quietly enjoy."
+      }
+     ]
+    },
+    {
+     "speaker": "REIGNIER",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "And I again, in Henry’s royal name,"
+      },
+      {
+       "kind": "line",
+       "text": "As deputy unto that gracious king,"
+      },
+      {
+       "kind": "line",
+       "text": "Give thee her hand for sign of plighted faith."
+      }
+     ]
+    },
+    {
+     "speaker": "SUFFOLK",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Reignier of France, I give thee kingly thanks,"
+      },
+      {
+       "kind": "line",
+       "text": "Because this is in traffic of a king."
+      },
+      {
+       "kind": "direction",
+       "text": "Aside."
+      },
+      {
+       "kind": "line",
+       "text": "And yet, methinks, I could be well content"
+      },
+      {
+       "kind": "line",
+       "text": "To be mine own attorney in this case."
+      },
+      {
+       "kind": "line",
+       "text": "I’ll over then to England with this news,"
+      },
+      {
+       "kind": "line",
+       "text": "And make this marriage to be solemnized."
+      },
+      {
+       "kind": "line",
+       "text": "So, farewell, Reignier; set this diamond safe"
+      },
+      {
+       "kind": "line",
+       "text": "In golden palaces, as it becomes."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v2",
+    "blocks": [
+     {
+      "source_block": 58,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "That's her ransom, then. I'm handing her back to you."
+       },
+       {
+        "kind": "line",
+        "text": "And those two counties are yours, Your Grace."
+       },
+       {
+        "kind": "line",
+        "text": "I give you my word you'll keep them in peace and quiet."
+       }
+      ]
+     },
+     {
+      "source_block": 59,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "And in return, in King Henry's royal name,"
+       },
+       {
+        "kind": "line",
+        "text": "since you stand here for that gracious king,"
+       },
+       {
+        "kind": "line",
+        "text": "I give you her hand, as a sign that she's promised to him."
+       }
+      ]
+     },
+     {
+      "source_block": 60,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Reignier of France, I thank you as a king would thank you."
+       },
+       {
+        "kind": "line",
+        "text": "This is a king's business, after all."
+       },
+       {
+        "kind": "direction",
+        "text": "Aside."
+       },
+       {
+        "kind": "line",
+        "text": "And yet I wouldn't mind pleading this case for myself."
+       },
+       {
+        "kind": "line",
+        "text": "Well, I'll cross back to England with the news,"
+       },
+       {
+        "kind": "line",
+        "text": "and see this marriage properly made."
+       },
+       {
+        "kind": "line",
+        "text": "So, goodbye, Reignier. Keep this diamond safe."
+       },
+       {
+        "kind": "line",
+        "text": "Set her in golden palaces, where she belongs."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 58,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "That's her ransom. I hand her over to you."
+       },
+       {
+        "kind": "line",
+        "text": "And I promise Your Grace will hold those two counties"
+       },
+       {
+        "kind": "line",
+        "text": "safely and in peace."
+       }
+      ]
+     },
+     {
+      "source_block": 59,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "And in return, in Henry's royal name,"
+       },
+       {
+        "kind": "line",
+        "text": "to you, as deputy for that gracious king,"
+       },
+       {
+        "kind": "line",
+        "text": "I give her hand, as a sign that the promise is sealed."
+       }
+      ]
+     },
+     {
+      "source_block": 60,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Reignier of France, I thank you as a king would,"
+       },
+       {
+        "kind": "line",
+        "text": "because this is a king's business."
+       },
+       {
+        "kind": "direction",
+        "text": "Aside."
+       },
+       {
+        "kind": "line",
+        "text": "And yet, I think I'd be quite happy"
+       },
+       {
+        "kind": "line",
+        "text": "to be pleading this case for myself."
+       },
+       {
+        "kind": "line",
+        "text": "Well, I'll cross to England with the news,"
+       },
+       {
+        "kind": "line",
+        "text": "and see this marriage properly made."
+       },
+       {
+        "kind": "line",
+        "text": "So, goodbye, Reignier. Keep this diamond safe"
+       },
+       {
+        "kind": "line",
+        "text": "in golden palaces, where it belongs."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "macbeth/2/1#8-13",
+   "play_title": "Macbeth",
+   "scene_id": "macbeth/2/1",
+   "where": "Macbeth 2.1",
+   "start": 8,
+   "end": 13,
+   "original": [
+    {
+     "speaker": "MACBETH",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Being unprepar’d,"
+      },
+      {
+       "kind": "line",
+       "text": "Our will became the servant to defect,"
+      },
+      {
+       "kind": "line",
+       "text": "Which else should free have wrought."
+      }
+     ]
+    },
+    {
+     "speaker": "BANQUO",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "All’s well."
+      },
+      {
+       "kind": "line",
+       "text": "I dreamt last night of the three Weird Sisters:"
+      },
+      {
+       "kind": "line",
+       "text": "To you they have show’d some truth."
+      }
+     ]
+    },
+    {
+     "speaker": "MACBETH",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "I think not of them:"
+      },
+      {
+       "kind": "line",
+       "text": "Yet, when we can entreat an hour to serve,"
+      },
+      {
+       "kind": "line",
+       "text": "We would spend it in some words upon that business,"
+      },
+      {
+       "kind": "line",
+       "text": "If you would grant the time."
+      }
+     ]
+    },
+    {
+     "speaker": "BANQUO",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "At your kind’st leisure."
+      }
+     ]
+    },
+    {
+     "speaker": "MACBETH",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "If you shall cleave to my consent, when ’tis,"
+      },
+      {
+       "kind": "line",
+       "text": "It shall make honour for you."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 8,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "We had no warning he was coming."
+       },
+       {
+        "kind": "line",
+        "text": "So our wish to welcome him was held back by what we lacked."
+       },
+       {
+        "kind": "line",
+        "text": "Otherwise we'd have been far more generous."
+       }
+      ]
+     },
+     {
+      "source_block": 9,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Everything was fine."
+       },
+       {
+        "kind": "line",
+        "text": "Last night I dreamt about the three Weird Sisters."
+       },
+       {
+        "kind": "line",
+        "text": "Some of what they told you has come true."
+       }
+      ]
+     },
+     {
+      "source_block": 10,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "I don't think about them."
+       },
+       {
+        "kind": "line",
+        "text": "Still, when we can find an hour to spare,"
+       },
+       {
+        "kind": "line",
+        "text": "I'd like to have a few words with you about all that."
+       },
+       {
+        "kind": "line",
+        "text": "If you can give me the time."
+       }
+      ]
+     },
+     {
+      "source_block": 11,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Whenever suits you best."
+       }
+      ]
+     },
+     {
+      "source_block": 12,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "If you stand with me when the moment comes,"
+       },
+       {
+        "kind": "line",
+        "text": "it will bring you honour."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v2",
+    "blocks": [
+     {
+      "source_block": 8,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "We weren't ready for him."
+       },
+       {
+        "kind": "line",
+        "text": "We wanted to do it properly, but we just didn't have what we needed."
+       },
+       {
+        "kind": "line",
+        "text": "Otherwise there'd have been no limit to what we gave him."
+       }
+      ]
+     },
+     {
+      "source_block": 9,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "It was all fine."
+       },
+       {
+        "kind": "line",
+        "text": "I dreamt about the three Weird Sisters last night."
+       },
+       {
+        "kind": "line",
+        "text": "Some of what they told you has come true."
+       }
+      ]
+     },
+     {
+      "source_block": 10,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "I don't think about them."
+       },
+       {
+        "kind": "line",
+        "text": "Still, when we can find an hour to spare,"
+       },
+       {
+        "kind": "line",
+        "text": "I'd like us to talk that business over."
+       },
+       {
+        "kind": "line",
+        "text": "If you can give me the time."
+       }
+      ]
+     },
+     {
+      "source_block": 11,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Whenever suits you."
+       }
+      ]
+     },
+     {
+      "source_block": 12,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "If you stand with me when the time comes,"
+       },
+       {
+        "kind": "line",
+        "text": "it'll bring you honour."
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "outcome": null
+}

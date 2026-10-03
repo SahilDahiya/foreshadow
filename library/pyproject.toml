@@ -3,7 +3,12 @@ name = "foreshadow-library"
 version = "0.1.0"
 description = "Turns public-domain plays into structured data the Foreshadow app can use."
 requires-python = ">=3.12"
-dependencies = ["pydantic>=2.10", "httpx>=0.28"]
+dependencies = [
+    "pydantic>=2.10",
+    "httpx>=0.28",
+    "anthropic>=1.11.0",
+    "dspy>=3.4.0",
+]
 
 [project.scripts]
 library = "foreshadow_library.cli:main"
