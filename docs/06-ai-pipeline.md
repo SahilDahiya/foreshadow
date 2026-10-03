@@ -95,6 +95,8 @@ QuestionWriter
 
 - **Write ahead:** while a round is open, write the next question for every option in
   parallel and keep the one that matches the winner. No visible wait between rounds.
+  Must finish within a round's minimum time (about 8 s); see "Round timing" in
+  [04](04-brainstorm.md).
 - **The first round** depends on no vote, so it is written before the set starts.
 - A fast model is enough here; the wait is hidden anyway.
 

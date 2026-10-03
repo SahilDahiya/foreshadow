@@ -43,7 +43,8 @@ sources         id, title, engine (tension, arc shape, devices)
 shows           id, code, status, content_rating, created_by
 sets            id, show_id, order, status, improviser_count, host_token
 survey_plans    id, name, rounds (scripted questions and options; then AI slots)
-rounds          id, set_id, order, slot, source (scripted|ai), question, selection_mode, closes_at
+rounds          id, set_id, order, slot, source (scripted|ai), question, selection_mode,
+                opened_at, min_s, max_s, threshold, closes_at
 options         id, round_id, text, persona
 ballots         id, round_id, participant_id, option_ids[]
 decisions       round_id, option_ids[]

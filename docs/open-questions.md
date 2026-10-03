@@ -16,6 +16,11 @@
 
 ## Brainstorm
 
+29. **Round timing defaults:** about 8 s minimum, 25 s maximum, close early at 85% of active
+    phones or when the result can't change, then a 3 s last call. Right ballpark?
+30. **Should voters ever see the live tally before the round closes?** Proposed: no; only
+    "34 of 52 have voted".
+
 26. **How do the improvisers receive their mime task?** Proposed: the host shows them a
     task card on the phone before Start. Should the audience also see it?
 

@@ -113,15 +113,79 @@ What a persona is hasn't been settled. Two interpretations so far:
 - **Simulated audiences:** personas that vote, used by the harness to generate test
   brainstorms. See [06-ai-pipeline.md](06-ai-pipeline.md).
 
-## Mechanics (proposed)
+## Round timing: when does a round close? (proposed)
 
-- About 20 seconds per round.
-- Between rounds the result appears on phones for a few seconds while the next question is
-  written.
-- **Generate ahead:** while voting is open, write the follow-up question for every option
-  in parallel, then use the one that matches the winner, so there is no wait.
-- How many options win a multiple-selection round (top one, top two, or above a threshold)
-  is open.
+Each AI question depends on earlier answers, so a round must close before the next
+question can be chosen. Waiting for everybody never works (someone is always at the bar),
+and a fixed timer wastes time when the room answered in five seconds. So a round closes on
+whichever comes first, within a minimum and a maximum.
+
+### The rule
+
+```
+round opens
+  │
+  ├─ minimum time: long enough to read the question and options (at least ~8 s,
+  │  longer for longer text). Nothing closes before this.
+  │
+  ├─ then the round closes early if either:
+  │    • most of the room has voted (about 85% of active phones), or
+  │    • the result can no longer change (the remaining voters can't overturn the leader)
+  │  → a short "last call" countdown (3 s) on every phone, then close
+  │
+  ├─ otherwise it closes at the maximum time (about 25 s)
+  │
+  └─ the host can always close now, or add 10 s, from the host device
+```
+
+- **"Active phones"** means phones that have been in touch with the server in the last few
+  seconds, not everyone who ever joined. People who wander off stop counting.
+- **The "last call"** is fair to the slow and theatrical: everyone sees "3, 2, 1".
+- **The server's clock decides.** Phones show a countdown computed from the server's time,
+  so every phone closes together.
+- **Late joiners** vote in the round that is open when they arrive.
+- **Changing your mind** is allowed until the round closes; the new vote replaces the old.
+- **Minimum, maximum, threshold and last call are set per round** in the survey plan, with
+  these as defaults.
+
+### What voters see while waiting
+
+- After voting: their choice, and **"34 of 52 have voted"**, which nudges the rest and
+  builds anticipation.
+- **No live tally for voters.** Seeing which option is ahead makes people follow the
+  crowd, and spoils the reveal. The host sees the live tally.
+- **The reveal:** when the round closes, every phone shows the winner and the split of
+  votes for about 3 seconds. That is the moment the next question needs anyway.
+
+### Ties
+
+A tie is broken at random, and the reveal says so ("Tie! Fate chose the swan"). It is
+fair, quick, and a small moment of its own.
+
+### Not every question has to wait: sync points
+
+The slot dependency graph ([06](06-ai-pipeline.md)) decides where the room has to wait:
+
+- **Dependent questions are sync points.** Everyone waits for the round to close, because
+  the next question is built from its result.
+- **Independent questions can run as a group.** Each person moves through them at their
+  own pace, one screen after another, and the group closes together under the same rule.
+  This saves time and feels quicker on the phone.
+
+### Hiding the AI behind the timing
+
+- **Write ahead:** when a round opens, the follow-up question for every option is written in
+  parallel. With a fast model, that finishes within the minimum time, so the next question
+  is ready the moment the round closes. If not, the 3-second reveal covers it.
+- **Multiple-selection rounds** have too many possible results to write ahead for. So
+  either they are used only where nothing depends on them, or their follow-up is written
+  after closing, during the reveal. How many options win one is open.
+
+### The whole survey
+
+With about five rounds, each taking 8 to 25 seconds plus a 3-second reveal, a survey runs
+roughly one to two and a half minutes. The survey plan has a target length; if the
+survey is running long, later rounds get shorter maximums.
 
 ## Content safety (proposed)
 
