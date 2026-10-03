@@ -12,7 +12,7 @@ from . import store
 from .passages import Passage, sample
 from .propose import preference_for_challenger, propose
 
-ITEMS_PER_ROUND = 10
+ITEMS_PER_ROUND = 5
 # The challenger takes over when it wins most passages, and by a real margin.
 PROMOTE_WIN_SHARE = 0.6
 PROMOTE_MEAN_PREFERENCE = 0.15
