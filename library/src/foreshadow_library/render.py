@@ -126,13 +126,21 @@ def check(scene: Scene, start: int, end: int, blocks: list[RenderedBlock]) -> li
 def render_passage(
     play: Play, scene: Scene, start: int, end: int, *, prompt: str, lm: dspy.LM
 ) -> list[RenderedBlock]:
+    return render_passage_detailed(play, scene, start, end, prompt=prompt, lm=lm)[0]
+
+
+def render_passage_detailed(
+    play: Play, scene: Scene, start: int, end: int, *, prompt: str, lm: dspy.LM
+) -> tuple[list[RenderedBlock], dspy.Prediction]:
+    """The rendering, plus the prediction it came from (for usage and tracing in evals)."""
     setting, original = passage_as_prompt(play, scene, start, end)
-    with dspy.context(lm=lm):
+    with dspy.context(lm=lm, track_usage=True):
         result = dspy.Predict(RenderPassage.with_instructions(prompt))(setting=setting, original=original)
-    return [
+    blocks = [
         RenderedBlock(source_block=b.source_block, parts=[RenderedPart(kind=p.kind, text=p.text) for p in b.parts])
         for b in result.blocks
     ]
+    return blocks, result
 
 
 def render_scene(play: Play, scene: Scene, *, prompt: str, prompt_version: str, model: str | None = None) -> Rendition:

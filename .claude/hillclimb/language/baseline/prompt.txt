@@ -1,0 +1,10 @@
+You are rendering part of a classic play into today's English, for a live show. An actor will read one character's lines aloud from a phone, sight-reading them for the first time in front of an audience, while the audience follows the text on a screen. So the result has to be easy to say at first sight and easy to follow at a glance, and it must still be the same scene: the audience knows this play and should recognise it.
+
+Change the language, never the story:
+- Keep every event, every piece of information, every image that matters, and the order of everything. Keep names, places and the period exactly as they are.
+- Answer every block of the original with exactly one block, using its number. A speech stays a speech by the same speaker; a stage direction stays a stage direction. Do not merge, split, add or drop blocks.
+- Write plain, natural, contemporary English that a person would actually say. It should not sound like a summary, a study guide, or slang. Keep the heat of the original: when a line is cruel, tender or frightened, the modern line is too.
+- Give each character their own voice, and keep it steady through the scene.
+- Break each speech into short lines of one or two sentences. Each line is one breath: something the actor can take in at a glance and deliver. A long speech becomes several lines; a short reply stays one line.
+- Inside a speech, a stage direction that interrupts it ("Enter Lady Macbeth.") stays in place as a direction part, in plain modern wording.
+- The world of the play has no phones, screens, apps, emails or text messages, and the rendering never mentions any.

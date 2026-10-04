@@ -1,0 +1,1383 @@
+{
+ "number": 2,
+ "task": "todays-english",
+ "champion": "v1",
+ "challenger": "v3",
+ "model": "claude-opus-5-5",
+ "created_at": "2026-10-03T17:05:09+00:00",
+ "items": [
+  {
+   "id": "a-midsummer-nights-dream/1/2#6-13",
+   "play_title": "A Midsummer Night’s Dream",
+   "scene_id": "a-midsummer-nights-dream/1/2",
+   "where": "A Midsummer Night’s Dream 1.2",
+   "start": 6,
+   "end": 13,
+   "original": [
+    {
+     "speaker": "BOTTOM",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "A very good piece of work, I assure you, and a merry. Now, good Peter"
+      },
+      {
+       "kind": "line",
+       "text": "Quince, call forth your actors by the scroll. Masters, spread"
+      },
+      {
+       "kind": "line",
+       "text": "yourselves."
+      }
+     ]
+    },
+    {
+     "speaker": "QUINCE",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Answer, as I call you. Nick Bottom, the weaver."
+      }
+     ]
+    },
+    {
+     "speaker": "BOTTOM",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Ready. Name what part I am for, and proceed."
+      }
+     ]
+    },
+    {
+     "speaker": "QUINCE",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "You, Nick Bottom, are set down for Pyramus."
+      }
+     ]
+    },
+    {
+     "speaker": "BOTTOM",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "What is Pyramus—a lover, or a tyrant?"
+      }
+     ]
+    },
+    {
+     "speaker": "QUINCE",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "A lover, that kills himself most gallantly for love."
+      }
+     ]
+    },
+    {
+     "speaker": "BOTTOM",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "That will ask some tears in the true performing of it. If I do it, let"
+      },
+      {
+       "kind": "line",
+       "text": "the audience look to their eyes. I will move storms; I will condole in"
+      },
+      {
+       "kind": "line",
+       "text": "some measure. To the rest—yet my chief humour is for a tyrant. I could"
+      },
+      {
+       "kind": "line",
+       "text": "play Ercles rarely, or a part to tear a cat in, to make all split."
+      },
+      {
+       "kind": "line",
+       "text": "The raging rocks"
+      },
+      {
+       "kind": "line",
+       "text": "And shivering shocks"
+      },
+      {
+       "kind": "line",
+       "text": "Shall break the locks"
+      },
+      {
+       "kind": "line",
+       "text": "Of prison gates,"
+      },
+      {
+       "kind": "line",
+       "text": "And Phibbus’ car"
+      },
+      {
+       "kind": "line",
+       "text": "Shall shine from far,"
+      },
+      {
+       "kind": "line",
+       "text": "And make and mar"
+      },
+      {
+       "kind": "line",
+       "text": "The foolish Fates."
+      },
+      {
+       "kind": "line",
+       "text": "This was lofty. Now name the rest of the players. This is Ercles’ vein,"
+      },
+      {
+       "kind": "line",
+       "text": "a tyrant’s vein; a lover is more condoling."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v3",
+    "blocks": [
+     {
+      "source_block": 6,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "A very good piece of work, I promise you, and a cheerful one."
+       },
+       {
+        "kind": "line",
+        "text": "Now, good Peter Quince, call your actors out from the list."
+       },
+       {
+        "kind": "line",
+        "text": "Gentlemen, spread out."
+       }
+      ]
+     },
+     {
+      "source_block": 7,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Answer when I call you."
+       },
+       {
+        "kind": "line",
+        "text": "Nick Bottom, the weaver."
+       }
+      ]
+     },
+     {
+      "source_block": 8,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Here."
+       },
+       {
+        "kind": "line",
+        "text": "Tell me what part I'm playing, and go on."
+       }
+      ]
+     },
+     {
+      "source_block": 9,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "You, Nick Bottom, are down for Pyramus."
+       }
+      ]
+     },
+     {
+      "source_block": 10,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "What's Pyramus? A lover, or a tyrant?"
+       }
+      ]
+     },
+     {
+      "source_block": 11,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "A lover, who kills himself very bravely for love."
+       }
+      ]
+     },
+     {
+      "source_block": 12,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "That'll take some tears, if it's done properly."
+       },
+       {
+        "kind": "line",
+        "text": "If I do it, the audience had better watch out for their eyes."
+       },
+       {
+        "kind": "line",
+        "text": "I'll stir up storms."
+       },
+       {
+        "kind": "line",
+        "text": "I'll do a fair bit of grieving."
+       },
+       {
+        "kind": "line",
+        "text": "Now, the others. But what I really love is a tyrant."
+       },
+       {
+        "kind": "line",
+        "text": "I could play Ercles brilliantly."
+       },
+       {
+        "kind": "line",
+        "text": "Or a part where I tear a cat to pieces, and make everything split."
+       },
+       {
+        "kind": "line",
+        "text": "The raging rocks"
+       },
+       {
+        "kind": "line",
+        "text": "And shuddering shocks"
+       },
+       {
+        "kind": "line",
+        "text": "Will break the locks"
+       },
+       {
+        "kind": "line",
+        "text": "Of prison gates,"
+       },
+       {
+        "kind": "line",
+        "text": "And Phibbus' chariot"
+       },
+       {
+        "kind": "line",
+        "text": "Will shine from far,"
+       },
+       {
+        "kind": "line",
+        "text": "And make and mar"
+       },
+       {
+        "kind": "line",
+        "text": "The foolish Fates."
+       },
+       {
+        "kind": "line",
+        "text": "That was lofty."
+       },
+       {
+        "kind": "line",
+        "text": "Now name the rest of the players."
+       },
+       {
+        "kind": "line",
+        "text": "That's the Ercles style, the tyrant style."
+       },
+       {
+        "kind": "line",
+        "text": "A lover is more mournful."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 6,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "A really good piece of work, I promise you, and a cheerful one."
+       },
+       {
+        "kind": "line",
+        "text": "Now, Peter Quince, my friend, call out your actors from the list."
+       },
+       {
+        "kind": "line",
+        "text": "Gentlemen, spread out."
+       }
+      ]
+     },
+     {
+      "source_block": 7,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Answer when I call your name."
+       },
+       {
+        "kind": "line",
+        "text": "Nick Bottom, the weaver."
+       }
+      ]
+     },
+     {
+      "source_block": 8,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Here. Tell me which part I'm playing, and carry on."
+       }
+      ]
+     },
+     {
+      "source_block": 9,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "You, Nick Bottom, are down for Pyramus."
+       }
+      ]
+     },
+     {
+      "source_block": 10,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "What's Pyramus? A lover, or a tyrant?"
+       }
+      ]
+     },
+     {
+      "source_block": 11,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "A lover, who kills himself most gallantly for love."
+       }
+      ]
+     },
+     {
+      "source_block": 12,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "That'll take some tears to do it properly."
+       },
+       {
+        "kind": "line",
+        "text": "If I play it, the audience had better watch their eyes."
+       },
+       {
+        "kind": "line",
+        "text": "I'll whip up storms. I'll grieve like nobody's business."
+       },
+       {
+        "kind": "line",
+        "text": "Now, the rest of them. Still, what I'm really best at is a tyrant."
+       },
+       {
+        "kind": "line",
+        "text": "I'd be brilliant as Hercules, or any part where you rip a cat to pieces and bring the house down."
+       },
+       {
+        "kind": "line",
+        "text": "The raging rocks"
+       },
+       {
+        "kind": "line",
+        "text": "And shivering shocks"
+       },
+       {
+        "kind": "line",
+        "text": "Shall break the locks"
+       },
+       {
+        "kind": "line",
+        "text": "Of prison gates,"
+       },
+       {
+        "kind": "line",
+        "text": "And Phibbus' car"
+       },
+       {
+        "kind": "line",
+        "text": "Shall shine from far,"
+       },
+       {
+        "kind": "line",
+        "text": "And make and mar"
+       },
+       {
+        "kind": "line",
+        "text": "The foolish Fates."
+       },
+       {
+        "kind": "line",
+        "text": "Now that was grand."
+       },
+       {
+        "kind": "line",
+        "text": "Go on, name the rest of the players."
+       },
+       {
+        "kind": "line",
+        "text": "That was the Hercules style, the tyrant style. A lover is more mournful."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "henry-vi-part-3/5/6#3-7",
+   "play_title": "Henry VI, Part 3",
+   "scene_id": "henry-vi-part-3/5/6",
+   "where": "Henry VI, Part 3 5.6",
+   "start": 3,
+   "end": 7,
+   "original": [
+    {
+     "speaker": "RICHARD",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Sirrah, leave us to ourselves; we must confer."
+      },
+      {
+       "kind": "direction",
+       "text": "Exit Lieutenant."
+      }
+     ]
+    },
+    {
+     "speaker": "KING HENRY",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "So flies the reckless shepherd from the wolf;"
+      },
+      {
+       "kind": "line",
+       "text": "So first the harmless sheep doth yield his fleece,"
+      },
+      {
+       "kind": "line",
+       "text": "And next his throat unto the butcher’s knife."
+      },
+      {
+       "kind": "line",
+       "text": "What scene of death hath Roscius now to act?"
+      }
+     ]
+    },
+    {
+     "speaker": "RICHARD",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Suspicion always haunts the guilty mind;"
+      },
+      {
+       "kind": "line",
+       "text": "The thief doth fear each bush an officer."
+      }
+     ]
+    },
+    {
+     "speaker": "KING HENRY",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "The bird that hath been limed in a bush"
+      },
+      {
+       "kind": "line",
+       "text": "With trembling wings misdoubteth every bush;"
+      },
+      {
+       "kind": "line",
+       "text": "And I, the hapless male to one sweet bird,"
+      },
+      {
+       "kind": "line",
+       "text": "Have now the fatal object in my eye"
+      },
+      {
+       "kind": "line",
+       "text": "Where my poor young was limed, was caught, and killed."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v3",
+    "blocks": [
+     {
+      "source_block": 3,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "You there, leave us alone."
+       },
+       {
+        "kind": "line",
+        "text": "We need to talk."
+       },
+       {
+        "kind": "direction",
+        "text": "The Lieutenant leaves."
+       }
+      ]
+     },
+     {
+      "source_block": 4,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "That's how the careless shepherd runs from the wolf."
+       },
+       {
+        "kind": "line",
+        "text": "That's how the harmless sheep gives up its fleece first,"
+       },
+       {
+        "kind": "line",
+        "text": "and then its throat to the butcher's knife."
+       },
+       {
+        "kind": "line",
+        "text": "What death scene has Roscius come to act now?"
+       }
+      ]
+     },
+     {
+      "source_block": 5,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Suspicion always haunts a guilty mind."
+       },
+       {
+        "kind": "line",
+        "text": "The thief is afraid every bush is an officer of the law."
+       }
+      ]
+     },
+     {
+      "source_block": 6,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "A bird that's been stuck fast in a lime-smeared bush"
+       },
+       {
+        "kind": "line",
+        "text": "trembles its wings and distrusts every bush."
+       },
+       {
+        "kind": "line",
+        "text": "And I, the unlucky father of one sweet bird,"
+       },
+       {
+        "kind": "line",
+        "text": "now have the deadly thing before my eyes"
+       },
+       {
+        "kind": "line",
+        "text": "that snared my poor young one, caught him, and killed him."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 3,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "You there, leave us alone. We need to talk."
+       },
+       {
+        "kind": "direction",
+        "text": "The Lieutenant leaves."
+       }
+      ]
+     },
+     {
+      "source_block": 4,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "That's how the careless shepherd runs from the wolf."
+       },
+       {
+        "kind": "line",
+        "text": "That's how the harmless sheep gives up its fleece first,"
+       },
+       {
+        "kind": "line",
+        "text": "and then its throat to the butcher's knife."
+       },
+       {
+        "kind": "line",
+        "text": "So what death scene has our great actor come to play now?"
+       }
+      ]
+     },
+     {
+      "source_block": 5,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "A guilty mind is always haunted by suspicion."
+       },
+       {
+        "kind": "line",
+        "text": "A thief thinks every bush is a policeman."
+       }
+      ]
+     },
+     {
+      "source_block": 6,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "A bird that's been trapped in a bush"
+       },
+       {
+        "kind": "line",
+        "text": "trembles and distrusts every bush after."
+       },
+       {
+        "kind": "line",
+        "text": "And I, the unlucky father of one sweet bird,"
+       },
+       {
+        "kind": "line",
+        "text": "am looking right now at the deadly thing"
+       },
+       {
+        "kind": "line",
+        "text": "that trapped my poor young one, caught him, and killed him."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-tempest/3/1#21-28",
+   "play_title": "The Tempest",
+   "scene_id": "the-tempest/3/1",
+   "where": "The Tempest 3.1",
+   "start": 21,
+   "end": 28,
+   "original": [
+    {
+     "speaker": "FERDINAND",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "My mistress, dearest;"
+      },
+      {
+       "kind": "line",
+       "text": "And I thus humble ever."
+      }
+     ]
+    },
+    {
+     "speaker": "MIRANDA",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "My husband, then?"
+      }
+     ]
+    },
+    {
+     "speaker": "FERDINAND",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Ay, with a heart as willing"
+      },
+      {
+       "kind": "line",
+       "text": "As bondage e’er of freedom: here’s my hand."
+      }
+     ]
+    },
+    {
+     "speaker": "MIRANDA",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "And mine, with my heart in ’t: and now farewell"
+      },
+      {
+       "kind": "line",
+       "text": "Till half an hour hence."
+      }
+     ]
+    },
+    {
+     "speaker": "FERDINAND",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "A thousand thousand!"
+      }
+     ]
+    },
+    {
+     "speaker": null,
+     "parts": [
+      {
+       "kind": "direction",
+       "text": "Exeunt Ferdinand and Miranda severally."
+      }
+     ]
+    },
+    {
+     "speaker": "PROSPERO",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "So glad of this as they, I cannot be,"
+      },
+      {
+       "kind": "line",
+       "text": "Who are surpris’d withal; but my rejoicing"
+      },
+      {
+       "kind": "line",
+       "text": "At nothing can be more. I’ll to my book;"
+      },
+      {
+       "kind": "line",
+       "text": "For yet, ere supper time, must I perform"
+      },
+      {
+       "kind": "line",
+       "text": "Much business appertaining."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 21,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "My mistress, my dearest."
+       },
+       {
+        "kind": "line",
+        "text": "And I'll always kneel to you like this."
+       }
+      ]
+     },
+     {
+      "source_block": 22,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "My husband, then?"
+       }
+      ]
+     },
+     {
+      "source_block": 23,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Yes, with a heart as willing as a prisoner's heart is for freedom."
+       },
+       {
+        "kind": "line",
+        "text": "Here's my hand."
+       }
+      ]
+     },
+     {
+      "source_block": 24,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "And here's mine, with my heart in it."
+       },
+       {
+        "kind": "line",
+        "text": "And now goodbye, for half an hour."
+       }
+      ]
+     },
+     {
+      "source_block": 25,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "A thousand thousand goodbyes!"
+       }
+      ]
+     },
+     {
+      "source_block": 26,
+      "parts": [
+       {
+        "kind": "direction",
+        "text": "Ferdinand and Miranda leave in different directions."
+       }
+      ]
+     },
+     {
+      "source_block": 27,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "I can't be as glad about this as they are. It's all taken them by surprise."
+       },
+       {
+        "kind": "line",
+        "text": "But nothing could make me happier."
+       },
+       {
+        "kind": "line",
+        "text": "Now, back to my book."
+       },
+       {
+        "kind": "line",
+        "text": "Before supper I still have a lot of work to do for this."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v3",
+    "blocks": [
+     {
+      "source_block": 21,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "You'll be my lady, dearest."
+       },
+       {
+        "kind": "line",
+        "text": "And I'll always be as humble as this before you."
+       }
+      ]
+     },
+     {
+      "source_block": 22,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "My husband, then?"
+       }
+      ]
+     },
+     {
+      "source_block": 23,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Yes, with a heart as eager"
+       },
+       {
+        "kind": "line",
+        "text": "as any slave ever was for freedom."
+       },
+       {
+        "kind": "line",
+        "text": "Here's my hand."
+       }
+      ]
+     },
+     {
+      "source_block": 24,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "And here's mine, with my heart in it."
+       },
+       {
+        "kind": "line",
+        "text": "And now goodbye, for half an hour."
+       }
+      ]
+     },
+     {
+      "source_block": 25,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "A thousand thousand goodbyes!"
+       }
+      ]
+     },
+     {
+      "source_block": 26,
+      "parts": [
+       {
+        "kind": "direction",
+        "text": "Ferdinand and Miranda leave in different directions."
+       }
+      ]
+     },
+     {
+      "source_block": 27,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "I can't be as glad of this as they are."
+       },
+       {
+        "kind": "line",
+        "text": "It's all taken them by surprise."
+       },
+       {
+        "kind": "line",
+        "text": "But nothing could make me happier."
+       },
+       {
+        "kind": "line",
+        "text": "I'll go to my book."
+       },
+       {
+        "kind": "line",
+        "text": "Before supper I still have to do"
+       },
+       {
+        "kind": "line",
+        "text": "a lot of work that bears on this."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "julius-caesar/1/2#76-79",
+   "play_title": "Julius Caesar",
+   "scene_id": "julius-caesar/1/2",
+   "where": "Julius Caesar 1.2",
+   "start": 76,
+   "end": 79,
+   "original": [
+    {
+     "speaker": "CASCA",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Ay, he spoke Greek."
+      }
+     ]
+    },
+    {
+     "speaker": "CASSIUS",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "To what effect?"
+      }
+     ]
+    },
+    {
+     "speaker": "CASCA",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Nay, and I tell you that, I’ll ne’er look you i’ the face again. But"
+      },
+      {
+       "kind": "line",
+       "text": "those that understood him smil’d at one another and shook their heads;"
+      },
+      {
+       "kind": "line",
+       "text": "but for mine own part, it was Greek to me. I could tell you more news"
+      },
+      {
+       "kind": "line",
+       "text": "too: Marullus and Flavius, for pulling scarfs off Caesar’s images, are"
+      },
+      {
+       "kind": "line",
+       "text": "put to silence. Fare you well. There was more foolery yet, if I could"
+      },
+      {
+       "kind": "line",
+       "text": "remember it."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v3",
+    "blocks": [
+     {
+      "source_block": 76,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Yes, he spoke Greek."
+       }
+      ]
+     },
+     {
+      "source_block": 77,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Saying what?"
+       }
+      ]
+     },
+     {
+      "source_block": 78,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "No. If I told you that, I could never look you in the face again."
+       },
+       {
+        "kind": "line",
+        "text": "But the ones who understood him smiled at each other and shook their heads."
+       },
+       {
+        "kind": "line",
+        "text": "As for me, it was all Greek to me."
+       },
+       {
+        "kind": "line",
+        "text": "I've got more news too."
+       },
+       {
+        "kind": "line",
+        "text": "Marullus and Flavius pulled the ribbons off Caesar's statues."
+       },
+       {
+        "kind": "line",
+        "text": "For that, they've been silenced."
+       },
+       {
+        "kind": "line",
+        "text": "Goodbye."
+       },
+       {
+        "kind": "line",
+        "text": "There was even more nonsense, if I could remember it."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 76,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Yes, he spoke Greek."
+       }
+      ]
+     },
+     {
+      "source_block": 77,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Saying what?"
+       }
+      ]
+     },
+     {
+      "source_block": 78,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "No, if I told you that, I could never look you in the face again."
+       },
+       {
+        "kind": "line",
+        "text": "But the ones who understood him smiled at each other and shook their heads."
+       },
+       {
+        "kind": "line",
+        "text": "As for me, it was all Greek to me."
+       },
+       {
+        "kind": "line",
+        "text": "I've got more news, too."
+       },
+       {
+        "kind": "line",
+        "text": "Marullus and Flavius pulled the scarves off Caesar's statues, and they've been silenced for it."
+       },
+       {
+        "kind": "line",
+        "text": "Goodbye."
+       },
+       {
+        "kind": "line",
+        "text": "There was even more foolishness, if I could remember it."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-two-gentlemen-of-verona/2/3#8-14",
+   "play_title": "The Two Gentlemen of Verona",
+   "scene_id": "the-two-gentlemen-of-verona/2/3",
+   "where": "The Two Gentlemen of Verona 2.3",
+   "start": 8,
+   "end": 14,
+   "original": [
+    {
+     "speaker": "LANCE",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "For fear thou shouldst lose thy tongue."
+      }
+     ]
+    },
+    {
+     "speaker": "PANTINO",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Where should I lose my tongue?"
+      }
+     ]
+    },
+    {
+     "speaker": "LANCE",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "In thy tale."
+      }
+     ]
+    },
+    {
+     "speaker": "PANTINO",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "In thy tail!"
+      }
+     ]
+    },
+    {
+     "speaker": "LANCE",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Lose the tide, and the voyage, and the master, and the service, and the"
+      },
+      {
+       "kind": "line",
+       "text": "tied? Why, man, if the river were dry, I am able to fill it with my"
+      },
+      {
+       "kind": "line",
+       "text": "tears; if the wind were down, I could drive the boat with my sighs."
+      }
+     ]
+    },
+    {
+     "speaker": "PANTINO",
+     "parts": [
+      {
+       "kind": "line",
+       "text": "Come, come away, man. I was sent to call thee."
+      }
+     ]
+    }
+   ],
+   "a": {
+    "prompt_id": "v1",
+    "blocks": [
+     {
+      "source_block": 8,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Because I'm afraid you'll lose your tongue."
+       }
+      ]
+     },
+     {
+      "source_block": 9,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Lose my tongue? Where would I lose it?"
+       }
+      ]
+     },
+     {
+      "source_block": 10,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "In your tale."
+       }
+      ]
+     },
+     {
+      "source_block": 11,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "In my tail? Watch your mouth!"
+       }
+      ]
+     },
+     {
+      "source_block": 12,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Lose the tide, and the voyage, and the master, and the job, and the tied-up dog?"
+       },
+       {
+        "kind": "line",
+        "text": "Listen, man, if the river ran dry, I could fill it back up with my tears."
+       },
+       {
+        "kind": "line",
+        "text": "And if the wind died down, I could push the boat along with my sighs."
+       }
+      ]
+     },
+     {
+      "source_block": 13,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Come on, come away, man."
+       },
+       {
+        "kind": "line",
+        "text": "I was sent to fetch you."
+       }
+      ]
+     }
+    ]
+   },
+   "b": {
+    "prompt_id": "v3",
+    "blocks": [
+     {
+      "source_block": 8,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "In case you lose your tongue."
+       }
+      ]
+     },
+     {
+      "source_block": 9,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Where would I lose my tongue?"
+       }
+      ]
+     },
+     {
+      "source_block": 10,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "In your tale."
+       }
+      ]
+     },
+     {
+      "source_block": 11,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "In your tail!"
+       }
+      ]
+     },
+     {
+      "source_block": 12,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Lose the tide, and the voyage, and the master,"
+       },
+       {
+        "kind": "line",
+        "text": "and the service, and the tied one?"
+       },
+       {
+        "kind": "line",
+        "text": "Listen, man, if the river ran dry,"
+       },
+       {
+        "kind": "line",
+        "text": "I could fill it with my tears."
+       },
+       {
+        "kind": "line",
+        "text": "If the wind dropped,"
+       },
+       {
+        "kind": "line",
+        "text": "I could drive the boat with my sighs."
+       }
+      ]
+     },
+     {
+      "source_block": 13,
+      "parts": [
+       {
+        "kind": "line",
+        "text": "Come on, come away, man."
+       },
+       {
+        "kind": "line",
+        "text": "I was sent to call you."
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "outcome": {
+  "decided_at": "2026-10-03T21:31:32+00:00",
+  "challenger_wins": 1,
+  "champion_wins": 4,
+  "both_rejected": 0,
+  "mean_preference": -0.371,
+  "promoted": false
+ }
+}

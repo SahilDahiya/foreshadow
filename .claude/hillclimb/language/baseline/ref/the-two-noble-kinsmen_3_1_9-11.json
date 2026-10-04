@@ -1,0 +1,10 @@
+{
+ "text": "PALAMON:\n  Sir,\n  I've seen you hold your ground in places that proved you were a man.\n  People called you a good knight, and a brave one.\n  But if it rains a single day, you can't call the whole week fine.\n  Men lose their courage once they lean toward treachery.\n  Then they fight like bears forced into the ring.\n  They'd run away if they weren't chained.\nARCITE:\n  Cousin, you might as well say all this to your mirror, and act it out there too,\n  as say it to me, because I couldn't care less what you think.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1296,
+  "output_tokens": 336,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

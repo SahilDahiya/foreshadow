@@ -229,3 +229,10 @@ node_modules/
 library/data/
 library/.cache/
 app/public/data/
+
+# Eval runs: keep scores and prompts, not bulk or derived output
+.claude/hillclimb/**/traces/
+.claude/hillclimb/**/report.html
+.claude/hillclimb/**/trajectory/
+.claude/hillclimb/**/progress.txt
+.claude/hillclimb/**/_analyzer/

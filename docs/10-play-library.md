@@ -189,6 +189,73 @@ Some great two-person moments sit inside bigger scenes (Helena and Demetrius in 
 Midsummer Night's Dream 2.1 is surrounded by fairies), so they don't show up as
 two-handers. The next step finds them.
 
+## Candidates: the scenes worth performing (built, first pass)
+
+**Decided:** collect, filter and curate as many stretches of these plays as meet the
+criteria; they should be the best for improv; the host starts and ends the scene; a host
+monologue is fine when it is good for improv; and scenes come in three sizes.
+
+`uv run library candidates` searches every scene and saves the ranked result; the app
+shows it at `/library/candidates`.
+
+### How a candidate is found (structure only, decided by code)
+
+1. **Two-speaker runs.** Every maximal run of speeches in which only two characters speak.
+2. **Cut at entrances and exits.** Nobody enters or leaves inside a candidate, so the good
+   stretch inside a famous scene isn't lost to the messenger who interrupts it.
+3. **The host opens and closes.** For each of the two characters as the host's part, the
+   stretch is trimmed so that character has the first and the last line.
+4. **Limits.** The host has at least 6 speeches and the improviser's character at least 5
+   (enough turns); the host speaks between 30% and 85% of the words; the running time is
+   between 3 and 30 minutes. Monologues are allowed and counted.
+5. **Sizes.** Small is about 5 minutes (3–7.5), medium about 10 (7.5–15), big about 20
+   (15–30). A long stretch is also offered as shorter cuts, ending on the host line nearest
+   each smaller size's target.
+
+**Running time is an estimate:** the host's words at 130 a minute, plus about 18 seconds of
+improvisation after each host speech. It should be replaced by real timings once
+performances are logged.
+
+### How candidates are ranked (0–100)
+
+| Part | Points | Idea |
+|---|---|---|
+| Back-and-forth | 30 | Many turns for the improviser |
+| Speaks to the partner | 20 | Lines aimed at them ("you", "thou"), not at the air |
+| Asks questions | 15 | Hands the improviser the scene |
+| Readable lines | 15 | The typical host line is easy to sight-read |
+| Says their name | 10 | Tells the improviser who they are |
+| Host carries it | 10 | The script holds the story (about 55% of the words) |
+
+### What it found
+
+499 candidates from 212 scenes in all 38 plays: 415 small, 75 medium, 9 big. Among the
+best: Gloucester and Edmund (King Lear 1.2), Juliet and Romeo (the balcony, in two
+sizes), Prospero and Ariel, Othello and Iago, Brutus and Cassius's quarrel, Richard and
+Anne (in three sizes), Timon and Apemantus.
+
+Big two-person scenes with nobody entering are rare in Shakespeare (nine). Longer scenes
+will mostly need more than two characters, which is where several hosts come in.
+
+### Today's English for judging (built)
+
+**Decided:** candidates are judged in the form they would be performed, so the strongest
+are rendered in today's English and shown beside the original.
+
+`uv run library render-candidates` renders the top candidates (30 small, 20 medium, all
+big by default; one rendering per scene covers its cuts and both host choices) with the
+lab's champion prompt, and skips any already done. The first run rendered 43 stretches
+covering 55 candidates for about $4. The candidates page marks them, and a candidate's
+page shows the original and today's English side by side, the host's part in amber.
+
+### Not yet done
+
+- **Judgement.** The ranking knows nothing about content: whether the stretch stands
+  alone, has a want and a turn, opens strongly and ends on a line that lands (one top
+  candidate opens with "Hum, ha!"). That is the next pass, by AI and then by a person.
+- **Curation.** Approving and rejecting candidates, and saving those decisions.
+- **More than two characters**, for scenes with several hosts or several improvisers.
+
 ## Cast analysis (proposed)
 
 With several hosts, a scene's cast size matters as much as two-handers: the witches'

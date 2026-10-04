@@ -77,8 +77,72 @@ export interface LibraryIndex {
   plays: PlaySummary[];
 }
 
+export interface CandidateMetrics {
+  host_speeches: number;
+  partner_speeches: number;
+  host_words: number;
+  partner_words: number;
+  host_share: number;
+  mean_host_words: number;
+  median_host_words: number;
+  max_host_words: number;
+  monologues: number;
+  minutes: number;
+  questions: number;
+  address: number;
+  names: number;
+  directions: number;
+  cast_changes: number;
+}
+
+/** A two-person stretch of a scene, trimmed so the host's character opens and closes it. */
+export interface Candidate {
+  id: string;
+  play_id: string;
+  play_title: string;
+  genre: string | null;
+  scene_id: string;
+  start: number;
+  end: number;
+  host: string;
+  host_name: string;
+  partner: string;
+  partner_name: string;
+  first_line: string;
+  last_line: string;
+  metrics: CandidateMetrics;
+  size: "small" | "medium" | "big";
+  cut: boolean;
+  score: number;
+  reasons: string[];
+}
+
+export interface CandidateList {
+  counts: Record<string, number>;
+  candidates: Candidate[];
+}
+
+/** A stretch of a scene rendered in today's English, block for block with the original. */
+export interface StretchRendition {
+  scene_id: string;
+  prompt_version: string;
+  model: string;
+  blocks: { source_block: number; parts: SpeechPart[] }[];
+  check_warnings: string[];
+}
+
+export interface StretchIndexEntry {
+  scene_id: string;
+  start: number;
+  end: number;
+  file: string;
+}
+
 /** Where the app gets plays. Static files today; an API backed by D1 or R2 later. */
 export interface LibraryRepository {
   index(): Promise<LibraryIndex>;
   play(id: string): Promise<Play>;
+  candidates(): Promise<CandidateList>;
+  stretchIndex(): Promise<StretchIndexEntry[]>;
+  stretch(file: string): Promise<StretchRendition>;
 }

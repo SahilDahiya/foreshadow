@@ -1,0 +1,10 @@
+{
+ "text": "AENEAS:\n  Hold it there! We still have control of the field.\n  Nobody goes home. We stay here and hold out through the night.\n  (Troilus enters.)\nTROILUS:\n  Hector has been killed.\nALL:\n  Hector! The gods forbid it!\nTROILUS:\n  He's dead. He's tied to his murderer's horse by the tail,\n  and dragged like an animal across this shameful field.\n  Go on, heavens, frown at us. Pour out your rage, and be quick about it.\n  Sit on your thrones, you gods, and smile down at Troy.\n  I'm telling you, strike us now. Make your plagues quick, and that will be mercy.\n  Don't drag out the ruin we know is coming.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1375,
+  "output_tokens": 460,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

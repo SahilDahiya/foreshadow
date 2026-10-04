@@ -1592,5 +1592,12 @@
    }
   }
  ],
- "outcome": null
+ "outcome": {
+  "decided_at": "2026-10-03T17:04:34+00:00",
+  "challenger_wins": 5,
+  "champion_wins": 2,
+  "both_rejected": 0,
+  "mean_preference": 0.061,
+  "promoted": false
+ }
 }

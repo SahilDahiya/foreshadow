@@ -1,0 +1,10 @@
+{
+ "text": "OCTAVIA:\n  Oh, my good lord, don't believe all of it.\n  Or if you have to believe it, don't take all of it to heart.\n  If this split happens, no woman was ever more unhappy than me.\n  I'll be standing between you, praying for both sides.\n  The gods will laugh at me.\n  I'll pray, \"Oh, bless my lord and husband!\"\n  Then I'll cancel that prayer by crying out just as loud, \"Oh, bless my brother!\"\n  If I pray for my husband to win, then for my brother to win, the second prayer wipes out the first.\n  There's no middle ground between the two. None at all.\nANTONY:\n  Gentle Octavia, let your love go to the side that does the most to protect it.\n  If I lose my honour, I lose myself.\n  I'd rather not be yours at all than be yours stripped of everything I am.\n  But as you asked, you yourself will go between us.\n  Meanwhile, my lady, I'll start getting ready for a war that will put your brother in the shade.\n  Leave as soon as you can.\n  That way you'll have what you asked for.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1475,
+  "output_tokens": 606,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

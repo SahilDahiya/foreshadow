@@ -1,0 +1,10 @@
+{
+ "text": "JOHN TALBOT:\n  Is my name Talbot? Am I your son?\n  And I should run away? Father, if you love my mother,\n  don't disgrace her good name\n  by turning me into a bastard and a coward!\n  The world will say he's no son of Talbot,\n  the one who ran like a coward while noble Talbot stood his ground.\nTALBOT:\n  Run, so you can avenge my death if I'm killed.\nJOHN TALBOT:\n  A man who runs like that never comes back.\nTALBOT:\n  If we both stay, we'll both be killed. That's certain.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1343,
+  "output_tokens": 364,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

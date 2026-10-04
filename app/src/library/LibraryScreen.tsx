@@ -1,5 +1,13 @@
-import { useEffect, useState } from "react";
-import type { LibraryScene, PlaySummary, SceneSummary } from "../../shared/library";
+import { Fragment, useEffect, useState } from "react";
+import type {
+  Block,
+  Candidate,
+  LibraryScene,
+  PlaySummary,
+  SceneSummary,
+  SpeechPart,
+  StretchIndexEntry,
+} from "../../shared/library";
 import { staticLibrary } from "./repository";
 import "./library.css";
 
@@ -8,6 +16,7 @@ import "./library.css";
 export function LibraryScreen({ path }: { path: string[] }) {
   const [playId, ...rest] = path;
   if (!playId) return <LibraryHome />;
+  if (playId === "candidates") return <CandidatesPage />;
   if (rest.length === 0) return <PlayPage playId={playId} />;
   return <ScenePage playId={playId} sceneId={`${playId}/${rest.join("/")}`} />;
 }
@@ -52,6 +61,9 @@ function LibraryHome() {
           {data.plays.length} plays · {totalScenes} scenes · {totalTwo} two-handers (two speakers carry the
           scene)
         </p>
+        <p>
+          <a href="/library/candidates">Scene candidates for the show →</a>
+        </p>
         <label className="toggle">
           <input type="checkbox" checked={twoHandersOnly} onChange={(e) => setTwoHandersOnly(e.target.checked)} />
           Only plays with two-handers
@@ -69,6 +81,110 @@ function LibraryHome() {
           </li>
         ))}
       </ul>
+    </main>
+  );
+}
+
+const GENRES = ["all", "tragedy", "comedy", "history", "romance"];
+const SIZES = [
+  { id: "all", label: "any length" },
+  { id: "small", label: "small · about 5 min" },
+  { id: "medium", label: "medium · about 10 min" },
+  { id: "big", label: "big · about 20 min" },
+];
+
+function covering(index: StretchIndexEntry[], sceneId: string, start: number, end: number) {
+  return index.find((e) => e.scene_id === sceneId && e.start <= start && e.end >= end);
+}
+
+function candidateLink(c: Candidate) {
+  return `/library/${c.scene_id}?start=${c.start}&end=${c.end}&host=${encodeURIComponent(c.host)}`;
+}
+
+// Stretches of scenes that could be performed: two speakers, the host opening and closing.
+function CandidatesPage() {
+  const { data, error } = useLoad(() => staticLibrary.candidates(), "candidates");
+  const rendered = useLoad(() => staticLibrary.stretchIndex(), "stretch-index").data ?? [];
+  const [modernOnly, setModernOnly] = useState(true);
+  const [genre, setGenre] = useState("all");
+  const [size, setSize] = useState("all");
+  const [onePerScene, setOnePerScene] = useState(true);
+  if (!data) return <main className="library"><Status error={error} /></main>;
+
+  let list = data.candidates.filter((c) => (genre === "all" || c.genre === genre) && (size === "all" || c.size === size));
+  const hasModern = (c: Candidate) => Boolean(covering(rendered, c.scene_id, c.start, c.end));
+  if (modernOnly && rendered.length) list = list.filter(hasModern);
+  if (onePerScene) {
+    const seen = new Set<string>();
+    list = list.filter((c) => (seen.has(c.scene_id) ? false : (seen.add(c.scene_id), true)));
+  }
+  return (
+    <main className="library">
+      <a href="/library" className="back">← All plays</a>
+      <header>
+        <p className="label">Candidates</p>
+        <h1>Scenes for the show</h1>
+        <p className="muted">
+          {data.counts.scenes} scenes searched · {data.candidates.length} stretches pass: two speakers, the host opens and
+          closes, the improviser gets enough turns, nobody enters or leaves. Monologues are allowed. Running times are
+          estimates. Ranked by structure only; nobody has judged the content yet.
+        </p>
+        <div className="filters">
+          {SIZES.map((s) => (
+            <button key={s.id} className={s.id === size ? "chip on" : "chip"} onClick={() => setSize(s.id)}>{s.label}</button>
+          ))}
+        </div>
+        <div className="filters">
+          {GENRES.map((g) => (
+            <button key={g} className={g === genre ? "chip on" : "chip"} onClick={() => setGenre(g)}>{g}</button>
+          ))}
+          <label className="toggle">
+            <input type="checkbox" checked={onePerScene} onChange={(e) => setOnePerScene(e.target.checked)} />
+            Best one per scene
+          </label>
+          <label className="toggle">
+            <input type="checkbox" checked={modernOnly} onChange={(e) => setModernOnly(e.target.checked)} />
+            Only those rendered in today’s English ({rendered.length} scenes)
+          </label>
+        </div>
+        <p className="muted small">Showing {list.length}.</p>
+      </header>
+      <table className="scenes">
+        <thead>
+          <tr>
+            <th className="num">Score</th>
+            <th>Scene</th>
+            <th>Host reads · improviser plays</th>
+            <th>Opens with / closes with</th>
+            <th className="num">Minutes</th>
+            <th className="num">Turns</th>
+            <th className="num">Monologues</th>
+          </tr>
+        </thead>
+        <tbody>
+          {list.map((c) => (
+            <tr key={c.id} title={c.reasons.join(" · ")}>
+              <td className="num">{c.score.toFixed(0)}</td>
+              <td>
+                <a href={candidateLink(c)}>{c.play_title} {c.scene_id.split("/").slice(1).join(".")}</a>
+                <div className="muted small">{c.genre} · {c.size}{c.cut ? " (a shorter cut)" : ""}</div>
+                {hasModern(c) && <span className="badge">today’s English</span>}
+              </td>
+              <td>
+                <strong>{c.host_name}</strong>
+                <div className="muted small">with {c.partner_name}</div>
+              </td>
+              <td className="lines">
+                <div>“{c.first_line}”</div>
+                <div className="muted">… “{c.last_line}”</div>
+              </td>
+              <td className="num">{c.metrics.minutes.toFixed(0)}</td>
+              <td className="num">{c.metrics.host_speeches}</td>
+              <td className="num">{c.metrics.monologues || ""}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </main>
   );
 }
@@ -142,6 +258,82 @@ function SceneRow({ scene, names }: { scene: SceneSummary; names: Map<string, st
   );
 }
 
+function PartsView({ parts }: { parts: SpeechPart[] }) {
+  return (
+    <>
+      {parts.map((part, j) =>
+        part.kind === "line" ? (
+          <p key={j} className="verse">{part.text}</p>
+        ) : (
+          <p key={j} className="direction inline">{part.text}</p>
+        ),
+      )}
+    </>
+  );
+}
+
+function BlockView({ block, className = "" }: { block: Block; className?: string }) {
+  return block.kind === "direction" ? (
+    <p className={"direction " + className}>{block.text}</p>
+  ) : (
+    <div className={"speech " + className}>
+      <p className="speaker-name">{block.speaker_label}</p>
+      <PartsView parts={block.parts} />
+    </div>
+  );
+}
+
+// A candidate stretch: the original beside today's English when a rendering exists.
+function StretchView(props: { scene: LibraryScene; start: number; end: number; host: string | null; hostName: string; playId: string }) {
+  const { scene, start, end, host } = props;
+  const index = useLoad(() => staticLibrary.stretchIndex(), "stretch-index").data;
+  const entry = index ? covering(index, scene.id, start, end) : undefined;
+  const modern = useLoad(() => (entry ? staticLibrary.stretch(entry.file) : Promise.resolve(null)), entry?.file ?? "none").data;
+  const byBlock = new Map(modern?.blocks.map((b) => [b.source_block, b.parts]) ?? []);
+  const rows = scene.blocks.map((block, i) => ({ block, i })).filter(({ i }) => i >= start && i < end);
+
+  return (
+    <>
+      <p className="stretch-note">
+        The host reads <strong>{props.hostName}</strong> (amber) and opens and closes the scene. The improviser plays the
+        other part (blue) without ever seeing it.{" "}
+        {modern
+          ? `Today’s English is on the right (prompt ${modern.prompt_version}).`
+          : index && !entry
+            ? "This stretch has not been rendered in today’s English yet."
+            : ""}{" "}
+        <a href={`/library/${scene.id}`}>See the whole scene</a>
+      </p>
+      <div className={modern ? "pair-grid" : "text"}>
+        {modern && (
+          <>
+            <p className="label">Original</p>
+            <p className="label">Today’s English</p>
+          </>
+        )}
+        {rows.map(({ block, i }) => {
+          const cls = block.kind === "speech" && block.speaker_ids[0] === host ? "host-part" : "ghost-part";
+          const parts = byBlock.get(i);
+          return (
+            <Fragment key={i}>
+              <BlockView block={block} className={cls} />
+              {modern &&
+                (block.kind === "direction" ? (
+                  <p className={"direction " + cls}>{parts?.map((p) => p.text).join(" ") ?? ""}</p>
+                ) : (
+                  <div className={"speech modern " + cls}>
+                    <p className="speaker-name">{block.speaker_label}</p>
+                    {parts ? <PartsView parts={parts} /> : <p className="muted">(not rendered)</p>}
+                  </div>
+                ))}
+            </Fragment>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+
 function ScenePage({ playId, sceneId }: { playId: string; sceneId: string }) {
   const { data, error } = useLoad(() => staticLibrary.play(playId), playId);
   if (!data) return <main className="library"><Status error={error} /></main>;
@@ -150,6 +342,12 @@ function ScenePage({ playId, sceneId }: { playId: string; sceneId: string }) {
   const scene: LibraryScene = data.scenes[index];
   const prev = data.scenes[index - 1];
   const next = data.scenes[index + 1];
+  // A candidate link carries the stretch to show and which character the host reads.
+  const query = new URLSearchParams(window.location.search);
+  const stretch = query.has("start")
+    ? { start: Number(query.get("start")), end: Number(query.get("end")), host: query.get("host") }
+    : null;
+  const hostName = stretch ? data.characters.find((c) => c.id === stretch.host)?.name : null;
 
   return (
     <main className="library reader">
@@ -164,24 +362,15 @@ function ScenePage({ playId, sceneId }: { playId: string; sceneId: string }) {
           </p>
         )}
       </header>
-      <div className="text">
-        {scene.blocks.map((block, i) =>
-          block.kind === "direction" ? (
-            <p key={i} className="direction">{block.text}</p>
-          ) : (
-            <div key={i} className="speech">
-              <p className="speaker-name">{block.speaker_label}</p>
-              {block.parts.map((part, j) =>
-                part.kind === "line" ? (
-                  <p key={j} className="verse">{part.text}</p>
-                ) : (
-                  <p key={j} className="direction inline">{part.text}</p>
-                ),
-              )}
-            </div>
-          ),
-        )}
-      </div>
+      {stretch ? (
+        <StretchView scene={scene} start={stretch.start} end={stretch.end} host={stretch.host} hostName={hostName ?? ""} playId={playId} />
+      ) : (
+        <div className="text">
+          {scene.blocks.map((block, i) => (
+            <BlockView key={i} block={block} />
+          ))}
+        </div>
+      )}
       <nav className="pager">
         {prev ? <a href={`/library/${prev.id}`}>← {sceneLabel(prev)}</a> : <span />}
         {next ? <a href={`/library/${next.id}`}>{sceneLabel(next)} →</a> : <span />}

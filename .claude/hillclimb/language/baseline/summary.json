@@ -1,0 +1,4 @@
+{
+  "description": "The seed prompt, unchanged (also the source of the frozen reference)",
+  "target": "system_prompt"
+}

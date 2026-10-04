@@ -145,3 +145,47 @@ class Rendition(BaseModel):
     approved_at: str | None = None  # nothing reaches a show until a person approves it
     blocks: list[RenderedBlock]
     check_warnings: list[str] = []
+
+
+# --- Candidates: stretches of a scene that could be performed (docs/10-play-library.md) --
+
+
+class CandidateMetrics(BaseModel):
+    host_speeches: int
+    partner_speeches: int
+    host_words: int
+    partner_words: int
+    host_share: float  # of all words in the stretch
+    mean_host_words: float  # per host speech
+    median_host_words: float
+    max_host_words: int
+    monologues: int  # host speeches over 100 words: allowed, and worth knowing about
+    minutes: float  # estimated running time on stage (see candidates.py)
+    questions: float  # share of host speeches that ask something
+    address: float  # share of host speeches that speak to the partner directly (you, thou…)
+    names: int  # host speeches that say the partner's name
+    directions: int  # stage directions inside the stretch
+    cast_changes: int  # entrances and exits inside the stretch
+
+
+class Candidate(BaseModel):
+    """A two-person stretch of a scene, trimmed so the host's character opens and closes it."""
+
+    id: str  # "<scene id>#<start>-<end>@<host character id>"
+    play_id: str
+    play_title: str
+    genre: str | None
+    scene_id: str
+    start: int  # block index, inclusive
+    end: int  # block index, exclusive
+    host: str  # character id the host would read
+    host_name: str
+    partner: str  # character id the improviser would play
+    partner_name: str
+    first_line: str
+    last_line: str
+    metrics: CandidateMetrics
+    size: Literal["small", "medium", "big"]  # about 5, 10 or 20 minutes on stage
+    cut: bool = False  # True: a shorter cut of a longer stretch, ending early on a host line
+    score: float  # 0–100, higher is better for the show
+    reasons: list[str] = []  # why it scored as it did, in plain words

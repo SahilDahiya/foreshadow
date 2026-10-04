@@ -1,0 +1,10 @@
+{
+ "text": "EGLAMOUR:\n  This is the hour Madam Silvia asked me to come and find out what she wants.\n  There's something important she needs me for.\n  Madam, madam!\n  (Silvia appears above.)\nSILVIA:\n  Who's there?\nEGLAMOUR:\n  Your servant and your friend.\n  Someone who's here to do whatever your ladyship asks.\nSILVIA:\n  Sir Eglamour, a thousand good mornings to you.\nEGLAMOUR:\n  And as many to you, my noble lady.\n  Just as your ladyship asked, I've come this early\n  to find out what you'd like me to do for you.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1408,
+  "output_tokens": 429,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

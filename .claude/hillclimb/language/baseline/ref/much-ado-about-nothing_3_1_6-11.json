@@ -1,0 +1,10 @@
+{
+ "text": "URSULA:\n  But are you sure Benedick loves Beatrice that completely?\nHERO:\n  That's what the Prince says, and my husband-to-be.\nURSULA:\n  And did they ask you to tell her about it, madam?\nHERO:\n  They begged me to let her know.\n  But I convinced them that if they really cared about Benedick,\n  they'd want him to fight his feelings and get over them,\n  and never let Beatrice find out.\nURSULA:\n  Why did you do that?\n  Doesn't he deserve as good a match, as happy a marriage bed,\n  as Beatrice could ever hope to lie in?",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1387,
+  "output_tokens": 413,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "text": "HAMLET:\n  No, no. Your questions come from a wicked tongue.\nQUEEN:\n  Hamlet, what is this?\nHAMLET:\n  What's the problem now?\nQUEEN:\n  Have you forgotten who I am?\nHAMLET:\n  No, by the cross, I haven't.\n  You are the Queen, your husband's brother's wife.\n  And, though I wish it weren't true, you are my mother.\nQUEEN:\n  Then I'll bring in people who know how to talk to you.\nHAMLET:\n  Come on, sit down. You're not moving.\n  You're not leaving until I hold up a mirror to you,\n  one where you can see the deepest part of yourself.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1393,
+  "output_tokens": 458,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "text": "DIANA:\n  Yes, that's how you serve us, until we give ourselves to you.\n  But once you've taken our roses, you leave us nothing but the thorns to prick ourselves with.\n  And then you mock us for being bare.\nBERTRAM:\n  But look how I've sworn to you!\nDIANA:\n  It isn't piling up oaths that makes a thing true.\n  It's one plain, simple promise, meant honestly.\n  We don't swear by things that aren't holy. We call on the highest power as our witness.\n  So tell me this.\n  If I swore by all the greatness of Jove that I loved you dearly, would you believe me, if I treated you badly?\n  It doesn't hold together, to swear by the one I claim to love that I'll work against him.\n  So your oaths are just words, empty terms with no seal on them.\n  At least, that's what I think.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1433,
+  "output_tokens": 484,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

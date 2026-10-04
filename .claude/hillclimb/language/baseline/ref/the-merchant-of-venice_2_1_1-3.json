@@ -1,0 +1,10 @@
+{
+ "text": "PRINCE OF MOROCCO:\n  Don't hold my colour against me.\n  It's the dark uniform of the blazing sun, my close neighbour, who raised me near him.\n  Bring me the fairest man born in the north, where the sun's fire barely thaws the icicles.\n  Let us both cut ourselves for your love, and see whose blood runs redder, his or mine.\n  I tell you, lady, this face of mine has struck fear into brave men.\n  And I swear by my love, the most admired young women of my country have loved it too.\n  I wouldn't change this colour for anything, my gentle queen, unless it would win your heart.\nPORTIA:\n  When it comes to choosing, I'm not led only by what pleases a girl's eye.\n  Besides, my fate hangs on a lottery, and that takes away my right to choose for myself.\n  But if my father hadn't restricted me, and bound me by his scheme to marry whoever wins me the way I told you,\n  then you, renowned Prince, would stand as good a chance of my love as any man who has come here yet.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1527,
+  "output_tokens": 520,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

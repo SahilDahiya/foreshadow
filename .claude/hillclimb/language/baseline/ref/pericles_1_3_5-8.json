@@ -1,0 +1,10 @@
+{
+ "text": "HELICANUS:\n  If you want to know more,\n  about why he would leave without asking your leave, out of love for you,\n  I'll shed some light on it.\n  While he was at Antioch—\nTHALIARD:\n  (Aside.)\n  What's this about Antioch?\nHELICANUS:\n  Royal Antiochus took offence at him, for what reason I don't know.\n  At least, that's what he believed.\n  And fearing he'd made a mistake, or done some wrong,\n  he chose to punish himself to show how sorry he was.\n  So he's taken on the hard life of a sailor,\n  where every minute could mean life or death.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1378,
+  "output_tokens": 408,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

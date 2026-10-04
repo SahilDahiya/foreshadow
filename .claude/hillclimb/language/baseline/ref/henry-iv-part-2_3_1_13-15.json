@@ -1,0 +1,10 @@
+{
+ "text": "WARWICK:\n  That can't be true, my lord.\n  Rumour doubles the numbers of anything we fear, the way an echo doubles a voice.\n  Please, your Grace, go to bed.\n  On my soul, my lord, the forces you've already sent out will win this prize with no trouble at all.\n  And to comfort you even more, I've had reliable word that Glendower is dead.\n  Your Majesty has been ill for two weeks now.\n  Staying up at these late hours can only make your sickness worse.\nKING:\n  I'll take your advice.\n  And once these wars at home are finished, dear lords, we'll go on to the Holy Land.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1347,
+  "output_tokens": 370,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

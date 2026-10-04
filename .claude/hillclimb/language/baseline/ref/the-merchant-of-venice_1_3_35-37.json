@@ -1,0 +1,10 @@
+{
+ "text": "ANTONIO:\n  I'm just as likely to call you that again.\n  To spit on you again, and kick you too.\n  If you're going to lend this money, don't lend it as if to a friend.\n  When did a friend ever charge a friend interest, making dead metal breed more metal?\n  No, lend it to your enemy instead.\n  Then if he fails to pay, you can enforce the penalty with a clearer conscience.\nSHYLOCK:\n  Well, look at you, raging away!\n  I want to be friends with you, and have your goodwill.\n  I'd forget the insults you've smeared me with.\n  I'd give you what you need right now, and not take a penny of interest for my money.\n  And you won't even listen to me.\n  This is a kind offer I'm making.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1374,
+  "output_tokens": 437,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

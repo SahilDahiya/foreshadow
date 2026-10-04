@@ -1,0 +1,10 @@
+{
+ "text": "FOOL:\n  If a man's brains were in his heels, wouldn't they be in danger of chilblains?\nLEAR:\n  Yes, boy.\nFOOL:\n  Then cheer up, please.\n  Your brains will never need slippers, because you haven't got any in your heels.\nLEAR:\n  Ha, ha, ha!\nFOOL:\n  You'll see your other daughter treat you kindly, all right.\n  She's as like this one as a crab apple is like an apple.\n  But I know what I know.\nLEAR:\n  And what do you know, boy?\nFOOL:\n  She'll taste as like this one as a crab apple tastes like a crab apple.\n  Can you tell me why a man's nose sits in the middle of his face?",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1409,
+  "output_tokens": 477,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

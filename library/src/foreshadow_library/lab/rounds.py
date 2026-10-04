@@ -36,13 +36,22 @@ def current_round() -> store.Round | None:
 
 
 def prepare(
-    repo: PlayRepository, progress: Progress = print, guidance: str = "", items_wanted: int = ITEMS_PER_ROUND
+    repo: PlayRepository,
+    progress: Progress = print,
+    guidance: str = "",
+    items_wanted: int = ITEMS_PER_ROUND,
+    challenger: store.Prompt | None = None,
 ) -> store.Round:
-    """Write a challenger, pick fresh passages, and render each with both prompts."""
+    """Pick fresh passages and render each with the champion and a challenger.
+
+    The challenger is written from the votes so far, unless one is supplied (for example
+    the winner of an eval hill-climb).
+    """
     lm = language_model()
     champ = champion()
-    progress(f"Writing a challenger to beat {champ.id}…")
-    challenger = propose(champ, lm, guidance)
+    if challenger is None:
+        progress(f"Writing a challenger to beat {champ.id}…")
+        challenger = propose(champ, lm, guidance)
 
     number = len(store.rounds()) + 1
     used = {f"{i.scene_id}#{i.start}-{i.end}" for r in store.rounds() for i in r.items}

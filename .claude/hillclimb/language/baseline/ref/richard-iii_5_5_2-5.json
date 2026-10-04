@@ -1,0 +1,10 @@
+{
+ "text": "STANLEY:\n  Brave Richmond, you've done well today!\n  Look. Here is the crown he stole and held so long.\n  I pulled it off the dead head of this bloody wretch,\n  and now it will grace yours.\n  Wear it. Enjoy it. Make the most of it.\nRICHMOND:\n  Great God in heaven, say Amen to all of this!\n  But tell me, is young George Stanley alive?\nSTANLEY:\n  He is, my lord, and safe in the town of Leicester.\n  If you're willing, we can go there now.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1321,
+  "output_tokens": 349,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

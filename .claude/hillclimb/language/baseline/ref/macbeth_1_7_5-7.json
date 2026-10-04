@@ -1,0 +1,10 @@
+{
+ "text": "MACBETH:\n  We're not going any further with this.\n  He's honoured me just recently.\n  And I've earned the good opinion of all kinds of people. It's golden.\n  I should be wearing it now, while it still shines like new,\n  not throwing it away so soon.\nLADY MACBETH:\n  So the hope you dressed yourself up in, was it drunk?\n  Has it slept it off since then?\n  And now it wakes up, sick and pale, at what it was so eager to do?\n  From now on, that's what I'll think your love is worth.\n  Are you afraid to be the same man in what you do and dare\n  as you are in what you want?\n  Would you have the thing you think is the crown of life,\n  and still live as a coward in your own eyes?\n  Letting \"I don't dare\" always follow \"I want to\",\n  like the poor cat in the old saying?",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1415,
+  "output_tokens": 511,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

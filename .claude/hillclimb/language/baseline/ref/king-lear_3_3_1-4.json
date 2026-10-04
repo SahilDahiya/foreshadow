@@ -1,0 +1,10 @@
+{
+ "text": "GLOUCESTER:\n  Oh, Edmund, Edmund, I don't like this. It's unnatural, the way they're treating him.\n  When I asked their permission to take pity on him, they took my own house away from me.\n  They ordered me, on pain of losing their favour forever, not to speak of him, not to plead for him, not to help him in any way.\nEDMUND:\n  That's savage. It's unnatural!\nGLOUCESTER:\n  Hush now. Don't say a word.\n  There's a rift between the Dukes, and something worse than that.\n  I got a letter tonight. It's dangerous even to talk about it.\n  I've locked it away in my private room.\n  The wrongs the King is suffering now will be paid back in full.\n  Part of an army has already landed. We have to side with the King.\n  I'll go and find him, and help him in secret.\n  You go and keep the Duke talking, so he doesn't notice what I'm doing for the King.\n  If he asks for me, I'm ill and I've gone to bed.\n  Even if it kills me, and that's exactly what they've threatened, the King, my old master, must be helped.\n  Something strange is coming, Edmund. Please, be careful.\n  (He leaves.)",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1511,
+  "output_tokens": 640,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

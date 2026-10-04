@@ -1,0 +1,4 @@
+{
+  "description": "Translate by the whole sentence, not phrase by phrase: rebuild the sentence, then count the content back in; restate the 28-word limit [reverted: no gain over v2; one rendering collapsed a speech into a single 90-word line]",
+  "target": "system_prompt"
+}

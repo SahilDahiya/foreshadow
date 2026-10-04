@@ -1,0 +1,10 @@
+{
+ "text": "SERVANT:\n  It is, my lord.\nHOTSPUR:\n  That roan will be my throne.\n  Right, I'll ride him straight away. O Esperance!\n  Tell Butler to lead him out into the park.\n  (The Servant leaves.)\nLADY PERCY:\n  But listen to me, my lord.\nHOTSPUR:\n  What is it, my lady?\nLADY PERCY:\n  What is it that's carrying you away?\nHOTSPUR:\n  Why, my horse, my love. My horse.\nLADY PERCY:\n  Oh, stop it, you mad-headed ape!\n  A weasel doesn't have half the temper that's throwing you around.\n  I swear, I'll find out what you're up to, Harry. I will.\n  I'm afraid my brother Mortimer is making a move to claim his title,\n  and he's sent for you to back him up.\n  But if you go—",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1481,
+  "output_tokens": 561,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "text": "ARCHIDAMUS:\n  Camillo, if you ever happen to visit Bohemia on business like the business that brings me here,\n  you'll see, as I've said, a great difference between our Bohemia and your Sicilia.\nCAMILLO:\n  I think the King of Sicilia means to visit Bohemia this coming summer.\n  He rightly owes your king that visit.\nARCHIDAMUS:\n  And when he comes, our hospitality will put us to shame.\n  Our affection will have to make up for it. Because honestly—\nCAMILLO:\n  Please, don't—",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1386,
+  "output_tokens": 333,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

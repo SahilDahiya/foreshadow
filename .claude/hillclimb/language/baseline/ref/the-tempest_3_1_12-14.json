@@ -1,0 +1,10 @@
+{
+ "text": "FERDINAND:\n  Admired Miranda!\n  You really are the height of everything a person could admire.\n  You're worth more than whatever the world holds dearest!\n  I've looked at a great many women and thought highly of them.\n  And many times the music of their voices has made a slave of my ear, which listened far too eagerly.\n  I've liked different women for different virtues.\n  But I never loved one with my whole heart, because there was always some flaw in her.\n  That flaw would fight with her finest quality and spoil it.\n  But you, oh, you, so perfect, with no one to compare to you,\n  you were made from the best of every living creature.\nMIRANDA:\n  I don't know a single other woman.\n  I can't remember any woman's face except my own, in my mirror.\n  And the only people I've seen who I could call men are you, my good friend, and my dear father.\n  I have no idea what people look like out there in the world.\n  But I swear by my modesty, the jewel of everything I bring to a marriage,\n  I wouldn't want anyone in the world beside me but you.\n  And I can't even imagine anyone else I could like, except you.\n  But I'm chattering away much too wildly.\n  And I'm forgetting everything my father told me.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1518,
+  "output_tokens": 671,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

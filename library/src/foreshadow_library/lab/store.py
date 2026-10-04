@@ -27,7 +27,7 @@ class Prompt(BaseModel):
     id: str  # "v1", "v2", …
     task: str
     text: str
-    origin: Literal["seed", "proposed"]
+    origin: Literal["seed", "proposed", "hillclimb"]  # hillclimb: the best prompt from an eval climb
     parent: str | None = None  # the champion it was written to beat
     rationale: str | None = None  # why the proposer thinks it is better
     created_at: str

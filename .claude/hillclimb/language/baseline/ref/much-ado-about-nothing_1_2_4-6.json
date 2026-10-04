@@ -1,0 +1,10 @@
+{
+ "text": "ANTONIO:\n  That depends on how things turn out. But it looks good from the outside, anyway.\n  The Prince and Count Claudio were walking down that thickly hedged path in my orchard,\n  and one of my men overheard them.\n  The Prince told Claudio he's in love with my niece, your daughter.\n  He means to tell her so tonight, at the dance.\n  And if she's willing, he means to seize the moment and come straight to you about it.\nLEONATO:\n  This man who told you, does he have any sense?",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1332,
+  "output_tokens": 301,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

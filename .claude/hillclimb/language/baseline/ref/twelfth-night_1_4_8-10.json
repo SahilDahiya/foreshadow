@@ -1,0 +1,10 @@
+{
+ "text": "DUKE:\n  Give us a moment, please.\n  (The attendants step back.)\n  Cesario, you know everything.\n  I've opened up to you the book of my most secret soul.\n  So, my good young man, go to her.\n  Don't take no for an answer. Stand at her doors.\n  Tell them your feet will take root right there until she sees you.\nVIOLA:\n  But surely, my noble lord,\n  if she's as lost in her grief as people say, she'll never let me in.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1320,
+  "output_tokens": 312,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "text": "MARGARELON:\n  Turn around, slave, and fight.\nTHERSITES:\n  Who are you?\nMARGARELON:\n  A bastard son of Priam's.\nTHERSITES:\n  I'm a bastard too. I love bastards.\n  I'm a bastard by birth, a bastard by upbringing, a bastard in my mind, a bastard in my courage.\n  Illegitimate in everything.\n  One bear won't bite another, so why should one bastard bite another?\n  Be careful. This quarrel is a very bad sign for people like us.\n  When the son of a whore fights over a whore, he's asking for God's judgement.\n  Goodbye, bastard.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1371,
+  "output_tokens": 436,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

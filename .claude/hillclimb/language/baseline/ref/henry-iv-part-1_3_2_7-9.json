@@ -1,0 +1,10 @@
+{
+ "text": "KING:\n  A hundred thousand rebels will die by this.\n  You'll have command, and my complete trust in it.\n  (Sir Walter Blunt comes in.)\n  Well, good Blunt? You look like you've come in a hurry.\nBLUNT:\n  So does the business I've come to tell you about.\n  Lord Mortimer of Scotland has sent word\n  that Douglas and the English rebels met at Shrewsbury on the eleventh of this month.\n  If everyone keeps their promises, it's as strong and frightening a force\n  as ever threatened a kingdom.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1332,
+  "output_tokens": 350,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

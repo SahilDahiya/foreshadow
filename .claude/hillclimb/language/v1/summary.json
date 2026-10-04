@@ -1,0 +1,4 @@
+{
+  "description": "Stay as close as a translator would: name the five kinds of phrase-level drift, and tie closeness to line length [reverted: no gain; traded natural for faithful]",
+  "target": "system_prompt"
+}

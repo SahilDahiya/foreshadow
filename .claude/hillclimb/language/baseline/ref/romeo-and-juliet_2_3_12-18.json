@@ -1,0 +1,10 @@
+{
+ "text": "ROMEO:\n  You used to scold me all the time for loving Rosaline.\nFRIAR LAWRENCE:\n  For being obsessed with her, my boy, not for loving her.\nROMEO:\n  And you told me to bury that love.\nFRIAR LAWRENCE:\n  Not in a grave where you put one love in\n  and dig another one out.\nROMEO:\n  Please, don't scold me.\n  The girl I love now gives me kindness for kindness and love for love.\n  The other one never did.\nFRIAR LAWRENCE:\n  Oh, she knew perfectly well\n  your love was reciting words by heart. It couldn't even spell.\n  But come on, you young weathervane, come with me.\n  For one reason, I'll help you.\n  This marriage might turn out so well\n  that it turns the hatred between your families into pure love.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1448,
+  "output_tokens": 511,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

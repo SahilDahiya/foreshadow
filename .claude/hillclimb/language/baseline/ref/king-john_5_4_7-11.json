@@ -1,0 +1,10 @@
+{
+ "text": "SALISBURY:\n  When we were happy, we had other names.\nPEMBROKE:\n  It's the Count Melun.\nSALISBURY:\n  And he's been wounded. He's dying.\nMELUN:\n  Run, noble Englishmen. You've been bought and sold.\n  Pull your thread back out of the coarse needle's eye of this rebellion.\n  Take back the loyalty you threw away and welcome it home.\n  Find King John and throw yourselves at his feet.\n  Because if the French win this roaring day,\n  Lewis plans to repay you for all your trouble by cutting off your heads.\n  He swore it. And I swore with him, and many more swore with me,\n  on the altar at Saint Edmundsbury.\n  The very same altar where we swore to you our dear friendship and everlasting love.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1387,
+  "output_tokens": 474,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "text": "KING EDWARD:\n  So, my brother Clarence, you're here too?\n  Well, then I can see Edward has to fall.\n  But Warwick, whatever bad luck comes my way,\n  whatever you and all your accomplices do to me,\n  Edward will always carry himself like a king.\n  Fortune may spitefully knock me off my throne,\n  but my mind is bigger than her wheel can reach.\nWARWICK:\n  Then let Edward be king of England in his mind.\n  (He takes off Edward's crown.)\n  But Henry will wear the English crown now.\n  He'll be the true king, and you'll be just the shadow.\n  My lord of Somerset, please see to this for me.\n  Have Duke Edward taken straight away to my brother, the Archbishop of York.\n  Once I've fought Pembroke and his men, I'll follow you.\n  Then I'll tell him what answer King Lewis and Lady Bona have sent him.\n  Now, goodbye for a while, my good Duke of York.\n  (They start to drag him out by force.)",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1475,
+  "output_tokens": 596,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

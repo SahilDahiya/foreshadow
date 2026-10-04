@@ -1,0 +1,10 @@
+{
+ "text": "COUNTESS:\n  You're telling me you have one answer that fits every question?\nCLOWN:\n  From anyone lower than a duke to anyone under a constable, it'll fit any question.\nCOUNTESS:\n  An answer that fits every question would have to be monstrously huge.\nCLOWN:\n  Not at all, honestly. It's just a little thing, if the experts are telling the truth about it.\n  Here it is, the whole thing.\n  Ask me if I'm a courtier. Learning something won't hurt you.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1330,
+  "output_tokens": 306,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

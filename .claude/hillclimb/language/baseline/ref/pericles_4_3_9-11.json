@@ -1,0 +1,10 @@
+{
+ "text": "DIONYZA:\n  Fine, then. So be it.\n  But nobody knows how she died except you.\n  And nobody can know, now that Leonine is gone.\n  She outshone my child. She stood between my daughter and her chances.\n  Nobody would look at her. Every eye went straight to Marina's face.\n  And ours was sneered at, treated like a kitchen drudge, not worth a good morning.\n  It cut me to the heart.\n  You call what I did unnatural. That's because you don't love your own child enough.\n  But to me, it feels like an act of kindness, done for your only daughter.\nCLEON:\n  May heaven forgive it!",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1359,
+  "output_tokens": 378,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

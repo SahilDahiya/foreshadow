@@ -1,0 +1,10 @@
+{
+ "text": "TALBOT:\n  Heavens, will you let hell win like this?\n  I'll burst my chest straining my courage.\n  I'll crack my arms clean off my shoulders,\n  but I will punish this arrogant whore.\n  (They fight again.)\nPUCELLE:\n  Talbot, goodbye. Your time hasn't come yet.\n  I have to get food into Orleans, right now.\n  (A short call to arms. She enters the town with soldiers.)\n  Catch me, if you can. I laugh at your strength.\n  Go on, go. Cheer up your starving men.\n  Help Salisbury write his will.\n  Today is ours, and many more days will be.\n  (She exits.)",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1377,
+  "output_tokens": 427,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

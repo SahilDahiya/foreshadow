@@ -1,0 +1,10 @@
+{
+ "text": "HAMLET:\n  What time is it now?\nHORATIO:\n  I think it's not quite twelve.\nMARCELLUS:\n  No, it's already struck.\nHORATIO:\n  Really? I didn't hear it.\n  Then it's getting close to the hour when the ghost usually walks.\n  (Trumpets play a fanfare, and cannons are fired offstage.)\n  What does that mean, my lord?\nHAMLET:\n  The King is up late tonight, drinking hard.\n  He's throwing a party, and the dancing's wild and reeling.\n  And every time he drains another cup of Rhine wine,\n  the kettle-drum and trumpet blare out like that,\n  to celebrate the toast.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1410,
+  "output_tokens": 453,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

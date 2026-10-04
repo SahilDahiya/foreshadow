@@ -1,4 +1,11 @@
-import type { LibraryIndex, LibraryRepository, Play } from "../../shared/library";
+import type {
+  CandidateList,
+  LibraryIndex,
+  LibraryRepository,
+  Play,
+  StretchIndexEntry,
+  StretchRendition,
+} from "../../shared/library";
 
 const BASE = "/data/library";
 
@@ -12,4 +19,8 @@ async function getJson<T>(path: string): Promise<T> {
 export const staticLibrary: LibraryRepository = {
   index: () => getJson<LibraryIndex>("index.json"),
   play: (id) => getJson<Play>(`plays/${encodeURIComponent(id)}.json`),
+  candidates: () => getJson<CandidateList>("candidates.json"),
+  // No renderings published yet is not an error: the list is just empty.
+  stretchIndex: () => getJson<StretchIndexEntry[]>("stretch_renditions.json").catch(() => []),
+  stretch: (file) => getJson<StretchRendition>(file),
 };

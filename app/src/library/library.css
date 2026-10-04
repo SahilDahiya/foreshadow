@@ -35,3 +35,21 @@
 @media (max-width: 40rem) {
   .scenes th:nth-child(2), .scenes td:nth-child(2) { display: none; }
 }
+
+.filters { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; margin-top: 0.75rem; }
+.chip { padding: 0.3rem 0.8rem; border-radius: 999px; border: 1px solid #ffffff2a; background: transparent; color: var(--fg); font: inherit; font-size: 0.85rem; cursor: pointer; }
+.chip.on { background: var(--fg); color: var(--bg); }
+.scenes .lines { font-size: 0.85rem; max-width: 22rem; }
+.stretch-note { margin-top: 1.5rem; padding: 0.7rem 0.9rem; border-left: 3px solid #e0a458; background: #1a160d; border-radius: 0 0.5rem 0.5rem 0; font-size: 0.92rem; }
+.outside { opacity: 0.28; }
+.host-part { border-left: 3px solid #e0a458; padding-left: 0.75rem; }
+.host-part .speaker-name { color: #e0a458; }
+.ghost-part { border-left: 3px dashed #5b6b8c; padding-left: 0.75rem; }
+.ghost-part .verse { color: #8ea0c4; font-style: italic; }
+
+.reader:has(.pair-grid) { max-width: 76rem; }
+.pair-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2.5rem; margin-top: 1.5rem; align-items: start; }
+.pair-grid > .label { margin-bottom: 0.75rem; }
+.pair-grid .speech.modern .verse { font-style: normal; color: var(--fg); }
+.pair-grid .ghost-part.modern .verse { color: #b9c6e2; }
+@media (max-width: 50rem) { .pair-grid { grid-template-columns: 1fr; } }

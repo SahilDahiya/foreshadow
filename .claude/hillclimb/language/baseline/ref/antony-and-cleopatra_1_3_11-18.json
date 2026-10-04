@@ -1,0 +1,10 @@
+{
+ "text": "CLEOPATRA:\n  I feel sick and miserable.\nANTONY:\n  I'm sorry I have to tell you what I'm planning—\nCLEOPATRA:\n  Help me out of here, Charmian dear! I'm going to faint.\n  This can't go on much longer.\n  My body can't take it.\nANTONY:\n  Now, my dearest queen—\nCLEOPATRA:\n  Please, stand further away from me.\nANTONY:\n  What's wrong?\nCLEOPATRA:\n  I can see it in your eyes. There's some good news.\n  What, has your wife said you can go home?\n  I wish she'd never let you come here at all!\n  Don't let her say I'm the one keeping you here.\n  I have no hold on you. You belong to her.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1441,
+  "output_tokens": 495,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

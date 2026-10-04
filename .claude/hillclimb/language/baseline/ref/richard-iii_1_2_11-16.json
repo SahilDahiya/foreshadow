@@ -1,0 +1,10 @@
+{
+ "text": "RICHARD:\n  Lady, you don't know the rules of charity.\n  Charity pays back bad with good, and curses with blessings.\nANNE:\n  You villain, you don't know the law of God or of man.\n  There's no beast so savage it doesn't feel a little pity.\nRICHARD:\n  But I feel none, so I'm no beast.\nANNE:\n  Oh, what a wonder, when devils tell the truth!\nRICHARD:\n  A bigger wonder when angels get this angry.\n  Divine perfection of a woman, please allow me this.\n  These crimes you think I've committed, let me answer them.\n  Let me go through it all in detail, and clear my name.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1379,
+  "output_tokens": 420,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

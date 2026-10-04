@@ -1,0 +1,10 @@
+{
+ "text": "IMOGEN:\n  You should have kept watching him until he was as small as a crow, or smaller.\n  Only then should you have stopped looking after him.\nPISANIO:\n  Madam, I did.\nIMOGEN:\n  I would have strained my eyes until they broke, just to keep looking at him.\n  I'd have watched until the distance shrank him to a point, sharp as my needle.\n  No, I'd have followed him until he melted away, from the size of a gnat into thin air.\n  And then I'd have turned away and cried.\n  But, good Pisanio, when will we hear from him?",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1356,
+  "output_tokens": 342,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

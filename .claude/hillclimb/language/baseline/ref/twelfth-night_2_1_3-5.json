@@ -1,0 +1,10 @@
+{
+ "text": "ANTONIO:\n  At least tell me where you're headed.\nSEBASTIAN:\n  No, honestly, sir. The journey I've set myself is just aimless wandering.\n  But I can see you're too decent to drag out of me what I'd rather keep to myself.\n  And that's exactly why good manners tell me to open up to you.\n  So here's the truth, Antonio. My name is Sebastian. I've been calling myself Roderigo.\n  My father was Sebastian of Messaline. I know you've heard of him.\n  When he died, he left behind me and a sister, both born in the same hour.\n  If heaven had been willing, I wish we'd died in the same hour too!\n  But you, sir, changed that.\n  Because about an hour before you pulled me out of the breaking waves, my sister drowned.",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1423,
+  "output_tokens": 426,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

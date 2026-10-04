@@ -1,0 +1,10 @@
+{
+ "text": "KING:\n  Your loving father, Hamlet.\nHAMLET:\n  My mother.\n  Father and mother are man and wife; man and wife are one flesh.\n  And so — my mother.\n  Come on. To England.\n  (He leaves.)\nKING:\n  Stay right on his heels. Coax him on board, and quickly.\n  Don't delay. I want him gone tonight.\n  Go. Everything this business depends on is sealed and settled.\n  Please, hurry.\n  (Rosencrantz and Guildenstern leave.)\n  And England, if you value my friendship at all —\n  and my great power should tell you how much you ought to,\n  since your scar from the Danish sword is still raw and red,\n  and you still pay me tribute out of fear —\n  you won't treat my royal command lightly.\n  My letters spell it out in full: the immediate death of Hamlet.\n  Do it, England.\n  He rages in my blood like a fever, and you must cure me.\n  Until I know it's done, whatever luck comes my way, my joy can never begin.\n  (He leaves.)",
+ "model": "claude-opus-5-5",
+ "usage": {
+  "input_tokens": 1524,
+  "output_tokens": 665,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0
+ }
+}

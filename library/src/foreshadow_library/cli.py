@@ -1,6 +1,9 @@
-"""library build | library render <scene id> | library lab | library publish
+"""library build | library candidates | library render-candidates | library render <scene id> | library lab | library publish
 
 build:   fetch Gutenberg #100 (cached), parse every Shakespeare play, analyse, save, report.
+candidates: find the stretches of scenes that suit the show (two speakers, host opens and
+         closes), ranked, and save them.
+render-candidates: write the strongest candidates in today's English, for judging them.
 render:  write a scene in today's English with Claude (needs ANTHROPIC_API_KEY, read from
          the repository's .env if present).
 lab:     open the preference lab, to A/B vote on renderings and improve the prompt.
@@ -46,6 +49,101 @@ def build(refresh: bool) -> int:
         problems += 0 if report.ok else 1
     repo.save_index(build_index(plays))
     print(f"\n{len(plays)} plays saved to {DATA}; {problems} with warnings.")
+    return 0
+
+
+def candidates_command() -> int:
+    import json
+
+    from .candidates import find
+
+    repo = FilePlayRepository(DATA)
+    plays = [p for p in (repo.get(i) for i in repo.list_ids()) if p]
+    found, counts = find(plays)
+    (DATA / "candidates.json").write_text(
+        json.dumps({"counts": counts, "candidates": [c.model_dump(mode="json") for c in found]}, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+    scenes = len({c.scene_id for c in found})
+    print(f"{counts['scenes']} scenes → {counts['two_speaker_runs']} two-speaker runs → {counts['pieces']} pieces → {len(found)} candidates, from {scenes} scenes in {len({c.play_id for c in found})} plays.")
+    for size in ("small", "medium", "big"):
+        of_size = [c for c in found if c.size == size]
+        print(f"\n{size}: {len(of_size)}")
+        for c in of_size[:6]:
+            print(f"  {c.score:5.1f}  {c.metrics.minutes:4.1f} min  {c.play_title} {c.scene_id.split('/', 1)[1]}: {c.host_name.title()} (host) and {c.partner_name.title()}")
+    return 0
+
+
+def render_candidates(small: int, medium: int, big: int) -> int:
+    """Render the strongest candidates in today's English with the lab's champion prompt.
+
+    One rendering per scene covers every chosen candidate in it (cuts and both host
+    choices share the same text), saved as a stretch: renditions/<scene>/stretch-<a>-<b>.json.
+    """
+    import json
+    from concurrent.futures import ThreadPoolExecutor
+    from datetime import UTC, datetime
+
+    from .domain import Candidate, Rendition
+    from .lab import rounds
+    from .render import check, language_model, model_name, render_passage_detailed
+
+    load_env()
+    repo = FilePlayRepository(DATA)
+    found = [Candidate.model_validate(c) for c in json.loads((DATA / "candidates.json").read_text(encoding="utf-8"))["candidates"]]
+    chosen: list[Candidate] = []
+    for size, n in (("big", big), ("medium", medium), ("small", small)):
+        scenes: set[str] = set()
+        for c in found:  # best first
+            if c.size == size and c.scene_id not in scenes and len(scenes) < n:
+                scenes.add(c.scene_id)
+                chosen.append(c)
+    spans: dict[str, tuple[int, int]] = {}
+    for c in chosen:
+        a, b = spans.get(c.scene_id, (c.start, c.end))
+        spans[c.scene_id] = (min(a, c.start), max(b, c.end))
+    index_path = DATA / "stretch_renditions.json"
+    index = json.loads(index_path.read_text(encoding="utf-8")) if index_path.exists() else []
+    have = {(e["scene_id"], e["start"], e["end"]) for e in index}
+    todo = [(s, a, b) for s, (a, b) in spans.items() if not any(hs == s and ha <= a and hb >= b for hs, ha, hb in have)]
+    prompt = rounds.champion()
+    print(f"{len(chosen)} candidates in {len(spans)} scenes; {len(todo)} stretches to render with prompt {prompt.id} on {model_name()}.")
+    plays: dict = {}
+
+    def one(job: tuple[str, int, int]) -> dict | None:
+        scene_id, start, end = job
+        play_id = scene_id.split("/")[0]
+        play = plays.setdefault(play_id, repo.get(play_id))
+        scene = next(s for s in play.scenes if s.id == scene_id)
+        for attempt in range(2):  # a rendering out of step with the original gets one more try
+            try:
+                blocks, prediction = render_passage_detailed(play, scene, start, end, prompt=prompt.text, lm=language_model())
+            except Exception as error:
+                print(f"  {scene_id}: {type(error).__name__}")
+                continue
+            warnings = check(scene, start, end, blocks)
+            if not any(w.startswith("blocks out of step") for w in warnings):
+                rendition = Rendition(
+                    id=f"{scene_id}#{start}-{end}", play_id=play_id, scene_id=scene_id, world="original",
+                    language="todays-english", model=model_name(), prompt_version=prompt.id,
+                    created_at=datetime.now(UTC).isoformat(timespec="seconds"), blocks=blocks, check_warnings=warnings,
+                )
+                path = DATA / "renditions" / scene_id / f"stretch-{start}-{end}.json"
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(rendition.model_dump_json(), encoding="utf-8")
+                usage = next(iter((prediction.get_lm_usage() or {}).values()), {})
+                return {"scene_id": scene_id, "start": start, "end": end, "file": f"renditions/{scene_id}/stretch-{start}-{end}.json",
+                        "prompt": prompt.id, "tokens_in": usage.get("prompt_tokens", 0), "tokens_out": usage.get("completion_tokens", 0)}
+        print(f"  {scene_id}: could not be rendered in step with the original")
+        return None
+
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        done = [r for r in pool.map(one, todo) if r]
+    index += done
+    index_path.write_text(json.dumps(index, ensure_ascii=False, indent=1), encoding="utf-8")
+    tokens_in, tokens_out = sum(r["tokens_in"] for r in done), sum(r["tokens_out"] for r in done)
+    # Claude Opus 5.5: $4 per million input tokens, $20 per million output tokens.
+    print(f"Rendered {len(done)} of {len(todo)}. {tokens_in:,} tokens in, {tokens_out:,} out: about ${tokens_in * 4e-6 + tokens_out * 20e-6:.2f}.")
     return 0
 
 
@@ -102,6 +200,11 @@ def main() -> None:
     sub = parser.add_subparsers(dest="command", required=True)
     b = sub.add_parser("build", help="fetch, parse, analyse and save every play")
     b.add_argument("--refresh", action="store_true", help="download again instead of using the cache")
+    sub.add_parser("candidates", help="find and rank the stretches of scenes that suit the show")
+    rc = sub.add_parser("render-candidates", help="write the strongest candidates in today's English")
+    rc.add_argument("--small", type=int, default=30)
+    rc.add_argument("--medium", type=int, default=20)
+    rc.add_argument("--big", type=int, default=9)
     r = sub.add_parser("render", help="write a scene in today's English")
     r.add_argument("scene_id", help="for example macbeth/1/7")
     r.add_argument("--model", help="override the model (default: claude-opus-5-5)")
@@ -112,6 +215,10 @@ def main() -> None:
     args = parser.parse_args()
     if args.command == "build":
         sys.exit(build(args.refresh))
+    if args.command == "candidates":
+        sys.exit(candidates_command())
+    if args.command == "render-candidates":
+        sys.exit(render_candidates(args.small, args.medium, args.big))
     if args.command == "render":
         sys.exit(render(args.scene_id, args.model))
     if args.command == "lab":
