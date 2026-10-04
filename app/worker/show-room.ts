@@ -1,5 +1,5 @@
 import { Server, type Connection } from "partyserver";
-import { DEMO_SCENE } from "../shared/demo-scene";
+import type { Scene } from "../shared/scene";
 import {
   initialShowState,
   isShowState,
@@ -22,10 +22,11 @@ export class ShowRoom extends Server<Env> {
     this.db.exec(
       "CREATE TABLE IF NOT EXISTS events (seq INTEGER PRIMARY KEY, at INTEGER NOT NULL, state TEXT NOT NULL)",
     );
+    this.db.exec("CREATE TABLE IF NOT EXISTS scene (id INTEGER PRIMARY KEY CHECK (id = 1), scene TEXT NOT NULL)");
   }
 
   onConnect(connection: Connection) {
-    this.send(connection, { type: "welcome", scene: DEMO_SCENE, state: this.load() });
+    this.send(connection, { type: "welcome", scene: this.scene(), state: this.load() });
   }
 
   onMessage(sender: Connection, raw: string) {
@@ -49,6 +50,17 @@ export class ShowRoom extends Server<Env> {
       ]);
     }
 
+    if (message.type === "load" && isScene(message.scene)) {
+      // A new scene replaces the old one for everyone, back at the briefing.
+      this.db.exec(
+        "INSERT INTO scene (id, scene) VALUES (1, ?) ON CONFLICT(id) DO UPDATE SET scene = excluded.scene",
+        JSON.stringify(message.scene),
+      );
+      const state = { ...initialShowState(), seq: current.seq + 1 };
+      this.save(state);
+      this.broadcast(JSON.stringify({ type: "welcome", scene: message.scene, state } satisfies ServerMessage));
+    }
+
     if (message.type === "reset") {
       const state = { ...initialShowState(), seq: current.seq + 1 };
       this.save(state);
@@ -58,6 +70,11 @@ export class ShowRoom extends Server<Env> {
 
   private get db() {
     return this.ctx.storage.sql;
+  }
+
+  private scene(): Scene | null {
+    const row = this.db.exec<{ scene: string }>("SELECT scene FROM scene WHERE id = 1").toArray()[0];
+    return row ? (JSON.parse(row.scene) as Scene) : null;
   }
 
   private load(): ShowState {
@@ -79,4 +96,18 @@ export class ShowRoom extends Server<Env> {
   private send(connection: Connection, message: ServerMessage) {
     connection.send(JSON.stringify(message));
   }
+}
+
+function isScene(value: unknown): value is Scene {
+  const v = value as Scene | null;
+  return (
+    typeof v === "object" &&
+    v !== null &&
+    typeof v.title === "string" &&
+    typeof v.hostCharacter === "string" &&
+    Array.isArray(v.lines) &&
+    v.lines.length > 0 &&
+    v.lines.every((l) => typeof l.text === "string" && typeof l.voiced === "boolean") &&
+    v.lines.some((l) => l.voiced)
+  );
 }

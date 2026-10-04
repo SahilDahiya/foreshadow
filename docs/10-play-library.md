@@ -248,6 +248,25 @@ lab's champion prompt, and skips any already done. The first run rendered 43 str
 covering 55 candidates for about $4. The candidates page marks them, and a candidate's
 page shows the original and today's English side by side, the host's part in amber.
 
+### Playable scenes (built)
+
+`uv run library scenes` turns every rendered candidate (the best per scene and size) into
+a scene in the app's format, and `library publish` puts the catalogue in the app.
+
+- **The host's turns:** everything the host says before the improviser speaks is one
+  line in the scene and one screen for the host, with the rendered lines kept as line
+  breaks. In the first catalogue, about 7 turns in 10 are short (a sentence or two) and
+  about 1 in 35 is a long speech that scrolls.
+- **The improviser's lines:** each speech is one ghost line, shown to the audience when
+  its gap opens.
+- **Stage directions** become the delivery description of the host line that follows, or
+  are dropped.
+- **Briefing and mime task are placeholders:** the briefing is built from the cast list
+  ("You are JULIET, daughter to Capulet…"), and the mime task is picked from a short list
+  of neutral activities. Both need a real pass later.
+
+First catalogue: 71 scenes (43 small, 23 medium, 5 big).
+
 ### Not yet done
 
 - **Judgement.** The ranking knows nothing about content: whether the stretch stands

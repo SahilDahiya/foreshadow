@@ -32,7 +32,7 @@
 }
 .line .who { font-size: 0.75rem; letter-spacing: 0.12em; color: var(--muted); }
 .line .cue { font-style: italic; font-size: 0.85rem; color: #8f8a7e; }
-.line .text { font-size: 1.15rem; line-height: 1.35; }
+.line .text { font-size: 1.15rem; line-height: 1.35; white-space: pre-line; }
 .line .text.hidden { color: #4a4740; letter-spacing: 0.3em; }
 
 .line.past { opacity: 0.35; }

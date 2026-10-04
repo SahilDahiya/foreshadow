@@ -169,6 +169,9 @@ deployed and tried on real phones before the next.
 
 0. **The skeleton.** Repository, CI, preview deploys, and a hello-world through every piece
    of the infrastructure.
+*Status: steps 0–2 are done as a rehearsal prototype (host a room, pick a scene from
+the catalogue, others follow along); the show flow in step 3 is next.*
+
 1. **Fake scene, real sync.** A hard-coded scene, the host screen with swipes, the
    follow-along screen, and the cursor through the Durable Object. The host is local-first,
    events carry sequence numbers and everything resumes after a reload, from the start.

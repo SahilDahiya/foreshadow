@@ -38,3 +38,7 @@ body {
   text-decoration: none;
 }
 .pill.secondary { background: transparent; color: var(--fg); border: 1px solid #ffffff33; }
+
+.follow { display: flex; gap: 0.5rem; align-items: center; }
+.follow input { width: 9rem; padding: 0.9rem 1rem; border-radius: 999px; border: 1px solid #ffffff33; background: transparent; color: var(--fg); font: inherit; text-transform: uppercase; letter-spacing: 0.15em; text-align: center; }
+.pill:disabled { opacity: 0.4; }

@@ -1,17 +1,18 @@
-/* Colours are a placeholder; the phase colour design comes later. */
+/* Colours are placeholders. */
 .host {
   position: fixed;
   inset: 0;
   overflow: hidden;
-  touch-action: none;
+  /* The turn may scroll up and down; sideways swipes and double taps are ours (and
+     pan-y also switches off the browser's double-tap zoom). */
+  touch-action: pan-y;
+  -webkit-touch-callout: none;
   user-select: none;
   -webkit-user-select: none;
   overscroll-behavior: none;
   background: var(--bg);
   transition: background-color 200ms;
 }
-.host.prepare { background: #0e1626; }
-.host.deliver { background: #241a08; }
 .host.loading { display: grid; place-items: center; color: var(--muted); }
 
 .host-inner {
@@ -75,20 +76,42 @@
 .dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; }
 .dot.on { background: var(--on); }
 .dot.off { background: var(--off); }
-.phase { margin-top: auto; }
-.cue { margin: 0; font-style: italic; color: #c9c3b4; font-size: 1.1rem; }
-.cue.large { font-size: 1.9rem; color: var(--fg); line-height: 1.25; }
-.dialogue { margin: 0; line-height: 1.2; font-weight: 600; }
-.dialogue.medium { font-size: 1.4rem; color: #c9c3b4; }
-.dialogue.huge { font-size: clamp(2rem, 8vw, 3.25rem); }
-.peek {
-  margin: auto 0 0;
-  padding-top: 1rem;
-  border-top: 1px solid #ffffff1a;
-  color: var(--muted);
-  font-size: 0.95rem;
+/* The reading screen. Two zones separated by empty space:
+   - the direction slot (upper third): amber, italic, smaller, set in from the edge behind
+     a rule; empty for most lines;
+   - the line: white, bold, large, flush left, always starting at the same height. */
+.direction-slot {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 2.75rem;
 }
-.playing > :last-child:not(.peek) { margin-bottom: auto; }
+.direction-note { border-left: 3px solid #e0a458; padding: 0.15rem 0 0.2rem 0.9rem; margin-left: 0.15rem; }
+.direction-label { margin: 0 0 0.3rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: #e0a458; opacity: 0.75; }
+.direction-text { margin: 0; font-style: italic; font-weight: 400; color: #e0a458; font-size: 1.5rem; line-height: 1.25; }
+.dialogue {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--fg);
+  font-size: clamp(2rem, 8.4vw, 3.25rem);
+  padding-bottom: 2rem;
+  scrollbar-width: none; /* the fade says there is more; a scrollbar would be clutter */
+  /* Fade the last rows out when there is more below, as a hint to scroll. */
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 2.5rem), transparent);
+}
+.dialogue p { margin: 0 0 0.45em; }
+.dialogue .inline-direction { font-style: italic; font-weight: 400; color: #e0a458; font-size: 0.8em; }
+/* Longer turns: smaller type, and the direction slot gives up its empty space. */
+.turn-medium .dialogue { font-size: clamp(1.5rem, 6.2vw, 2.2rem); }
+.turn-long .dialogue { font-size: clamp(1.25rem, 5vw, 1.6rem); line-height: 1.28; font-weight: 600; }
+.turn-speech .dialogue { font-size: clamp(1.1rem, 4.4vw, 1.35rem); line-height: 1.35; font-weight: 600; }
+.turn-medium .direction-slot { flex-basis: 22%; }
+.turn-long .direction-slot, .turn-speech .direction-slot { flex-basis: auto; min-height: 1.5rem; padding-bottom: 1.25rem; }
 
 .ended {
   display: flex;
@@ -99,3 +122,16 @@
   gap: 1rem;
   text-align: center;
 }
+
+.picker { min-height: 100dvh; padding: 1.25rem 1rem 3rem; box-sizing: border-box; max-width: 40rem; margin: 0 auto; }
+.picker header { position: sticky; top: 0; background: var(--bg); padding-bottom: 0.75rem; }
+.picker .sizes { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.6rem 0; }
+.picker ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+.chip { padding: 0.45rem 0.9rem; border-radius: 999px; border: 1px solid #ffffff2a; background: transparent; color: var(--fg); font: inherit; font-size: 0.9rem; }
+.chip.on { background: var(--fg); color: var(--bg); }
+.scene-card { width: 100%; text-align: left; display: flex; flex-direction: column; gap: 0.25rem; padding: 0.9rem 1rem; border: 1px solid #ffffff22; border-radius: 0.75rem; background: #14151c; color: var(--fg); font: inherit; }
+.scene-card .title { font-weight: 700; font-size: 1.1rem; }
+.scene-card:disabled { opacity: 0.5; }
+.small { font-size: 0.85rem; }
+.link { background: none; border: none; padding: 0; color: #d9c9a3; font: inherit; text-decoration: underline; }
+.ended .pill { cursor: pointer; }

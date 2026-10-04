@@ -10,8 +10,12 @@ export function WatchScreen({ showId }: { showId: string }) {
   const [scene, setScene] = useState<Scene | null>(null);
   const [state, setState] = useState<ShowState>(initialShowState);
 
+  const [welcomed, setWelcomed] = useState(false);
   const { connected } = useShowRoom(showId, (message) => {
-    if (message.type === "welcome") setScene(message.scene);
+    if (message.type === "welcome") {
+      setScene(message.scene);
+      setWelcomed(true);
+    }
     setState((current) => (message.state.seq >= current.seq ? message.state : current));
   });
 
@@ -28,7 +32,11 @@ export function WatchScreen({ showId }: { showId: string }) {
   }, [delivered]);
 
   if (!scene) {
-    return <main className="watch loading">{connected ? "Loading…" : "Connecting…"}</main>;
+    return (
+      <main className="watch loading">
+        {!connected ? "Connecting…" : welcomed ? "Waiting for the host to choose a scene." : "Loading…"}
+      </main>
+    );
   }
 
   const { stage } = state.position;

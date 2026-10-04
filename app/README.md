@@ -22,8 +22,8 @@ shared/   Code used by both: scene types, the demo scene, the sync protocol
 
 Deployed at https://foreshadow.dahiya-sahil-89.workers.dev
 
-- Host the demo: `/host/demo`
-- Follow along: `/watch/demo`
+- Host a scene: the home page makes a room code, or go to `/host/<code>`; pick a scene from the catalogue
+- Follow along: `/watch/<code>`
 - Play library: `/library` (data from `../library`: run `library build` and `library publish` first)
 
 Any name works in place of `demo`; each name is its own room.

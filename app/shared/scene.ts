@@ -4,12 +4,16 @@ export type Beat = "setup" | "escalation" | "turn" | "ending";
 
 export interface Line {
   character: string;
+  /**
+   * One turn: everything said before the other side speaks. Rows are separated by line
+   * breaks; a row in [square brackets] is a direction that falls in the middle of the turn.
+   */
   text: string;
   /** Silent description of how to deliver the line. */
   cue?: string;
   /** true: the host reads it. false: a ghost line, played by an improviser. */
   voiced: boolean;
-  beat: Beat;
+  beat?: Beat;
 }
 
 export interface OpeningTask {
@@ -19,6 +23,11 @@ export interface OpeningTask {
 }
 
 export interface Scene {
+  /** Catalogue id; absent on the built-in demo. */
+  id?: string;
+  size?: "small" | "medium" | "big";
+  /** Estimated running time. */
+  minutes?: number;
   title: string;
   genre: string;
   /** What the play is about, in a sentence or two. */
@@ -28,4 +37,19 @@ export interface Scene {
   hostCharacter: string;
   openingTasks: OpeningTask[];
   lines: Line[];
+}
+
+/** One row of the catalogue of playable scenes (library/data/scenes/index.json). */
+export interface SceneSummary {
+  id: string;
+  title: string;
+  about: string;
+  genre: string;
+  host: string;
+  partner: string;
+  size: "small" | "medium" | "big";
+  minutes: number;
+  hostLines: number;
+  score: number;
+  opens: string;
 }

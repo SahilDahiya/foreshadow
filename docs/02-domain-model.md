@@ -89,14 +89,9 @@ Line
 
 ## Performance and cursor
 
-**Proposed:** the scene is a flat ordered list of lines. Each voiced line goes through two
-phases on the host device, **prepare** and **deliver** (colours are a later design idea); see
-[03](03-roles-and-surfaces.md).
-
-The host device holds the full position: the line and its phase. The shared cursor is
-only the **last delivered line**, which changes when the host swipes into deliver (or steps
-back out of it). The prepare phase is private to the host. Everything on the audience
-screens is derived from the shared cursor:
+**Built:** the scene is a flat ordered list of lines. The host is on one line at a time: one
+screen per line, one swipe per line ([03](03-roles-and-surfaces.md)). The shared cursor is
+the line the host is on. Everything on the audience screens is derived from it:
 
 - Lines up to the cursor are **past**; the cursor line is **being said now**.
 - Ghost lines right after the cursor are **the open gap**: the improviser is filling it.

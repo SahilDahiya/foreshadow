@@ -107,57 +107,36 @@ Start ─▶ PREPARE line 1 ─────────────────�
 - **The silent opening is the host's first pacing choice:** they decide how long the room
   watches the mime before the first line lands.
 
-During the scene, **each line has two phases** (decided): prepare, then deliver.
-**Showing the phase by screen colour (blue / yellow) is an idea, to design later.**
+During the scene, **one screen per line, with the direction on the same screen**
+(decided, after trying a separate prepare step and a separate direction screen; the
+screen is called "one screen per line" below, where a line means a whole turn):
 
-| Phase | Colour idea | What the host does | What the screen shows |
-|---|---|---|---|
-| **Prepare** | Blue | Reads the delivery description in silence and gets ready, while the improviser is talking | The description, large; the dialogue below it, so they can prepare it (proposed) |
-| **Deliver** | Yellow | Says the dialogue aloud | The dialogue, huge; the description small above it |
-
-The loop (decided; the gesture is proposed):
-
-```
-Start ─▶ PREPARE line 1 ─swipe─▶ DELIVER line 1 ─swipe─▶ PREPARE line 2 ─swipe─▶ DELIVER line 2 ─▶ …
-```
-
-- **Swiping into deliver means "I'm saying this now".** This is the only moment the
-  audience screens move. The prepare phase is private to the host.
-- **Swiping out of deliver means "I've said it".** The host moves to prepare the next line
-  while the improviser answers.
-- **Every line is delivered** (decided). Nothing in the script is optional, so there is no
-  skip and no jump to the ending.
-
-**The gesture is a swipe, not a tap** (proposed, following the owner's suggestion):
-
-- **A swipe is deliberate.** A tap can come from gripping the phone, brushing the screen or
-  a gesture while acting. Since a line can never be skipped, moving forward should take
-  intent.
-- **Swipe up: forward one phase.** The script moves up like a teleprompter, the same
-  direction the audience's follow-along scrolls.
-- **Swipe down: back one phase** (decided that going back is easy): deliver back to prepare
-  for the same line, or prepare back to the previous deliver. Stepping back out of deliver
-  tells the audience screens to undo the delivery.
-- **Taps do nothing during the scene.** That removes accidental advances entirely.
-- **One swipe moves one phase, however fast or long it is.** A flick can't pass a line
-  unsaid; every line goes through deliver before the next can be reached.
-- **The swipe counts on release**, once it has travelled far enough. A half-swipe that is
-  let go springs back, so the host can change their mind mid-gesture.
-- **Swipes start anywhere in the middle of the screen**, away from the edges, where the
-  phone's own gestures live (home, back, notifications).
-- **The host device runs the app installed to the home screen, full screen**, so the
-  browser's own swipe-to-go-back can't fire mid-scene.
-- Which direction feels right (up or sideways, like turning a page) is worth trying both
-  ways in the first rehearsal.
-
-- **Colour ideas, for later:** never show the phase by colour alone (add a label and a
-  short vibration); use muted tones suited to a dark room.
-- **The peek:** in blue, the line after this one is shown small at the bottom.
-- **Ghost lines are not shown to the host** (proposed, to keep the screen simple).
-- **No menus during the scene.** Settings sit behind a long press.
-- **The phone never sleeps or locks** while the scene runs.
-- **Pacing tools:** see "Pacing" below.
-- After the last line, the swipe out of deliver ends the scene.
+- **One screen is one turn** (decided): everything the host says before the improviser
+  speaks is on a single screen, so a swipe always means "my turn is over, yours begins".
+  Short turns are set very large; longer ones use smaller type; a long speech scrolls up
+  and down, with its last rows fading as a hint that there is more. A direction that falls
+  in the middle of a speech stays in place, in amber.
+- **Two zones, kept apart by empty space.** The **line** is white, bold and large, flush
+  left, and always starts at the same height. The **direction**, when there is one, sits
+  in its own slot above: amber, italic, smaller, set in from the edge behind a thin rule,
+  under the small heading "How to say it".
+- **The empty slot does the work.** Most lines have no direction, so that part of the
+  screen is usually blank. Anything appearing there reads at once as *how*, not *what*,
+  and the line never moves, so the eye always lands in the same place.
+- **Difference on every axis:** colour, weight, slant, size, position and left edge all
+  differ between the two, so they can't be mistaken for each other at a glance.
+- **Nothing else on the screen:** no preview of the next line, no footer.
+- **Sideways swipes and double tap** (decided): swipe left, or double tap, for the next
+  turn; swipe right to go back. The move that shows a turn is the moment it is said, and
+  the audience's screens move with it. A single tap, a short drag, a mostly vertical drag
+  (that is scrolling) and a drag from the very edge of the screen do nothing.
+- **Trust the reader.** The host is an improviser too. The app's job is to keep them on
+  the lines, in order, and no more than that.
+- **Every line is delivered** (decided). Nothing can be skipped; one swipe moves exactly
+  one line.
+- **A small counter stays at the top**: line, total, time elapsed.
+- **No menus during the scene.** The phone never sleeps or locks while the scene runs.
+- The idea of showing phases by screen colour is dropped with the phases.
 
 When to deliver the next line: see "Timing" below.
 

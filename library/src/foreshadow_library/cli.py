@@ -1,9 +1,10 @@
-"""library build | library candidates | library render-candidates | library render <scene id> | library lab | library publish
+"""library build | library candidates | library render-candidates | library scenes | library render <scene id> | library lab | library publish
 
 build:   fetch Gutenberg #100 (cached), parse every Shakespeare play, analyse, save, report.
 candidates: find the stretches of scenes that suit the show (two speakers, host opens and
          closes), ranked, and save them.
 render-candidates: write the strongest candidates in today's English, for judging them.
+scenes:  turn every rendered candidate into a scene the app can play.
 render:  write a scene in today's English with Claude (needs ANTHROPIC_API_KEY, read from
          the repository's .env if present).
 lab:     open the preference lab, to A/B vote on renderings and improve the prompt.
@@ -147,6 +148,37 @@ def render_candidates(small: int, medium: int, big: int) -> int:
     return 0
 
 
+def scenes_command() -> int:
+    """Every rendered candidate (the best per scene and size) as a playable scene."""
+    import json
+
+    from .domain import Candidate, Rendition
+    from .perform import summary, to_app_scene
+
+    repo = FilePlayRepository(DATA)
+    found = [Candidate.model_validate(c) for c in json.loads((DATA / "candidates.json").read_text(encoding="utf-8"))["candidates"]]
+    index = json.loads((DATA / "stretch_renditions.json").read_text(encoding="utf-8"))
+    out = DATA / "scenes"
+    out.mkdir(parents=True, exist_ok=True)
+    catalogue, seen = [], set()
+    for candidate in found:  # best first
+        key = (candidate.scene_id, candidate.size)
+        entry = next((e for e in index if e["scene_id"] == candidate.scene_id and e["start"] <= candidate.start and e["end"] >= candidate.end), None)
+        if key in seen or entry is None:
+            continue
+        seen.add(key)
+        play = repo.get(candidate.play_id)
+        scene = next(s for s in play.scenes if s.id == candidate.scene_id)
+        rendition = Rendition.model_validate_json((DATA / entry["file"]).read_text(encoding="utf-8"))
+        app_scene = to_app_scene(play, scene, candidate, rendition)
+        (out / f"{app_scene['id']}.json").write_text(json.dumps(app_scene, ensure_ascii=False), encoding="utf-8")
+        catalogue.append(summary(app_scene, candidate))
+    (out / "index.json").write_text(json.dumps(catalogue, ensure_ascii=False, indent=1), encoding="utf-8")
+    sizes = {s: sum(1 for c in catalogue if c["size"] == s) for s in ("small", "medium", "big")}
+    print(f"{len(catalogue)} playable scenes written to {out}: {sizes}")
+    return 0
+
+
 def load_env() -> None:
     """Read KEY=value lines from the repository's .env without overriding the environment."""
     import os
@@ -205,6 +237,7 @@ def main() -> None:
     rc.add_argument("--small", type=int, default=30)
     rc.add_argument("--medium", type=int, default=20)
     rc.add_argument("--big", type=int, default=9)
+    sub.add_parser("scenes", help="turn rendered candidates into scenes the app can play")
     r = sub.add_parser("render", help="write a scene in today's English")
     r.add_argument("scene_id", help="for example macbeth/1/7")
     r.add_argument("--model", help="override the model (default: claude-opus-5-5)")
@@ -219,6 +252,8 @@ def main() -> None:
         sys.exit(candidates_command())
     if args.command == "render-candidates":
         sys.exit(render_candidates(args.small, args.medium, args.big))
+    if args.command == "scenes":
+        sys.exit(scenes_command())
     if args.command == "render":
         sys.exit(render(args.scene_id, args.model))
     if args.command == "lab":

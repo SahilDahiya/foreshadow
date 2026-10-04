@@ -3,7 +3,8 @@ import type { Scene } from "./scene";
 // Where the host is. The host device is the only writer of this state.
 export type HostPosition =
   | { stage: "briefing" }
-  | { stage: "playing"; voiced: number; phase: "prepare" | "deliver" }
+  /** The host is on this line: it is on their screen (with its direction, if any) and being said. */
+  | { stage: "playing"; voiced: number }
   | { stage: "ended" };
 
 export interface ShowState {
@@ -16,10 +17,13 @@ export interface ShowState {
 
 export type ClientMessage =
   | { type: "state"; state: ShowState }
+  /** Put a scene in the room. Everyone gets it, and the show goes back to the briefing. */
+  | { type: "load"; scene: Scene }
   | { type: "reset" };
 
 export type ServerMessage =
-  | { type: "welcome"; scene: Scene; state: ShowState }
+  /** scene is null until the host has chosen one. */
+  | { type: "welcome"; scene: Scene | null; state: ShowState }
   | { type: "state"; state: ShowState };
 
 export const initialShowState = (): ShowState => ({
@@ -34,8 +38,9 @@ export function voicedLines(scene: Scene): number[] {
 }
 
 /**
- * The shared cursor: the index of the last delivered line, or null before the
- * first one. The prepare phase is private to the host, so it doesn't move this.
+ * The shared cursor: the index of the line the host is on, or null before the scene
+ * starts. One screen per line: the swipe that shows a line to the host is the moment it
+ * is said, and the audience's screens move with it.
  */
 export function deliveredLine(scene: Scene, position: HostPosition): number | null {
   const voiced = voicedLines(scene);
@@ -44,40 +49,34 @@ export function deliveredLine(scene: Scene, position: HostPosition): number | nu
       return null;
     case "ended":
       return voiced.at(-1) ?? null;
-    case "playing": {
-      const v = position.phase === "deliver" ? position.voiced : position.voiced - 1;
-      return v >= 0 ? voiced[v] : null;
-    }
+    case "playing":
+      return voiced[position.voiced] ?? null;
   }
 }
 
 /**
- * One swipe moves exactly one phase. Forward from briefing is not a swipe
- * (the host presses Start), and every line passes through deliver.
+ * One swipe, one line, and every line is reached in order: nothing can be skipped.
+ * Forward from the briefing is not a swipe: the host presses Start.
  */
 export function step(scene: Scene, position: HostPosition, direction: "forward" | "back"): HostPosition {
   const last = voicedLines(scene).length - 1;
   if (direction === "forward") {
     switch (position.stage) {
       case "briefing":
-        return { stage: "playing", voiced: 0, phase: "prepare" };
+        return { stage: "playing", voiced: 0 };
       case "ended":
         return position;
       case "playing":
-        if (position.phase === "prepare") return { ...position, phase: "deliver" };
-        if (position.voiced === last) return { stage: "ended" };
-        return { stage: "playing", voiced: position.voiced + 1, phase: "prepare" };
+        return position.voiced >= last ? { stage: "ended" } : { stage: "playing", voiced: position.voiced + 1 };
     }
   }
   switch (position.stage) {
     case "briefing":
       return position;
     case "ended":
-      return { stage: "playing", voiced: last, phase: "deliver" };
+      return { stage: "playing", voiced: last };
     case "playing":
-      if (position.phase === "deliver") return { ...position, phase: "prepare" };
-      if (position.voiced === 0) return position;
-      return { stage: "playing", voiced: position.voiced - 1, phase: "deliver" };
+      return position.voiced === 0 ? position : { stage: "playing", voiced: position.voiced - 1 };
   }
 }
 
@@ -92,8 +91,6 @@ export function isShowState(value: unknown): value is ShowState {
     p !== null &&
     (p.stage === "briefing" ||
       p.stage === "ended" ||
-      (p.stage === "playing" &&
-        typeof p.voiced === "number" &&
-        (p.phase === "prepare" || p.phase === "deliver")))
+      (p.stage === "playing" && typeof p.voiced === "number"))
   );
 }
